@@ -1,5 +1,7 @@
 # Reflex — a stop-loss & take-profit guardian that reacts so you don't have to
 
+**Live demo: [godson-droid.github.io/reflex](https://godson-droid.github.io/reflex/)** — the web app, running live and reading the deployed contracts on-chain.
+
 **Reflex** is an autonomous guardian for a Uniswap-V2-style liquidity position.
 You arm it once with a price band — a stop-loss floor and a take-profit ceiling —
 and then you can walk away. A reactive contract on **Reactive Lasna** watches the
