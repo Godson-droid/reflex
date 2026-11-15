@@ -1,0 +1,25 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Foundry (contracts/)
+contracts/cache/
+contracts/out/
+contracts/broadcast/*/31337/
+contracts/broadcast/**/dry-run/
+
+# Node (web/)
+web/node_modules/
+web/dist/
+web/dist-ssr/
+*.local
+
+# Logs & editor noise
+*.log
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
