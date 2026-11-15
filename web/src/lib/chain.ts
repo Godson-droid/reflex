@@ -17,7 +17,7 @@
  * read path wired here is what the judging demo exercises.
  */
 
-import { BrowserProvider, Contract, JsonRpcProvider } from 'ethers';
+import { BrowserProvider, Contract, JsonRpcProvider, type Eip1193Provider } from 'ethers';
 
 /* ------------------------------------------------------------------ */
 /*  Contract wiring — deployed 2026-11-15 (see stopguard/DEPLOYMENT.md) */
@@ -39,6 +39,15 @@ export const CONTRACTS = {
 /** True once real addresses are dropped into CONTRACTS above. */
 export const CONTRACTS_WIRED: boolean =
   (CONTRACTS.reactiveGuardian as string) !== '0x0000000000000000000000000000000000000000';
+
+/**
+ * WalletConnect Cloud project ID — the ONLY place this value lives.
+ * Create a project at https://cloud.walletconnect.com (free), replace the
+ * placeholder below, then rebuild and republish (demo/publish-pages.sh).
+ * Until a real ID is in place the WalletConnect option is present in the
+ * UI but its modal cannot initialise.
+ */
+export const WALLETCONNECT_PROJECT_ID = '5940522633ad9fc623dd1fb3f00b05f4';
 
 export const NETWORKS = {
   baseSepolia: {
@@ -131,6 +140,12 @@ export interface ChainAdapter {
   tickMarket(): Promise<MarketData>;
   getGuardians(): Promise<Guardian[]>;
   createGuardian(input: CreateGuardianInput): Promise<Guardian>;
+  /**
+   * The EIP-1193 provider of the currently connected wallet (injected or
+   * WalletConnect), or null when no wallet is connected. Write flows use
+   * this; reads never need it.
+   */
+  getWalletProvider(): Eip1193Provider | null;
 }
 
 /* ------------------------------------------------------------------ */
@@ -442,37 +457,263 @@ export const chain: ChainAdapter = {
     localGuardians.unshift(guardian);
     return guardian;
   },
+
+  getWalletProvider() {
+    // The module-level getWalletProvider() in the wallet section below —
+    // object property names are not scope bindings, so this is not a
+    // recursive call.
+    return getWalletProvider();
+  },
 };
 
 /* ------------------------------------------------------------------ */
-/*  Wallet (real — window.ethereum via ethers v6)                      */
+/*  Wallet connections                                                 */
+/*                                                                     */
+/*  Two ways in, one shared state:                                     */
+/*   - 'injected'      — window.ethereum: MetaMask extension on        */
+/*                       desktop, or a wallet's in-app browser.        */
+/*   - 'walletconnect' — WalletConnect v2 (@walletconnect/ethereum-    */
+/*                       provider, loaded on demand). Works in any     */
+/*                       mobile browser: the library's own modal       */
+/*                       shows a QR code on desktop and deep-links     */
+/*                       to the wallet app on mobile. Its session      */
+/*                       persists in the library's storage and is      */
+/*                       restored on reload.                           */
+/*                                                                     */
+/*  Whichever path connected, getWalletProvider() (also exposed on     */
+/*  the chain adapter) hands back the live EIP-1193 provider for       */
+/*  future write flows.                                                */
 /* ------------------------------------------------------------------ */
+
+export type WalletKind = 'injected' | 'walletconnect';
 
 export interface WalletState {
   address: string | null;
   chainId: number | null;
+  kind: WalletKind | null;
 }
+
+const NO_WALLET_STATE: WalletState = { address: null, chainId: null, kind: null };
+
+let walletState: WalletState = NO_WALLET_STATE;
+let activeProvider: Eip1193Provider | null = null;
+const walletListeners = new Set<(state: WalletState) => void>();
+
+export function getWalletState(): WalletState {
+  return walletState;
+}
+
+/** The connected EIP-1193 provider (injected or WalletConnect), if any. */
+export function getWalletProvider(): Eip1193Provider | null {
+  return activeProvider;
+}
+
+/** Subscribe to wallet state changes from either provider. */
+export function subscribeWallet(listener: (state: WalletState) => void): () => void {
+  walletListeners.add(listener);
+  return () => {
+    walletListeners.delete(listener);
+  };
+}
+
+function setWalletState(next: WalletState, provider: Eip1193Provider | null) {
+  walletState = next;
+  activeProvider = provider;
+  walletListeners.forEach((listener) => listener(walletState));
+}
+
+type EmitterLike = {
+  on(event: string, listener: (...args: never[]) => void): void;
+  removeListener(event: string, listener: (...args: never[]) => void): void;
+};
+
+const watchedProviders = new WeakSet<object>();
+
+/** Follow account / chain / disconnect events of the active provider. */
+function watchProvider(provider: Eip1193Provider, kind: WalletKind) {
+  if (watchedProviders.has(provider)) return;
+  const emitter = provider as unknown as EmitterLike;
+  if (typeof emitter.on !== 'function') return;
+  watchedProviders.add(provider);
+  const onAccounts = (accounts: string[]) => {
+    if (!accounts || accounts.length === 0) {
+      setWalletState(NO_WALLET_STATE, null);
+    } else if (activeProvider === provider) {
+      setWalletState({ ...walletState, address: accounts[0], kind }, provider);
+    }
+  };
+  const onChain = (hexChainId: string) => {
+    if (activeProvider === provider) {
+      setWalletState({ ...walletState, chainId: parseInt(hexChainId, 16), kind }, provider);
+    }
+  };
+  const onDisconnect = () => {
+    if (activeProvider === provider) setWalletState(NO_WALLET_STATE, null);
+  };
+  emitter.on('accountsChanged', onAccounts as (...args: never[]) => void);
+  emitter.on('chainChanged', onChain as (...args: never[]) => void);
+  emitter.on('disconnect', onDisconnect as (...args: never[]) => void);
+}
+
+/* ---------------------------- Injected ----------------------------- */
 
 export function hasInjectedWallet(): boolean {
   return typeof window !== 'undefined' && typeof window.ethereum !== 'undefined';
 }
 
-export async function connectWallet(): Promise<WalletState> {
+async function connectInjected(): Promise<WalletState> {
   if (!hasInjectedWallet()) {
     throw new Error('NO_WALLET');
   }
-  const provider = new BrowserProvider(window.ethereum!);
+  const eip1193 = window.ethereum!;
+  const provider = new BrowserProvider(eip1193);
   const signer = await provider.getSigner();
   const address = await signer.getAddress();
   const network = await provider.getNetwork();
-  return { address, chainId: Number(network.chainId) };
+  const state: WalletState = { address, chainId: Number(network.chainId), kind: 'injected' };
+  watchProvider(eip1193, 'injected');
+  setWalletState(state, eip1193);
+  return state;
 }
 
+/* --------------------------- WalletConnect -------------------------- */
+
+type WalletConnectInstance = Eip1193Provider & {
+  accounts: string[];
+  chainId: number;
+  session?: unknown;
+  connect(): Promise<void>;
+  disconnect(): Promise<void>;
+};
+
+let wcProviderPromise: Promise<WalletConnectInstance> | null = null;
+
+/**
+ * Lazily create the WalletConnect provider (dynamic import keeps it out
+ * of the initial bundle). Configured for Base Sepolia, with Reactive
+ * Lasna as an optional chain, and the library's own QR / deep-link modal.
+ */
+function loadWalletConnectProvider(): Promise<WalletConnectInstance> {
+  if (!wcProviderPromise) {
+    wcProviderPromise = (async () => {
+      const { EthereumProvider } = await import('@walletconnect/ethereum-provider');
+      const provider = await EthereumProvider.init({
+        projectId: WALLETCONNECT_PROJECT_ID,
+        chains: [NETWORKS.baseSepolia.chainId],
+        optionalChains: [NETWORKS.lasna.chainId],
+        showQrModal: true,
+        metadata: {
+          name: 'Reflex',
+          description:
+            'Stop-loss and take-profit guardians that live inside a Reactive smart contract.',
+          url: 'https://godson-droid.github.io/reflex/',
+          icons: ['https://godson-droid.github.io/reflex/favicon.svg'],
+        },
+      });
+      return provider as unknown as WalletConnectInstance;
+    })();
+    // A failed init (e.g. while the project ID is still a placeholder)
+    // must not poison later attempts.
+    wcProviderPromise.catch(() => {
+      wcProviderPromise = null;
+    });
+  }
+  return wcProviderPromise;
+}
+
+async function connectWalletConnect(): Promise<WalletState> {
+  const wc = await loadWalletConnectProvider();
+  if (!wc.session || wc.accounts.length === 0) {
+    // Opens the library's modal: QR on desktop, wallet deep links on mobile.
+    await wc.connect();
+  }
+  const address = wc.accounts[0] ?? null;
+  if (!address) throw new Error('WC_NO_ACCOUNTS');
+  const state: WalletState = { address, chainId: wc.chainId ?? null, kind: 'walletconnect' };
+  watchProvider(wc, 'walletconnect');
+  setWalletState(state, wc);
+  return state;
+}
+
+/** The WalletConnect library persists sessions in local storage. */
+function hasStoredWalletConnectSession(): boolean {
+  try {
+    for (let i = 0; i < window.localStorage.length; i++) {
+      const key = window.localStorage.key(i);
+      if (key && key.startsWith('wc@2:') && key.includes('session')) return true;
+    }
+  } catch {
+    // Storage unavailable (private mode, etc.) — nothing to restore.
+  }
+  return false;
+}
+
+/* ----------------------------- Public API --------------------------- */
+
+export async function connectWallet(kind: WalletKind): Promise<WalletState> {
+  return kind === 'walletconnect' ? connectWalletConnect() : connectInjected();
+}
+
+export async function disconnectWallet(): Promise<void> {
+  const kind = walletState.kind;
+  const provider = activeProvider;
+  setWalletState(NO_WALLET_STATE, null);
+  if (kind === 'walletconnect' && provider) {
+    try {
+      await (provider as unknown as WalletConnectInstance).disconnect();
+    } catch {
+      // Session already gone on the relay — local state is cleared either way.
+    }
+  }
+  // Injected wallets cannot be disconnected from the dApp side; the user
+  // revokes the connection inside the wallet itself.
+}
+
+/**
+ * Restore an existing connection on load: an already-authorized injected
+ * wallet first, then a persisted WalletConnect session. Never throws — a
+ * missing wallet or a WalletConnect init failure simply means "not
+ * connected", and the connect chooser remains available.
+ */
 export async function readWalletState(): Promise<WalletState> {
-  if (!hasInjectedWallet()) return { address: null, chainId: null };
-  const provider = new BrowserProvider(window.ethereum!);
-  const accounts = await provider.listAccounts();
-  if (accounts.length === 0) return { address: null, chainId: null };
-  const network = await provider.getNetwork();
-  return { address: accounts[0].address, chainId: Number(network.chainId) };
+  if (walletState.address) return walletState;
+  if (hasInjectedWallet()) {
+    try {
+      const eip1193 = window.ethereum!;
+      const provider = new BrowserProvider(eip1193);
+      const accounts = await provider.listAccounts();
+      if (accounts.length > 0) {
+        const network = await provider.getNetwork();
+        const state: WalletState = {
+          address: accounts[0].address,
+          chainId: Number(network.chainId),
+          kind: 'injected',
+        };
+        watchProvider(eip1193, 'injected');
+        setWalletState(state, eip1193);
+        return state;
+      }
+    } catch {
+      // Fall through to the WalletConnect restore.
+    }
+  }
+  if (hasStoredWalletConnectSession()) {
+    try {
+      const wc = await loadWalletConnectProvider();
+      if (wc.session && wc.accounts.length > 0) {
+        const state: WalletState = {
+          address: wc.accounts[0],
+          chainId: wc.chainId ?? null,
+          kind: 'walletconnect',
+        };
+        watchProvider(wc, 'walletconnect');
+        setWalletState(state, wc);
+        return state;
+      }
+    } catch {
+      // WalletConnect unavailable (e.g. placeholder project ID) — the
+      // page and its live reads are unaffected.
+    }
+  }
+  return NO_WALLET_STATE;
 }
