@@ -1,0 +1,59 @@
+{
+  "n": 34,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "batch3-tp-2",
+  "priceBefore": 2027.0907122196395,
+  "triggerPrice": 3599.999999993343,
+  "executedPrice": 3599.999999993343,
+  "amountInWETH": 10,
+  "amountOutUSDC": 32402.710232911217,
+  "originTx": "0xe43904bc8429a89a2fd38960d5998b87fe74962e546b440c6e365c974103d68b",
+  "originBlock": 59517614,
+  "reactiveTx": "0xde6788a87c8dca629485c55375e327affe32b310af3677d0d67a3d5fb866e20c",
+  "reactiveBlock": 8483161,
+  "callbackTx": "0x734413e405c10768ec2a0caa016d360a084db2a850b52dce5464474a4a1467b3",
+  "callbackBlock": 59517622,
+  "latencyBlocksBase": 8,
+  "reconciliation": {
+    "predictedUsdc": 699097.6099603294,
+    "actualUsdc": 699097.6099603295,
+    "usdcDiff": 1.1641532182693481e-10,
+    "predictedWeth": 897.4152499241117,
+    "actualWeth": 897.4152499241117,
+    "wethDiff": 0
+  },
+  "triggerSwap": {
+    "transferTx": "0x3e6534545aa1df0d3493f282aad21b5a98b8519e572e5773a9f9bd8392a1f0fb",
+    "transferBlock": 59517588,
+    "originTx": "0xe43904bc8429a89a2fd38960d5998b87fe74962e546b440c6e365c974103d68b",
+    "originBlock": 59517614,
+    "amountIn": 83291.03132681789,
+    "amountOut": 30.751648950873257,
+    "targetPrice": 3600,
+    "priceAfter": 3599.9999999933425
+  },
+  "rearm": {
+    "callbackRearmTx": "0x9273259575d88621ed02a0323ac3ae7e084c9ed67a131cfdfef2afe74e08cada",
+    "callbackRearmBlock": 59517645,
+    "guardianRearmTx": "0x59476d9c2b55ad5ce925e6b5b922a2e1484a474f350b5094319ed842ba4f64c5",
+    "guardianRearmBlock": 8483176,
+    "stateAfter": {
+      "reserves": {
+        "weth": 102.58475007588837,
+        "usdc": 300902.3900396705
+      },
+      "price": 2933.2078093193595,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 897.4152499241117,
+        "usdc": 699097.6099603295,
+        "baseETH": 0.019954713366461665,
+        "lasnaLREACT": 5.281987199998834
+      },
+      "guardianLREACT": 4.0725931,
+      "callbackETH": 0.009954220768004549
+    }
+  }
+}

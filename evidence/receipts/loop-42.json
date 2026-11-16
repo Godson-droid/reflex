@@ -1,0 +1,59 @@
+{
+  "n": 42,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "batch3-tp-6",
+  "priceBefore": 1911.1673024637585,
+  "triggerPrice": 3600.000000002299,
+  "executedPrice": 3600.000000002299,
+  "amountInWETH": 10,
+  "amountOutUSDC": 32412.870107960895,
+  "originTx": "0x32ac95c9a01c312443cfbcd65125f04e55bfff0eb13b06318382108f0f46e11f",
+  "originBlock": 59518493,
+  "reactiveTx": "0x7e2494483119ff074d4447775c126a4dbebf6aa1dc2427c0fa61272c116f0a3f",
+  "reactiveBlock": 8483322,
+  "callbackTx": "0x2573e94e561122b1180830e9e91b2f5955b65e84677790ad388c0ea109edb511",
+  "callbackBlock": 59518502,
+  "latencyBlocksBase": 9,
+  "reconciliation": {
+    "predictedUsdc": 698029.6277432535,
+    "actualUsdc": 698029.6277432536,
+    "usdcDiff": 1.1641532182693481e-10,
+    "predictedWeth": 897.1157660098629,
+    "actualWeth": 897.1157660098628,
+    "wethDiff": -1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0x3b26391158fa0b9118cdb0f5dfb6a87741d5bddb95e712ca1f9a73d3b9f6116b",
+    "transferBlock": 59518468,
+    "originTx": "0x32ac95c9a01c312443cfbcd65125f04e55bfff0eb13b06318382108f0f46e11f",
+    "originBlock": 59518493,
+    "amountIn": 90845.90675300494,
+    "amountOut": 34.544346070723634,
+    "targetPrice": 3600,
+    "priceAfter": 3600.000000002299
+  },
+  "rearm": {
+    "callbackRearmTx": "0x685fb89e8429afca0e12d55ece2b16e6df2aed89382df366849f5d950654b098",
+    "callbackRearmBlock": 59518522,
+    "guardianRearmTx": "0x3f0d1d21c1f0905aa9b40542eda4def235d9097172b3a06d18b2d3b32748b9c8",
+    "guardianRearmBlock": 8483336,
+    "stateAfter": {
+      "reserves": {
+        "weth": 102.88423399013716,
+        "usdc": 301970.37225674646
+      },
+      "price": 2935.0500124799914,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 897.1157660098628,
+        "usdc": 698029.6277432536,
+        "baseETH": 0.019948931120462834,
+        "lasnaLREACT": 5.255817599998834
+      },
+      "guardianLREACT": 3.8611631,
+      "callbackETH": 0.009943612501990188
+    }
+  }
+}

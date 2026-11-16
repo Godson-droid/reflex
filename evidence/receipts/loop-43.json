@@ -1,0 +1,59 @@
+{
+  "n": 43,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "batch3-sl-7",
+  "priceBefore": 2935.0500124799914,
+  "triggerPrice": 2199.9999896254917,
+  "executedPrice": 2199.9999896254917,
+  "amountInWETH": 10,
+  "amountOutUSDC": 20236.543316049825,
+  "originTx": "0x22c300206ef6360088bbc3f66eb164b83ae7b804d976ea04e96675fd54cd3fb6",
+  "originBlock": 59518616,
+  "reactiveTx": "0xf53d1c6ae03ffa0286c14b696aa8800adc85e3a5012b8299b2fd9a90fece3948",
+  "reactiveBlock": 8483345,
+  "callbackTx": "0x55fc3bb17bbde5035eb6dcf501ff62c9b54a6c5b40223d8bbe1fe6cdd59bc8cc",
+  "callbackBlock": 59518624,
+  "latencyBlocksBase": 8,
+  "reconciliation": {
+    "predictedUsdc": 758746.297205555,
+    "actualUsdc": 758746.2972055549,
+    "usdcDiff": -1.1641532182693481e-10,
+    "predictedWeth": 871.1407966619996,
+    "actualWeth": 871.1407966619997,
+    "wethDiff": 1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0x46b12defe9d91dcc12e07e30fe8618c5bf572cdab4717608179456e3fc18415a",
+    "transferBlock": 59518592,
+    "originTx": "0x22c300206ef6360088bbc3f66eb164b83ae7b804d976ea04e96675fd54cd3fb6",
+    "originBlock": 59518616,
+    "amountIn": 15.974969347863164,
+    "amountOut": 40480.12614625152,
+    "targetPrice": 2200,
+    "priceAfter": 2199.9999896254917
+  },
+  "rearm": {
+    "callbackRearmTx": "0xecb8d32db8f98ebe02045203106921acbd3fc8e98b1cb6a466f0edb402c18747",
+    "callbackRearmBlock": 59518649,
+    "guardianRearmTx": "0x703cdbce208f5b693831a9ee6db086928d5deb6b8b22b6b87ca0752dc16d69ec",
+    "guardianRearmBlock": 8483356,
+    "stateAfter": {
+      "reserves": {
+        "weth": 128.85920333800033,
+        "usdc": 241253.7027944451
+      },
+      "price": 1872.2271793162627,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 871.1407966619997,
+        "usdc": 758746.2972055549,
+        "baseETH": 0.019948208325065893,
+        "lasnaLREACT": 5.252546399998834
+      },
+      "guardianLREACT": 3.8347355,
+      "callbackETH": 0.009942286641190188
+    }
+  }
+}

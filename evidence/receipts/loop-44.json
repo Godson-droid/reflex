@@ -1,0 +1,59 @@
+{
+  "n": 44,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "batch3-tp-7",
+  "priceBefore": 1872.2271793162627,
+  "triggerPrice": 3549.999999997241,
+  "executedPrice": 3549.999999997241,
+  "amountInWETH": 10,
+  "amountOutUSDC": 31986.992103270506,
+  "originTx": "0x18a42fa8967d2785920c350fe3b979ac4357794785849feb22b538f5497f07ca",
+  "originBlock": 59518722,
+  "reactiveTx": "0xe49cb2c15b1aa7f279c2a5c12ca156d874181721bf91f1f8f2f4635ef067ceb1",
+  "reactiveBlock": 8483365,
+  "callbackTx": "0x53a7f8e6e4dbff221dba42cf9507fca1209bd6f1cdd53c4ec533bf253188ecd1",
+  "callbackBlock": 59518731,
+  "latencyBlocksBase": 9,
+  "reconciliation": {
+    "predictedUsdc": 699643.2432153557,
+    "actualUsdc": 699643.2432153557,
+    "usdcDiff": 0,
+    "predictedWeth": 896.3820425667119,
+    "actualWeth": 896.3820425667118,
+    "wethDiff": -1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0x158e7cee5b95588f67469baf4c1f013da03c31e57051e92d3ecc803928b359c1",
+    "transferBlock": 59518697,
+    "originTx": "0x18a42fa8967d2785920c350fe3b979ac4357794785849feb22b538f5497f07ca",
+    "originBlock": 59518722,
+    "amountIn": 91090.04609346967,
+    "amountOut": 35.241245904712144,
+    "targetPrice": 3550,
+    "priceAfter": 3549.9999999972415
+  },
+  "rearm": {
+    "callbackRearmTx": "0x127895748665985fb7051f381a135d30f35855b40faba7372fc48781f20e64e6",
+    "callbackRearmBlock": 59518751,
+    "guardianRearmTx": "0xf88e06be85879872e12e8179dd5e425ae55c68b11dc7934e057580398618866b",
+    "guardianRearmBlock": 8483379,
+    "stateAfter": {
+      "reserves": {
+        "weth": 103.61795743328818,
+        "usdc": 300356.75678464427
+      },
+      "price": 2898.6940509614024,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 896.3820425667118,
+        "usdc": 699643.2432153557,
+        "baseETH": 0.01994748560705881,
+        "lasnaLREACT": 5.249275199998834
+      },
+      "guardianLREACT": 3.8083056,
+      "callbackETH": 0.009940959511725939
+    }
+  }
+}

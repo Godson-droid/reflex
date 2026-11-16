@@ -1,0 +1,59 @@
+{
+  "n": 37,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "batch3-sl-4",
+  "priceBefore": 2896.860245392211,
+  "triggerPrice": 2449.9999979359795,
+  "executedPrice": 2449.9999979359795,
+  "amountInWETH": 10,
+  "amountOutUSDC": 22435.59438605598,
+  "originTx": "0x41db626965bae373cc025f2ce99c1a482947c9a34c8aeb0bb5291952de5c3789",
+  "originBlock": 59517935,
+  "reactiveTx": "0x3395777185b43a8fa3da0ebc1d1d3c05eda8e59fc76052923667704be4e72619",
+  "reactiveBlock": 8483220,
+  "callbackTx": "0xc05193e5c2ceb55fefc0dda2cb159a336bca81a2b70896650906fa64c84fa5c9",
+  "callbackBlock": 59517943,
+  "latencyBlocksBase": 8,
+  "reconciliation": {
+    "predictedUsdc": 747172.3937423497,
+    "actualUsdc": 747172.3937423498,
+    "usdcDiff": 1.1641532182693481e-10,
+    "predictedWeth": 877.6476731119985,
+    "actualWeth": 877.6476731119985,
+    "wethDiff": 0
+  },
+  "triggerSwap": {
+    "transferTx": "0x07c45a0a1ab609bb2b65cca160633e7c2e9a863036b5adca9694c3cd4e1cc6be",
+    "transferBlock": 59517931,
+    "originTx": "0x41db626965bae373cc025f2ce99c1a482947c9a34c8aeb0bb5291952de5c3789",
+    "originBlock": 59517935,
+    "amountIn": 9.040767963964653,
+    "amountOut": 24015.94729283106,
+    "targetPrice": 2450,
+    "priceAfter": 2449.9999979359795
+  },
+  "rearm": {
+    "callbackRearmTx": "0x67ceb8d8c2899212b865a3d9b746d39a0dbd826bff61f2fc8958574576e081ad",
+    "callbackRearmBlock": 59517959,
+    "guardianRearmTx": "0xae71caefaff3559b59bbf2dbe9165bd711260dd4d602fab9ffec9fa27a045c2c",
+    "guardianRearmBlock": 8483232,
+    "stateAfter": {
+      "reserves": {
+        "weth": 122.3523268880015,
+        "usdc": 252827.60625765022
+      },
+      "price": 2066.3898487936626,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 877.6476731119985,
+        "usdc": 747172.3937423498,
+        "baseETH": 0.019952545025747954,
+        "lasnaLREACT": 5.272173599998834
+      },
+      "guardianLREACT": 3.993308,
+      "callbackETH": 0.009950243033804549
+    }
+  }
+}

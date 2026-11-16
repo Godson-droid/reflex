@@ -1,0 +1,59 @@
+{
+  "n": 41,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "batch3-sl-6",
+  "priceBefore": 2860.824093747355,
+  "triggerPrice": 2250.0000046947926,
+  "executedPrice": 2250.0000046947926,
+  "amountInWETH": 10,
+  "amountOutUSDC": 20676.97007653721,
+  "originTx": "0x5927a6b006e98296c6861be9479f870e7cc471eb26130045fc962cc87aa392e6",
+  "originBlock": 59518392,
+  "reactiveTx": "0x20e169dafdb4e925635e9c6e08ac4516296d701ea8b2f575269c6175387b8325",
+  "reactiveBlock": 8483303,
+  "callbackTx": "0x2834035b8809830612acc96533071bafb8af741761551941cf6e3fae8a780e0e",
+  "callbackBlock": 59518401,
+  "latencyBlocksBase": 9,
+  "reconciliation": {
+    "predictedUsdc": 756462.6643882976,
+    "actualUsdc": 756462.6643882976,
+    "usdcDiff": 0,
+    "predictedWeth": 872.5714199391392,
+    "actualWeth": 872.5714199391392,
+    "wethDiff": 0
+  },
+  "triggerSwap": {
+    "transferTx": "0x67f39749ff06511903d174c928b9ba20e8a4fea2dd24409cc9b2e715b9b9158f",
+    "transferBlock": 59518367,
+    "originTx": "0x5927a6b006e98296c6861be9479f870e7cc471eb26130045fc962cc87aa392e6",
+    "originBlock": 59518392,
+    "amountIn": 13.30582180418015,
+    "amountOut": 33662.589839903725,
+    "targetPrice": 2250,
+    "priceAfter": 2250.000004694793
+  },
+  "rearm": {
+    "callbackRearmTx": "0x31bd61bc002ab584686914187ba2bc34399281771478a8ea98c16c88f71dcd3e",
+    "callbackRearmBlock": 59518421,
+    "guardianRearmTx": "0x8e9c8ea3f84a50a049d9017c95ecc6ab20cf30432a70d8ba64c2040f9105a785",
+    "guardianRearmBlock": 8483312,
+    "stateAfter": {
+      "reserves": {
+        "weth": 127.4285800608608,
+        "usdc": 243537.3356117024
+      },
+      "price": 1911.1673024637585,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 872.5714199391392,
+        "usdc": 756462.6643882976,
+        "baseETH": 0.019949653910469455,
+        "lasnaLREACT": 5.259088799998834
+      },
+      "guardianLREACT": 3.887593,
+      "callbackETH": 0.009944938514590189
+    }
+  }
+}

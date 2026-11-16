@@ -1,0 +1,59 @@
+{
+  "n": 40,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "batch3-tp-5",
+  "priceBefore": 1988.9931451266077,
+  "triggerPrice": 3500.000000000241,
+  "executedPrice": 3500.000000000241,
+  "amountInWETH": 10,
+  "amountOutUSDC": 31552.758370261596,
+  "originTx": "0xe995bc2010015444c046e55bdfd69a700e2707c6c5d88a208f564ab1cc444f27",
+  "originBlock": 59518265,
+  "reactiveTx": "0x7d42ab40ef1fdd6a623dba7ecdf076e513afacf9196d4c4a94acfc635a2237d2",
+  "reactiveBlock": 8483280,
+  "callbackTx": "0x884cbae3e7a44ea2068265ba2e7fdd230077a05164db53602fdbd6ada16087ec",
+  "callbackBlock": 59518273,
+  "latencyBlocksBase": 8,
+  "reconciliation": {
+    "predictedUsdc": 702123.1044718567,
+    "actualUsdc": 702123.1044718566,
+    "usdcDiff": -1.1641532182693481e-10,
+    "predictedWeth": 895.8772417433194,
+    "actualWeth": 895.8772417433194,
+    "wethDiff": 0
+  },
+  "triggerSwap": {
+    "transferTx": "0x4bf7c9ac6ce9829442e50f96d3b772cdc1784e1276eb9dc77796eaf75beba9cd",
+    "transferBlock": 59518260,
+    "originTx": "0xe995bc2010015444c046e55bdfd69a700e2707c6c5d88a208f564ab1cc444f27",
+    "originBlock": 59518265,
+    "amountIn": 81182.2502260301,
+    "amountOut": 30.68782959306926,
+    "targetPrice": 3500,
+    "priceAfter": 3500.000000000241
+  },
+  "rearm": {
+    "callbackRearmTx": "0xe5a19ab8ee84201e2ac6213ddb19be4373aac5de7a4642d0d3e5907647b76f1d",
+    "callbackRearmBlock": 59518291,
+    "guardianRearmTx": "0x8ba36d24b221488b4d40638655ee5f4a8e3a19a5bb6601ce540c233bb4dd762d",
+    "guardianRearmBlock": 8483294,
+    "stateAfter": {
+      "reserves": {
+        "weth": 104.12275825668064,
+        "usdc": 297876.89552814333
+      },
+      "price": 2860.824093747355,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 895.8772417433194,
+        "usdc": 702123.1044718566,
+        "baseETH": 0.019950376628475812,
+        "lasnaLREACT": 5.262359999998834
+      },
+      "guardianLREACT": 3.9140206,
+      "callbackETH": 0.009946265147804547
+    }
+  }
+}

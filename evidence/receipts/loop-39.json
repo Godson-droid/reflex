@@ -1,0 +1,59 @@
+{
+  "n": 39,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "batch3-sl-5",
+  "priceBefore": 2970.8665776255866,
+  "triggerPrice": 2349.99999383688,
+  "executedPrice": 2349.99999383688,
+  "amountInWETH": 10,
+  "amountOutUSDC": 21557.477066946038,
+  "originTx": "0x90eeac160c72ee89014daaa248113cca793838905e467e94f8ac1af4d44b3b62",
+  "originBlock": 59518152,
+  "reactiveTx": "0xb73fb72ca7ffa647c1bba7052d71e5009c418ab48bec18c91ab9f96a9735a8b6",
+  "reactiveBlock": 8483260,
+  "callbackTx": "0x0b52fbef47a1d56a813df72b60a9287790fb1967b7aca6760b178b53cb5fdfb3",
+  "callbackBlock": 59518162,
+  "latencyBlocksBase": 10,
+  "reconciliation": {
+    "predictedUsdc": 751752.5963276251,
+    "actualUsdc": 751752.5963276252,
+    "usdcDiff": 1.1641532182693481e-10,
+    "predictedWeth": 875.1894121502501,
+    "actualWeth": 875.1894121502501,
+    "wethDiff": 0
+  },
+  "triggerSwap": {
+    "transferTx": "0x358f95fcffc5e9b4cd69cbea931ee509ff6dbbd76d3a9b59e029440f7e491a58",
+    "transferBlock": 59518147,
+    "originTx": "0x90eeac160c72ee89014daaa248113cca793838905e467e94f8ac1af4d44b3b62",
+    "originBlock": 59518152,
+    "amountIn": 12.716138022956317,
+    "amountOut": 33504.10801217259,
+    "targetPrice": 2350,
+    "priceAfter": 2349.9999938368805
+  },
+  "rearm": {
+    "callbackRearmTx": "0x3ea2156c21b71b05298ff37a1299ce991daae27230709c93dfec55b0438edf0c",
+    "callbackRearmBlock": 59518187,
+    "guardianRearmTx": "0x06e32a44499f67531a5cd02756421cb1c8439a428c873d386d8569ab7e4606e9",
+    "guardianRearmBlock": 8483275,
+    "stateAfter": {
+      "reserves": {
+        "weth": 124.81058784974991,
+        "usdc": 248247.40367237484
+      },
+      "price": 1988.9931451266077,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 875.1894121502501,
+        "usdc": 751752.5963276252,
+        "baseETH": 0.019951099418482235,
+        "lasnaLREACT": 5.265631199998834
+      },
+      "guardianLREACT": 3.9404505,
+      "callbackETH": 0.009947591160404548
+    }
+  }
+}

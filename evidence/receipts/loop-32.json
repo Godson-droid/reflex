@@ -1,0 +1,59 @@
+{
+  "n": 32,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "batch3-tp-1",
+  "priceBefore": 1870.8128685993283,
+  "triggerPrice": 3500.000000002379,
+  "executedPrice": 3500.000000002379,
+  "amountInWETH": 10,
+  "amountOutUSDC": 31543.205404765,
+  "originTx": "0x18f0b8ff89ef684c7a6fcee623506ce1ce699b0301f19a8a5a9838d2b8ff02b2",
+  "originBlock": 59517348,
+  "reactiveTx": "0x19e2a84475cdee2680c24aca083dd836c61efc52cfcc0c2c8a0ac2d287cfb1bc",
+  "reactiveBlock": 8483113,
+  "callbackTx": "0x9c36c34b894913dff4176b8a21a5c26052c1805d57ee692b9b9aeef30921509b",
+  "callbackBlock": 59517358,
+  "latencyBlocksBase": 10,
+  "reconciliation": {
+    "predictedUsdc": 703151.9149130922,
+    "actualUsdc": 703151.9149130923,
+    "usdcDiff": 1.1641532182693481e-10,
+    "predictedWeth": 896.173917002443,
+    "actualWeth": 896.173917002443,
+    "wethDiff": 0
+  },
+  "triggerSwap": {
+    "transferTx": "0xfda4c29ade4cba7a0ce04b3db60ee57a5e9a6d664758cc447a331e326d84ece2",
+    "transferBlock": 59517343,
+    "originTx": "0x18f0b8ff89ef684c7a6fcee623506ce1ce699b0301f19a8a5a9838d2b8ff02b2",
+    "originBlock": 59517348,
+    "amountIn": 88398.96644365574,
+    "amountOut": 34.45629525425526,
+    "targetPrice": 3500,
+    "priceAfter": 3500.000000002379
+  },
+  "rearm": {
+    "callbackRearmTx": "0x877a072bb069e1d9f7ee013592b4d795637bbeac574e228f503a640296afd72a",
+    "callbackRearmBlock": 59517374,
+    "guardianRearmTx": "0x5fea5641d886df7db4892eddb31121f390eddfbc8a98dbc6aaf6770cd5e0d3ea",
+    "guardianRearmBlock": 8483127,
+    "stateAfter": {
+      "reserves": {
+        "weth": 103.82608299755702,
+        "usdc": 296848.0850869077
+      },
+      "price": 2859.089705752382,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 896.173917002443,
+        "usdc": 703151.9149130923,
+        "baseETH": 0.019956158802473967,
+        "lasnaLREACT": 5.288529599998834
+      },
+      "guardianLREACT": 4.1254506,
+      "callbackETH": 0.009956872641404548
+    }
+  }
+}
