@@ -1,0 +1,59 @@
+{
+  "n": 26,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "batch2-tp-5",
+  "priceBefore": 1987.1640469751505,
+  "triggerPrice": 3500.0000000063237,
+  "executedPrice": 3500.0000000063237,
+  "amountInWETH": 10,
+  "amountOutUSDC": 31535.391973983544,
+  "originTx": "0x1191141a8c2f0eb2e7074aa270a72b17930bdadb83d9dde4ad203477deb8a534",
+  "originBlock": 59515441,
+  "reactiveTx": "0xf435954dde303003fd5fe4a1c61ed3f756419c75041998eab5afec164549f310",
+  "reactiveBlock": 8482759,
+  "callbackTx": "0x41963920263ed05ffc5e759730b0ac8fd6c54f2e335f601c30e8dae2820de7fa",
+  "callbackBlock": 59515447,
+  "latencyBlocksBase": 6,
+  "reconciliation": {
+    "predictedUsdc": 703988.9953729822,
+    "actualUsdc": 703988.9953729822,
+    "usdcDiff": 0,
+    "predictedWeth": 896.4153152570259,
+    "actualWeth": 896.4153152570258,
+    "wethDiff": -1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0x9dccf5d8096e88e783523c62594d88ffd650f53658bb5667bdf0249384501010",
+    "transferBlock": 59515437,
+    "originTx": "0x1191141a8c2f0eb2e7074aa270a72b17930bdadb83d9dde4ad203477deb8a534",
+    "originBlock": 59515441,
+    "amountIn": 80831.80145400266,
+    "amountOut": 30.569431029473613,
+    "targetPrice": 3500,
+    "priceAfter": 3500.0000000063233
+  },
+  "rearm": {
+    "callbackRearmTx": "0x47731dfb66e7f6776842b6151883ba4c5b2596c604551877417783d7347fa311",
+    "callbackRearmBlock": 59515465,
+    "guardianRearmTx": "0x661eaaaeded7c78c6a442e0418676704773176f8e5920fbe271d6b72eb7ff874",
+    "guardianRearmBlock": 8482772,
+    "stateAfter": {
+      "reserves": {
+        "weth": 103.58468474297416,
+        "usdc": 296011.0046270178
+      },
+      "price": 2857.6715308977696,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 896.4153152570258,
+        "usdc": 703988.9953729822,
+        "baseETH": 0.019960495701461172,
+        "lasnaLREACT": 5.308156799998834
+      },
+      "guardianLREACT": 4.2840231,
+      "callbackETH": 0.009964828261604547
+    }
+  }
+}

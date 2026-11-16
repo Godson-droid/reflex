@@ -1,0 +1,59 @@
+{
+  "n": 19,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "batch2-sl-2",
+  "priceBefore": 2855.9274947682134,
+  "triggerPrice": 2399.999992755789,
+  "executedPrice": 2399.999992755789,
+  "amountInWETH": 10,
+  "amountOutUSDC": 21983.061711229464,
+  "originTx": "0xaa0144882472b481751b4d95f6f1d256c542a310f19d0135cb10219b3ef88c24",
+  "originBlock": 59514669,
+  "reactiveTx": "0x1140ef08216bc885b66a1989de5671e1de8a33f7e4a174ebaa57cf4237e9e416",
+  "reactiveBlock": 8482622,
+  "callbackTx": "0xab4318bcdbe1d3f927394b56a2b1e1e9e2d072c6af4b06aec2e7a1f3e4f13b8a",
+  "callbackBlock": 59514679,
+  "latencyBlocksBase": 10,
+  "reconciliation": {
+    "predictedUsdc": 751531.9519722366,
+    "actualUsdc": 751531.9519722365,
+    "usdcDiff": -1.1641532182693481e-10,
+    "predictedWeth": 877.3120372686133,
+    "actualWeth": 877.3120372686132,
+    "wethDiff": -1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0xfbaeafeb71d115d0b5d902ecb0224111d1dd358b803c41cf83fe032b8ccc57ca",
+    "transferBlock": 59514665,
+    "originTx": "0xaa0144882472b481751b4d95f6f1d256c542a310f19d0135cb10219b3ef88c24",
+    "originBlock": 59514669,
+    "amountIn": 9.39869016450251,
+    "amountOut": 24535.56369938001,
+    "targetPrice": 2400,
+    "priceAfter": 2399.999992755789
+  },
+  "rearm": {
+    "callbackRearmTx": "0x820528ac6e97920846d2aaeca70f86cfab40a6b73f385636013b9dc1324ee8b5",
+    "callbackRearmBlock": 59514693,
+    "guardianRearmTx": "0xb4c8d7e52fb2c74b8c8511bb40b5c76b3d12cf732653d6d5e62a25a2441581c1",
+    "guardianRearmBlock": 8482630,
+    "stateAfter": {
+      "reserves": {
+        "weth": 122.68796273138679,
+        "usdc": 248468.04802776346
+      },
+      "price": 2025.203145411745,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 877.3120372686132,
+        "usdc": 751531.9519722365,
+        "baseETH": 0.019965554943502755,
+        "lasnaLREACT": 5.331055199998834
+      },
+      "guardianLREACT": 4.4690255,
+      "callbackETH": 0.009974110128666775
+    }
+  }
+}

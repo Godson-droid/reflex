@@ -1,0 +1,59 @@
+{
+  "n": 22,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "batch2-tp-3",
+  "priceBefore": 1947.7427063785583,
+  "triggerPrice": 3549.999999996862,
+  "executedPrice": 3549.999999996862,
+  "amountInWETH": 10,
+  "amountOutUSDC": 31959.14102629034,
+  "originTx": "0x9fbc3521c68807ec74f282b892dc240a0b0ddbe4a858f4f0c653fe3720629cb5",
+  "originBlock": 59514987,
+  "reactiveTx": "0x48b3c2f2967778d07b9cf466565ac60ccf7956e021d4f48c10a3edaae1ae9280",
+  "reactiveBlock": 8482679,
+  "callbackTx": "0xdc709d5601ad0240a54771829b07d1d8a4acdde9b7dd0d2ac10832ba75ef835c",
+  "callbackBlock": 59514995,
+  "latencyBlocksBase": 8,
+  "reconciliation": {
+    "predictedUsdc": 702597.5726572471,
+    "actualUsdc": 702597.572657247,
+    "usdcDiff": -1.1641532182693481e-10,
+    "predictedWeth": 897.2220934170888,
+    "actualWeth": 897.2220934170889,
+    "wethDiff": 1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0x4e5ac3d8b2572110e88edcebc705968ff64999b6aa04aa3be24a4af45a6e2284",
+    "transferBlock": 59514962,
+    "originTx": "0x9fbc3521c68807ec74f282b892dc240a0b0ddbe4a858f4f0c653fe3720629cb5",
+    "originBlock": 59514987,
+    "amountIn": 85493.25392155643,
+    "amountOut": 32.4277038136036,
+    "targetPrice": 3550,
+    "priceAfter": 3549.999999996862
+  },
+  "rearm": {
+    "callbackRearmTx": "0xb083724294b33bc8bb00cd27a771bf17c53850d2e51c30fb4c42387ffeb7fbef",
+    "callbackRearmBlock": 59515015,
+    "guardianRearmTx": "0x4e46afd9e416a5db823406e4c80d298deb85f35dc7a3d7148147b02c6b75a8e4",
+    "guardianRearmBlock": 8482693,
+    "stateAfter": {
+      "reserves": {
+        "weth": 102.77790658291113,
+        "usdc": 297402.42734275304
+      },
+      "price": 2893.6416125856576,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 897.2220934170889,
+        "usdc": 702597.572657247,
+        "baseETH": 0.019963386717484117,
+        "lasnaLREACT": 5.321241599998834
+      },
+      "guardianLREACT": 4.3897381,
+      "callbackETH": 0.009970132242666773
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "n": 18,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "batch2-tp-1",
+  "priceBefore": 1869.1376392772856,
+  "triggerPrice": 3499.9999999962006,
+  "executedPrice": 3499.9999999962006,
+  "amountInWETH": 10,
+  "amountOutUSDC": 31525.780545367623,
+  "originTx": "0x7c9104b78303fe14098c60df5c1ac11224c553d919b3041a4050fad384c051f9",
+  "originBlock": 59514564,
+  "reactiveTx": "0x7a2c5fdc8cc8bc702cb618606b2135f88ec5ae6afe451ed2dd850cb7a7a47618",
+  "reactiveBlock": 8482602,
+  "callbackTx": "0xcfdeee6696a1fdaf2d53cf60d1c6de36f6934b1476a9584cdd11b2e284350abe",
+  "callbackBlock": 59514571,
+  "latencyBlocksBase": 7,
+  "reconciliation": {
+    "predictedUsdc": 705013.3265616271,
+    "actualUsdc": 705013.3265616271,
+    "usdcDiff": 0,
+    "predictedWeth": 896.7107274331157,
+    "actualWeth": 896.7107274331157,
+    "wethDiff": 0
+  },
+  "triggerSwap": {
+    "transferTx": "0x8a361acbd379ebd798d5f592cc263b5944ecca1f0ac2cdad64cbf30acfe80c80",
+    "transferBlock": 59514559,
+    "originTx": "0x7c9104b78303fe14098c60df5c1ac11224c553d919b3041a4050fad384c051f9",
+    "originBlock": 59514564,
+    "amountIn": 88000.18404036957,
+    "amountOut": 34.31624183257607,
+    "targetPrice": 3500,
+    "priceAfter": 3499.999999996201
+  },
+  "rearm": {
+    "callbackRearmTx": "0x8c7b6a795331b15bf4b91fa1c51d09050d2bead4feda5397f57867b8d835d158",
+    "callbackRearmBlock": 59514598,
+    "guardianRearmTx": "0x16dd137d6fe6e33aa8b8a1379008e51567c9e6a3933ed60d99c5225adc8a1214",
+    "guardianRearmBlock": 8482617,
+    "stateAfter": {
+      "reserves": {
+        "weth": 103.28927256688428,
+        "usdc": 294986.67343837296
+      },
+      "price": 2855.9274947682134,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 896.7107274331157,
+        "usdc": 705013.3265616271,
+        "baseETH": 0.01996627766150877,
+        "lasnaLREACT": 5.334326399998834
+      },
+      "guardianLREACT": 4.4954531,
+      "callbackETH": 0.009975435989466774
+    }
+  }
+}

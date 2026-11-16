@@ -1,0 +1,59 @@
+{
+  "n": 30,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "batch2-tp-7",
+  "priceBefore": 1870.560214061102,
+  "triggerPrice": 3550.0000000048944,
+  "executedPrice": 3550.0000000048944,
+  "amountInWETH": 10,
+  "amountOutUSDC": 31969.307963965424,
+  "originTx": "0xf984a4edd699d3e1a8eec0367fbe738b339d298099b1722cc5170b7bb50db579",
+  "originBlock": 59515914,
+  "reactiveTx": "0xc21a37ae751d6b580714866bbe4d7b443327dcba73bbe709a8ce19bf0ddfb7f1",
+  "reactiveBlock": 8482847,
+  "callbackTx": "0xdee19555e29f3b35b47e9a9966760f3dbde5662665cbf735f11bfdd4d3e1b433",
+  "callbackBlock": 59515924,
+  "latencyBlocksBase": 10,
+  "reconciliation": {
+    "predictedUsdc": 701524.7273152709,
+    "actualUsdc": 701524.7273152708,
+    "usdcDiff": -1.1641532182693481e-10,
+    "predictedWeth": 896.9170195357073,
+    "actualWeth": 896.9170195357074,
+    "wethDiff": 1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0x917a944a70cb4053a66e51b6613dc3f93b35fdaf896c07c413cbb6449288e7f1",
+    "transferBlock": 59515890,
+    "originTx": "0xf984a4edd699d3e1a8eec0367fbe738b339d298099b1722cc5170b7bb50db579",
+    "originBlock": 59515914,
+    "amountIn": 90676.44321606382,
+    "amountOut": 35.096874763184516,
+    "targetPrice": 3550,
+    "priceAfter": 3550.0000000048944
+  },
+  "rearm": {
+    "callbackRearmTx": "0xc97ff36554c4fb6c0fe1ff7a7852c1428070b43e607131ae035c4c735e0d1b1e",
+    "callbackRearmBlock": 59515946,
+    "guardianRearmTx": "0x6fbebb026a73eba682bf689adf34b1c8915b6f33e9be82a875f4b9da04f40d5d",
+    "guardianRearmBlock": 8482856,
+    "stateAfter": {
+      "reserves": {
+        "weth": 103.08298046429267,
+        "usdc": 298475.2726847292
+      },
+      "price": 2895.4854752974397,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 896.9170195357074,
+        "usdc": 701524.7273152708,
+        "baseETH": 0.019957604434323047,
+        "lasnaLREACT": 5.295071999998834
+      },
+      "guardianLREACT": 4.1783081,
+      "callbackETH": 0.009959524514804549
+    }
+  }
+}

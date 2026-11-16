@@ -1,19 +1,22 @@
 # Reflex — a stop-loss & take-profit guardian that reacts so you don't have to
 
-## Loop evidence — 15 executed loops on testnet, both directions
+## Loop evidence — 30 executed loops on testnet, both directions
 
-Reflex has executed its full reactive loop **15 times** on Base Sepolia +
-Reactive Lasna: **8 stop-loss** and **7 take-profit** executions, every one a
-10 WETH protective sale, with latencies of 5 to 10 Base blocks between the
-origin swap and the callback execution. Every loop's balances were reconciled
-to the token: the owner's USDC and WETH balances after each execution match
-the trigger swap plus the on-chain execution record exactly. The batch
-includes one single-move crash of 37 percent (2,890.34 to 1,820.00, loop 9),
-an in-band negative proof (a move to 2,859.09 that the guardian priced and
-correctly ignored), and a documented recovery-abort attempt (see
-[evidence/abort-attempt](evidence/receipts/abort-attempt.json)). Full data:
-[evidence/LOOPS.md](evidence/LOOPS.md), [evidence/evidence.json](evidence/evidence.json),
-and one receipt file per loop in [evidence/receipts/](evidence/receipts/).
+Reflex has executed its full reactive loop **30 times** on Base Sepolia +
+Reactive Lasna: **15 stop-loss** and **15 take-profit** executions, every one a
+10 WETH protective sale, 791,604.82 USDC of protective sales in total, with
+latencies of 5 to 17 Base blocks between the origin swap and the
+callback execution. Every loop's balances were reconciled to the token: the
+owner's USDC and WETH balances after each execution match the trigger swap
+plus the on-chain execution record exactly (loop 5 reconciles once its
+interleaved recovery swap is counted, and loop 17 took 17 blocks, the slowest
+so far). The batch includes one single-move crash of 37 percent (2,890.34 to
+1,820.00, loop 9), an in-band negative proof (a move to 2,859.09 that the
+guardian priced and correctly ignored), and a documented recovery-abort
+attempt (see [evidence/abort-attempt](evidence/receipts/abort-attempt.json)).
+Full data: [evidence/LOOPS.md](evidence/LOOPS.md),
+[evidence/evidence.json](evidence/evidence.json), and one receipt file per
+loop in [evidence/receipts/](evidence/receipts/).
 
 | # | Kind | Trigger price | Executed price | Amount in | Amount out (USDC) | Latency (blocks) | Origin | Reactive | Callback |
 |---|---|---|---|---|---|---|---|---|---|
@@ -32,6 +35,21 @@ and one receipt file per loop in [evidence/receipts/](evidence/receipts/).
 | 13 | stop-loss | 2,250.00 | 2,250.00 | 10 WETH | 20,658.60 | 8 | [0xdc76c557…](https://sepolia.basescan.org/tx/0xdc76c55774f8bab71523524311b2305b2828db06c957a023d3972469bda3d01b) | [0x3048d2dd…](https://lasna.reactscan.net/tx/0x3048d2dd3458e2dd5292ac4063e2ff7a73102224e1dcf32c2a359c05bd68a1ec) | [0x48a02746…](https://sepolia.basescan.org/tx/0x48a027466e0aa9b0317f51ab71b16c9dd1b38bd98a3647cd19f3e3d1236d7a69) |
 | 14 | take-profit | 3,500.00 | 3,500.00 | 10 WETH | 31,520.97 | 8 | [0xb997a57a…](https://sepolia.basescan.org/tx/0xb997a57ad02ed7665cf72b5fbe60069917293eee9bdb6aae83910ffd3110dd21) | [0xac8fc9e9…](https://lasna.reactscan.net/tx/0xac8fc9e9958326c2c79f3a04d7087cb6a5e1f1f6da3ae9d9987942e318226564) | [0x72c27dde…](https://sepolia.basescan.org/tx/0x72c27dde91197f9e6456f30fc6d739d7512bdfe560f85db8f8af9be6847f92ef) |
 | 15 | stop-loss | 2,450.00 | 2,450.00 | 10 WETH | 22,419.22 | 8 | [0xbb9715c5…](https://sepolia.basescan.org/tx/0xbb9715c51bede378e8b104ccd9561bbff2c53bee85fe856d0e84116e7e49f528) | [0xe282f9c1…](https://lasna.reactscan.net/tx/0xe282f9c189db2d65cdc2790b245a12eb0aac09227d95d3a3b6ed4f1994cb4d42) | [0xe3530e63…](https://sepolia.basescan.org/tx/0xe3530e63fdfa352ec00adb747e91fc808f585d6f3849d15ef9d5018d84fdf4d3) |
+| 16 | take-profit | 3,500.00 | 3,500.00 | 10 WETH | 31,523.19 | 8 | [0x8094e9f1…](https://sepolia.basescan.org/tx/0x8094e9f12a6696bd62fc7d4b583c9d17ed529724de452f201c28e95c17c9680f) | [0xeb8a617e…](https://lasna.reactscan.net/tx/0xeb8a617e232d01c88ba7df721095fe186a79ccfed9ab4dc5d0e7f8603070debf) | [0xeda6acc8…](https://sepolia.basescan.org/tx/0xeda6acc82cd4d3ddd7541465a135a4358c6ce779fc9d9cbe859a5569366a60c1) |
+| 17 | stop-loss | 2,200.00 | 2,200.00 | 10 WETH | 20,219.86 | 17 | [0xc1414abb…](https://sepolia.basescan.org/tx/0xc1414abb0f62d2aa8abd2dd2add1a0fb66041bfba1d65867a2ee694003534677) | [0xb2b9244d…](https://lasna.reactscan.net/tx/0xb2b9244d3f81f6550084f827aab580cdd3c00a1c97c9290fc6a7385eb5841069) | [0x194ade85…](https://sepolia.basescan.org/tx/0x194ade8535ee9dafcb2c517e850109bc4ff20e81bc236a0debcef97446327b1a) |
+| 18 | take-profit | 3,500.00 | 3,500.00 | 10 WETH | 31,525.78 | 7 | [0x7c9104b7…](https://sepolia.basescan.org/tx/0x7c9104b78303fe14098c60df5c1ac11224c553d919b3041a4050fad384c051f9) | [0x7a2c5fdc…](https://lasna.reactscan.net/tx/0x7a2c5fdc8cc8bc702cb618606b2135f88ec5ae6afe451ed2dd850cb7a7a47618) | [0xcfdeee66…](https://sepolia.basescan.org/tx/0xcfdeee6696a1fdaf2d53cf60d1c6de36f6934b1476a9584cdd11b2e284350abe) |
+| 19 | stop-loss | 2,400.00 | 2,400.00 | 10 WETH | 21,983.06 | 10 | [0xaa014488…](https://sepolia.basescan.org/tx/0xaa0144882472b481751b4d95f6f1d256c542a310f19d0135cb10219b3ef88c24) | [0x1140ef08…](https://lasna.reactscan.net/tx/0x1140ef08216bc885b66a1989de5671e1de8a33f7e4a174ebaa57cf4237e9e416) | [0xab4318bc…](https://sepolia.basescan.org/tx/0xab4318bcdbe1d3f927394b56a2b1e1e9e2d072c6af4b06aec2e7a1f3e4f13b8a) |
+| 20 | take-profit | 3,600.00 | 3,600.00 | 10 WETH | 32,384.60 | 9 | [0xed2a0475…](https://sepolia.basescan.org/tx/0xed2a04757d2d7adb11064b6688df20f9b829acdd40741e028be8418025eb7a85) | [0xd4d5e615…](https://lasna.reactscan.net/tx/0xd4d5e615e30c61d38490ce02211629bbf01a84eee21ad14978d4e39d489041a8) | [0x3ae6154d…](https://sepolia.basescan.org/tx/0x3ae6154d111e42627cf025feff56e58e0b70ed97564312e3fe5da6c6f99da846) |
+| 21 | stop-loss | 2,300.00 | 2,300.00 | 10 WETH | 21,104.59 | 9 | [0x04258cc8…](https://sepolia.basescan.org/tx/0x04258cc8dd0e7fa5bfb1b36b9fb6cc958c73e0e57ae9a12c95de05d74ff44462) | [0xf803ad96…](https://lasna.reactscan.net/tx/0xf803ad9640ef5b2f9b05cbc8d254200d2ee56944d7b9369951fb5e36448df996) | [0x8437cfa2…](https://sepolia.basescan.org/tx/0x8437cfa2c1ad2c1b2108d16cb1ab852192557f13c217e72f4986631dcf9d9dbf) |
+| 22 | take-profit | 3,550.00 | 3,550.00 | 10 WETH | 31,959.14 | 8 | [0x9fbc3521…](https://sepolia.basescan.org/tx/0x9fbc3521c68807ec74f282b892dc240a0b0ddbe4a858f4f0c653fe3720629cb5) | [0x48b3c2f2…](https://lasna.reactscan.net/tx/0x48b3c2f2967778d07b9cf466565ac60ccf7956e021d4f48c10a3edaae1ae9280) | [0xdc709d56…](https://sepolia.basescan.org/tx/0xdc709d5601ad0240a54771829b07d1d8a4acdde9b7dd0d2ac10832ba75ef835c) |
+| 23 | stop-loss | 2,450.00 | 2,450.00 | 10 WETH | 22,425.08 | 5 | [0xeb9a3a88…](https://sepolia.basescan.org/tx/0xeb9a3a88ac2137bc71ecdea2fbfbf10460b375aa3baf3597197c2df2ab18e170) | [0xd2b1a618…](https://lasna.reactscan.net/tx/0xd2b1a6189804e8ca7f6111552f8aa690be2e20e780f9a6479b4daede218157b1) | [0x2b5437a8…](https://sepolia.basescan.org/tx/0x2b5437a8097e31e5369da2173ddaf44825327e82f947d542be0a72db33ddb067) |
+| 24 | take-profit | 3,650.00 | 3,650.00 | 10 WETH | 32,817.32 | 7 | [0xe78bf2b0…](https://sepolia.basescan.org/tx/0xe78bf2b0a1e07b8297163df4271e234f2cb219ee5ded43ccf8f11db6149085ca) | [0x98718a89…](https://lasna.reactscan.net/tx/0x98718a891a81a24c01f69b86bc4d8f94c0058ed1de56a5e00932d0c655a09e5f) | [0x5b9c8b84…](https://sepolia.basescan.org/tx/0x5b9c8b8411b7d02b208dfe05cc8f8d58b734929f4e8e3f15dc0ccc0ba37d9506) |
+| 25 | stop-loss | 2,350.00 | 2,350.00 | 10 WETH | 21,547.58 | 10 | [0x22c5aa0f…](https://sepolia.basescan.org/tx/0x22c5aa0f63e6ad7de32d88ac4640ab3bfdec3b1e36ce9b60a3479a2b21c60e20) | [0x8fd92e93…](https://lasna.reactscan.net/tx/0x8fd92e93a3bd7bfe153381c632c6492bd7afc9ac244471dcafaec610f64c9ce6) | [0x733c6f26…](https://sepolia.basescan.org/tx/0x733c6f268c24324f416fe3ce73b736967d7813a95292aa01f5edec79941d70dd) |
+| 26 | take-profit | 3,500.00 | 3,500.00 | 10 WETH | 31,535.39 | 6 | [0x1191141a…](https://sepolia.basescan.org/tx/0x1191141a8c2f0eb2e7074aa270a72b17930bdadb83d9dde4ad203477deb8a534) | [0xf435954d…](https://lasna.reactscan.net/tx/0xf435954dde303003fd5fe4a1c61ed3f756419c75041998eab5afec164549f310) | [0x41963920…](https://sepolia.basescan.org/tx/0x41963920263ed05ffc5e759730b0ac8fd6c54f2e335f601c30e8dae2820de7fa) |
+| 27 | stop-loss | 2,250.00 | 2,250.00 | 10 WETH | 20,667.67 | 7 | [0x1ff2c098…](https://sepolia.basescan.org/tx/0x1ff2c09897325d0c3314a96407631e763e0b47be74a9ee433b3fe0a5393a7e2b) | [0xc0d42ce4…](https://lasna.reactscan.net/tx/0xc0d42ce44a2f09039ed34a6c2adbe82fd9c0b2aa36c6f3e55c2d6cf727c5ae1c) | [0x94f4ff6c…](https://sepolia.basescan.org/tx/0x94f4ff6c10b32e94594c08af22c2dd0b56c7df5d4e5d6f8ddbdf7548b7d0ff5a) |
+| 28 | take-profit | 3,600.00 | 3,600.00 | 10 WETH | 32,394.82 | 6 | [0xbeb33844…](https://sepolia.basescan.org/tx/0xbeb3384471795df96d891fd36082595e7dd649dd4c1e4915c6da048aaf890159) | [0xf8b0efb8…](https://lasna.reactscan.net/tx/0xf8b0efb8defc99f251e8110f28c28811e4902debdfdde0907d44c6ab96070511) | [0xd62d5444…](https://sepolia.basescan.org/tx/0xd62d5444af0a48037ea7c5ad92e798d66fc2ca9b63164a91218e72d550ff52ab) |
+| 29 | stop-loss | 2,200.00 | 2,200.00 | 10 WETH | 20,227.54 | 9 | [0x8f50128a…](https://sepolia.basescan.org/tx/0x8f50128a5aa558b9ea24c96f0377c02f67dc018740dfe36191295f23b0f8ae53) | [0x72c5ced6…](https://lasna.reactscan.net/tx/0x72c5ced637252cba55e48177130bad1572c84d12ee8bb212be46cb5eb4bcbf88) | [0x18313beb…](https://sepolia.basescan.org/tx/0x18313bebc096528826e33881e1f327a4ac989c6f74520376f96c5b32e8f00a5e) |
+| 30 | take-profit | 3,550.00 | 3,550.00 | 10 WETH | 31,969.31 | 10 | [0xf984a4ed…](https://sepolia.basescan.org/tx/0xf984a4edd699d3e1a8eec0367fbe738b339d298099b1722cc5170b7bb50db579) | [0xc21a37ae…](https://lasna.reactscan.net/tx/0xc21a37ae751d6b580714866bbe4d7b443327dcba73bbe709a8ce19bf0ddfb7f1) | [0xdee19555…](https://sepolia.basescan.org/tx/0xdee19555e29f3b35b47e9a9966760f3dbde5662665cbf735f11bfdd4d3e1b433) |
 
 ## Watches any V2-style pair — the Sync signal is the interface
 
@@ -59,7 +77,7 @@ reaction is a property of the network, not of your infrastructure.
 > Built for the **Reactive Omni Buildathon** (DoraHacks), track
 > **Every Second Counts**.
 >
-> **Live on testnet, loop proven on-chain 15 times** (see the evidence table
+> **Live on testnet, loop proven on-chain 30 times** (see the evidence table
 > above): stop-loss and take-profit both fire end to end, and the deployment
 > is currently re-armed and **watching**.
 

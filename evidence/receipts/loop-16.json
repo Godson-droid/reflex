@@ -1,0 +1,33 @@
+{
+  "n": 16,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "runner-judge-test",
+  "priceBefore": 2063.370699948276,
+  "triggerPrice": 3500.000000001373,
+  "executedPrice": 3500.000000001373,
+  "amountInWETH": 10,
+  "amountOutUSDC": 31523.18929111584,
+  "originTx": "0x8094e9f12a6696bd62fc7d4b583c9d17ed529724de452f201c28e95c17c9680f",
+  "originBlock": 59514268,
+  "reactiveTx": "0xeb8a617e232d01c88ba7df721095fe186a79ccfed9ab4dc5d0e7f8603070debf",
+  "reactiveBlock": 8482547,
+  "callbackTx": "0xeda6acc82cd4d3ddd7541465a135a4358c6ce779fc9d9cbe859a5569366a60c1",
+  "callbackBlock": 59514276,
+  "latencyBlocksBase": 8,
+  "reconciliation": {
+    "predictedUsdc": 705288.4788399598,
+    "actualUsdc": 705288.4788398049,
+    "usdcDiff": -1.5494879335165024e-07,
+    "predictedWeth": 896.7900823988211,
+    "actualWeth": 896.7900827282334,
+    "wethDiff": 3.2941227345872903e-07
+  },
+  "triggerSwap": {
+    "originTx": "0x8094e9f12a6696bd62fc7d4b583c9d17ed529724de452f201c28e95c17c9680f",
+    "originBlock": 59514268,
+    "amountIn": 75835.307069,
+    "amountOut": 28.144623
+  },
+  "rearm": null
+}

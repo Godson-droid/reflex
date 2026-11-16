@@ -1,0 +1,59 @@
+{
+  "n": 23,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "batch2-sl-4",
+  "priceBefore": 2893.6416125856576,
+  "triggerPrice": 2450.0000010258627,
+  "executedPrice": 2450.0000010258627,
+  "amountInWETH": 10,
+  "amountOutUSDC": 22425.081129985945,
+  "originTx": "0xeb9a3a88ac2137bc71ecdea2fbfbf10460b375aa3baf3597197c2df2ab18e170",
+  "originBlock": 59515112,
+  "reactiveTx": "0xd2b1a6189804e8ca7f6111552f8aa690be2e20e780f9a6479b4daede218157b1",
+  "reactiveBlock": 8482702,
+  "callbackTx": "0x2b5437a8097e31e5369da2173ddaf44825327e82f947d542be0a72db33ddb067",
+  "callbackBlock": 59515117,
+  "latencyBlocksBase": 5,
+  "reconciliation": {
+    "predictedUsdc": 748736.1248307655,
+    "actualUsdc": 748736.1248307655,
+    "usdcDiff": 0,
+    "predictedWeth": 878.2902219654607,
+    "actualWeth": 878.2902219654605,
+    "wethDiff": -1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0x9d397ae952a21aa60f842843bcaad73aa83d77d47876e960f944fff83a928c58",
+    "transferBlock": 59515087,
+    "originTx": "0xeb9a3a88ac2137bc71ecdea2fbfbf10460b375aa3baf3597197c2df2ab18e170",
+    "originBlock": 59515112,
+    "amountIn": 8.931871451628275,
+    "amountOut": 23713.47104353259,
+    "targetPrice": 2450,
+    "priceAfter": 2450.0000010258623
+  },
+  "rearm": {
+    "callbackRearmTx": "0xbaccfb82de5c5afc7e9c2772f1d133a8bb680d0a26a3e6ed3dafd8aa2c4201cc",
+    "callbackRearmBlock": 59515147,
+    "guardianRearmTx": "0x89c6ecd9d7da9aeb2322475e82722c79414c7c7bcfb61b6b7e5043a879e660b6",
+    "guardianRearmBlock": 8482715,
+    "stateAfter": {
+      "reserves": {
+        "weth": 121.70977803453941,
+        "usdc": 251263.8751692345
+      },
+      "price": 2064.4510180433454,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 878.2902219654605,
+        "usdc": 748736.1248307655,
+        "baseETH": 0.019962663999478693,
+        "lasnaLREACT": 5.317970399998834
+      },
+      "guardianLREACT": 4.3633105,
+      "callbackETH": 0.009968806381866775
+    }
+  }
+}
