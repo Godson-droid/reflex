@@ -3,7 +3,19 @@ import { fmtNum, fmtUsd, truncateMiddle } from '../lib/format';
 import type { LiveCheckStatus } from '../hooks/useLiveLoop';
 import type { EvidenceLoop } from '../data/evidence';
 import { EVIDENCE_META } from '../data/evidence';
-import { Card, MicroLabel, Pill, SectionHeading } from './ui';
+import {
+  Card,
+  IconBolt,
+  IconExternal,
+  IconGauge,
+  IconShield,
+  IconTrendDown,
+  IconTrendUp,
+  KpiCard,
+  MicroLabel,
+  Pill,
+  SectionHeading,
+} from './ui';
 
 /**
  * The Loop Ledger — every executed protection, newest first, with the
@@ -42,29 +54,37 @@ export function LoopLedger({
       </div>
 
       {/* Summary strip */}
-      <div className="mt-7 grid grid-cols-2 gap-px overflow-hidden rounded-card border border-line bg-line/40 sm:grid-cols-3 lg:grid-cols-5">
-        {[
-          { label: 'Executed loops', value: loops.length.toString() },
-          { label: 'Stop-loss', value: `${slCount} fired` },
-          { label: 'Take-profit', value: `${tpCount} fired` },
-          { label: 'Protective sales', value: `$${fmtNum(totalOut, 0)}` },
-          {
-            label: 'Latency · origin to callback',
-            value: loops.length ? `${minLatency}–${maxLatency} blocks` : '—',
-          },
-        ].map((stat, i, arr) => (
-          <div
-            key={stat.label}
-            className={`bg-ink-850 px-5 py-4 ${
-              i === arr.length - 1 ? 'col-span-2 sm:col-span-2 lg:col-span-1' : ''
-            }`}
-          >
-            <MicroLabel>{stat.label}</MicroLabel>
-            <p className="tnum mt-1 font-display text-[19px] font-semibold text-mist-100">
-              {stat.value}
-            </p>
-          </div>
-        ))}
+      <div className="mt-7 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+        <KpiCard icon={<IconBolt size={14} />} label="Executed loops" accent="volt">
+          <p className="tnum font-display text-[19px] font-semibold text-mist-100">
+            {loops.length.toString()}
+          </p>
+        </KpiCard>
+        <KpiCard icon={<IconTrendDown size={14} />} label="Stop-loss" accent="rose">
+          <p className="tnum font-display text-[19px] font-semibold text-mist-100">
+            {slCount} fired
+          </p>
+        </KpiCard>
+        <KpiCard icon={<IconTrendUp size={14} />} label="Take-profit" accent="volt">
+          <p className="tnum font-display text-[19px] font-semibold text-mist-100">
+            {tpCount} fired
+          </p>
+        </KpiCard>
+        <KpiCard icon={<IconShield size={14} />} label="Protective sales" accent="volt">
+          <p className="tnum font-display text-[19px] font-semibold text-mist-100">
+            ${fmtNum(totalOut, 0)}
+          </p>
+        </KpiCard>
+        <KpiCard
+          icon={<IconGauge size={14} />}
+          label="Latency · origin to callback"
+          accent="pulse"
+          className="min-[420px]:col-span-2 sm:col-span-2 lg:col-span-1"
+        >
+          <p className="tnum font-display text-[19px] font-semibold text-mist-100">
+            {loops.length ? `${minLatency}–${maxLatency} blocks` : '—'}
+          </p>
+        </KpiCard>
       </div>
 
       <VerificationNote check={check} />
@@ -79,11 +99,11 @@ export function LoopLedger({
       ) : (
         <>
           {/* Desktop table */}
-          <div className="mt-5 hidden overflow-hidden rounded-card border border-line bg-ink-850/90 shadow-card lg:block">
+          <div className="glass-surface mt-5 hidden overflow-hidden rounded-card border border-line shadow-card lg:block">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[880px] text-left text-[13px]">
                 <thead>
-                  <tr className="border-b border-line bg-ink-900/70 text-[11px] uppercase tracking-[0.14em] text-mist-500">
+                  <tr className="border-b border-line bg-ink-900/70 text-[11px] uppercase tracking-[0.14em] text-mist-500 [&_th]:sticky [&_th]:top-0 [&_th]:z-10 [&_th]:bg-ink-900">
                     <th className="px-5 py-3.5 font-semibold">Loop</th>
                     <th className="px-3 py-3.5 font-semibold">Kind</th>
                     <th className="px-3 py-3.5 text-right font-semibold">Trigger</th>
@@ -98,7 +118,7 @@ export function LoopLedger({
                   {rows.map((loop) => (
                     <tr
                       key={loop.n}
-                      className="border-b border-line/60 transition-colors last:border-0 hover:bg-white/[0.02]"
+                      className="border-b border-line/60 transition-colors last:border-0 hover:bg-white/[0.04]"
                     >
                       <td className="tnum px-5 py-3.5 font-display font-semibold text-mist-100">
                         #{loop.n}
@@ -118,8 +138,10 @@ export function LoopLedger({
                       <td className="tnum px-3 py-3.5 text-right font-semibold text-mist-100">
                         {fmtNum(loop.amountOutUSDC)}
                       </td>
-                      <td className="tnum px-3 py-3.5 text-right text-mist-300">
-                        {loop.latencyBlocksBase} blk
+                      <td className="px-3 py-3.5 text-right">
+                        <span className="tnum inline-flex items-center whitespace-nowrap rounded-full bg-white/[0.04] px-2 py-0.5 text-[12px] font-medium text-mist-300 ring-1 ring-line">
+                          {loop.latencyBlocksBase} blk
+                        </span>
                       </td>
                       <td className="px-5 py-3.5">
                         <TxLinks loop={loop} />
@@ -146,7 +168,14 @@ export function LoopLedger({
                   <LedgerStat label="Executed price" value={fmtUsd(loop.executedPrice)} strong />
                   <LedgerStat label="Amount in" value={`${fmtNum(loop.amountInWETH, 0)} WETH`} />
                   <LedgerStat label="USDC out" value={fmtNum(loop.amountOutUSDC)} strong />
-                  <LedgerStat label="Latency" value={`${loop.latencyBlocksBase} blocks`} />
+                  <div>
+                    <MicroLabel>Latency</MicroLabel>
+                    <p className="mt-1.5">
+                      <span className="tnum inline-flex items-center whitespace-nowrap rounded-full bg-white/[0.04] px-2 py-0.5 text-[12px] font-medium text-mist-300 ring-1 ring-line">
+                        {loop.latencyBlocksBase} blocks
+                      </span>
+                    </p>
+                  </div>
                   <LedgerStat
                     label="Callback block"
                     value={loop.callbackBlock.toLocaleString('en-US')}
@@ -201,9 +230,15 @@ function LedgerStat({
 
 export function KindBadge({ loop }: { loop: EvidenceLoop }) {
   return loop.kind === 'stop-loss' ? (
-    <Pill tone="rose">Stop-loss</Pill>
+    <Pill tone="rose">
+      <IconTrendDown size={12} />
+      Stop-loss
+    </Pill>
   ) : (
-    <Pill tone="volt">Take-profit</Pill>
+    <Pill tone="volt">
+      <IconTrendUp size={12} />
+      Take-profit
+    </Pill>
   );
 }
 
@@ -227,8 +262,8 @@ function TxLinks({ loop, stacked = false }: { loop: EvidenceLoop; stacked?: bool
           <span className="font-mono text-[11.5px] text-pulse-300 underline decoration-pulse-400/30 underline-offset-4">
             {truncateMiddle(link.hash, 8, 6)}
           </span>
-          <span aria-hidden className="text-mist-500">
-            ↗
+          <span className="self-center text-mist-500">
+            <IconExternal size={11} />
           </span>
         </a>
       ))}

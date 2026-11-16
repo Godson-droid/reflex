@@ -12,6 +12,7 @@ import { EvidenceSection } from './components/EvidenceSection';
 import { BandGauge } from './components/BandGauge';
 import { HowItWorks } from './components/HowItWorks';
 import { Footer } from './components/Footer';
+import { IconActivity, IconBolt, IconShield, IconStack, KpiCard } from './components/ui';
 import { fmtNum, fmtUsd } from './lib/format';
 
 export default function App() {
@@ -99,28 +100,32 @@ export default function App() {
             </p>
           </div>
 
-          <dl className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 lg:grid-cols-4">
-            <div>
-              <dt className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-mist-500">
-                Loops executed
-                <ExecutionBadge check={live.check} />
-              </dt>
-              <dd className="tnum mt-1.5 font-display text-[34px] font-bold leading-none text-mist-100">
-                {live.evidenceCount}
-              </dd>
-              <dd className="mt-1.5 text-[12px] leading-snug text-mist-500">
-                {live.check === 'verified'
+          <div className="mt-10 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+            <KpiCard
+              icon={<IconBolt size={14} />}
+              label="Loops executed"
+              accent="volt"
+              glow
+              badge={<ExecutionBadge check={live.check} />}
+              sub={
+                live.check === 'verified'
                   ? 'Last execution confirmed on-chain just now'
                   : live.check === 'syncing'
                     ? 'Newest executions settling into the evidence pack'
-                    : 'From the verified evidence pack'}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-mist-500">
-                Guardian status
-              </dt>
-              <dd className="mt-1.5 flex items-center gap-2 font-display text-[20px] font-semibold leading-8 text-mist-100">
+                    : 'From the verified evidence pack'
+              }
+            >
+              <p className="tnum font-display text-[34px] font-bold leading-none text-mist-100">
+                {live.evidenceCount}
+              </p>
+            </KpiCard>
+            <KpiCard
+              icon={<IconShield size={14} />}
+              label="Guardian status"
+              accent="pulse"
+              sub="Guardian on Lasna · callback on Base Sepolia"
+            >
+              <p className="flex items-center gap-2 font-display text-[20px] font-semibold leading-8 text-mist-100">
                 {live.state?.watching && (
                   <span className="relative flex h-2 w-2" aria-hidden>
                     <span className="absolute h-full w-full animate-ping-soft rounded-full bg-volt-400" />
@@ -128,36 +133,35 @@ export default function App() {
                   </span>
                 )}
                 {guardianStatus}
-              </dd>
-              <dd className="mt-1 text-[12px] leading-snug text-mist-500">
-                Guardian on Lasna · callback on Base Sepolia
-              </dd>
-            </div>
-            <div>
-              <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-mist-500">
-                Current price
-              </dt>
-              <dd className="tnum mt-1.5 font-display text-[20px] font-semibold leading-8 text-mist-100">
+              </p>
+            </KpiCard>
+            <KpiCard
+              icon={<IconActivity size={14} />}
+              label="Current price"
+              accent="pulse"
+              sub="Live from ReflexPair reserves"
+            >
+              <p className="tnum font-display text-[20px] font-semibold leading-8 text-mist-100">
                 {heroPrice ? fmtUsd(heroPrice) : '—'}
-              </dd>
-              <dd className="mt-1 text-[12px] leading-snug text-mist-500">
-                Live from ReflexPair reserves
-              </dd>
-            </div>
-            <div>
-              <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-mist-500">
-                WETH protected
-              </dt>
-              <dd className="tnum mt-1.5 font-display text-[20px] font-semibold leading-8 text-mist-100">
+              </p>
+            </KpiCard>
+            <KpiCard
+              icon={<IconStack size={14} />}
+              label="WETH protected"
+              accent="volt"
+              sub={
+                <>
+                  {guardians.filter((g) => g.status === 'watching').length} guardian
+                  {guardians.filter((g) => g.status === 'watching').length === 1 ? '' : 's'} armed
+                  · no off-chain bots
+                </>
+              }
+            >
+              <p className="tnum font-display text-[20px] font-semibold leading-8 text-mist-100">
                 {fmtNum(totalProtected)} WETH
-              </dd>
-              <dd className="mt-1 text-[12px] leading-snug text-mist-500">
-                {guardians.filter((g) => g.status === 'watching').length} guardian
-                {guardians.filter((g) => g.status === 'watching').length === 1 ? '' : 's'} armed ·
-                no off-chain bots
-              </dd>
-            </div>
-          </dl>
+              </p>
+            </KpiCard>
+          </div>
 
           {/* Price band gauge */}
           <div className="mt-9 rounded-card border border-line bg-ink-850/80 px-5 py-5 shadow-card sm:px-7">
