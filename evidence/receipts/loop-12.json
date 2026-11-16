@@ -1,0 +1,59 @@
+{
+  "n": 12,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "upgrade-tp-5",
+  "priceBefore": 2024.1491235368374,
+  "triggerPrice": 3599.99999999648,
+  "executedPrice": 3599.99999999648,
+  "amountInWETH": 10,
+  "amountOutUSDC": 32374.481279475556,
+  "originTx": "0x190e7478d0af18119b0056f67e13cd7c2954c4be2f74f196a6225270730f60ee",
+  "originBlock": 59509658,
+  "reactiveTx": "0x8e264dc9f0458a330df880583bd721d9e023b85c4fc2bf25ba198049171fe0e3",
+  "reactiveBlock": 8481701,
+  "callbackTx": "0x117acb12f307196796e73d0eda0c002553cff61a66337ea77ac569e3e62f6cc3",
+  "callbackBlock": 59509667,
+  "latencyBlocksBase": 9,
+  "reconciliation": {
+    "predictedUsdc": 702032.2786031105,
+    "actualUsdc": 702032.2786031105,
+    "usdcDiff": 0,
+    "predictedWeth": 898.2382770342533,
+    "actualWeth": 898.2382770342533,
+    "wethDiff": 0
+  },
+  "triggerSwap": {
+    "transferTx": "0x786833fc0a36951214c5ce8eadbd2ae4fca35977c0d2ba29f614364207a6fc3a",
+    "transferBlock": 59509633,
+    "originTx": "0x190e7478d0af18119b0056f67e13cd7c2954c4be2f74f196a6225270730f60ee",
+    "originBlock": 59509658,
+    "amountIn": 82730.67800634455,
+    "amountOut": 30.56697396215744,
+    "targetPrice": 3600,
+    "priceAfter": 3599.9999999964803
+  },
+  "rearm": {
+    "callbackRearmTx": "0xed9cc6073fa2bd32c0256914314790b60553d9c5ea1505e8164d1fb8a74b6aaf",
+    "callbackRearmBlock": 59509693,
+    "guardianRearmTx": "0xf201a3fc0d3082ee3ce232fdb95fa94d29a1d3acb954bdbf70d5e2363afcb140",
+    "guardianRearmBlock": 8481712,
+    "stateAfter": {
+      "reserves": {
+        "weth": 101.76172296574671,
+        "usdc": 297967.7213968896
+      },
+      "price": 2928.0923387783673,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 898.2382770342533,
+        "usdc": 702032.2786031105,
+        "baseETH": 0.019970530206135487,
+        "lasnaLREACT": 5.3534083999988615
+      },
+      "guardianLREACT": 4.6540256,
+      "callbackETH": 0.009983391609666775
+    }
+  }
+}

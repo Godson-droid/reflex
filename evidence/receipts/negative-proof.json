@@ -1,0 +1,44 @@
+{
+  "targetPrice": 2859.0884823800625,
+  "swap": {
+    "transferTx": "0x20529e5485fac2cade95d82a79e6304a8acd670c94a4f835bb721dad3596ee48",
+    "transferBlock": 59507516,
+    "originTx": "0x58076b553f7e579bd8c8465ecc7ef78dbe4c140d88127d6599450d701359ca20",
+    "originBlock": 59507539,
+    "amountIn": 3096.855986546475,
+    "amountOut": 1.0914426950887086,
+    "targetPrice": 2859.0884823800625,
+    "priceAfter": 2859.0884823771007
+  },
+  "priceBefore": 2799.0884823800625,
+  "priceAfterSwap": 2859.0884823771007,
+  "guardianLastPriceBefore": 3427.9776728501097,
+  "guardianLastPriceAfter": 2859.0884823771007,
+  "guardianStateBefore": 1,
+  "guardianStateAfter": 1,
+  "callbackStatusBefore": 0,
+  "callbackStatusAfter": 0,
+  "lasnaBlocksScanned": [
+    8481294,
+    8481315
+  ],
+  "triggeredLogsInWindow": 0,
+  "balancesAfter": {
+    "reserves": {
+      "weth": 102.53167773084688,
+      "usdc": 293147.138879065
+    },
+    "price": 2859.0884823771007,
+    "guardianState": 1,
+    "callbackStatus": 0,
+    "owner": {
+      "weth": 897.4683222691531,
+      "usdc": 706852.861120935,
+      "baseETH": 0.019978492705273663,
+      "lasnaLREACT": 5.386120399998862
+    },
+    "guardianLREACT": 4.9295512,
+    "callbackETH": 0.0099966524866
+  },
+  "verdict": "PASS: guardian priced the in band Sync (lastPrice updated) and did not fire; no Triggered event, no callback"
+}

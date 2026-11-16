@@ -1,0 +1,1596 @@
+{
+  "generated": "2026-11-16T10:02:42.402Z",
+  "network": {
+    "origin": "Base Sepolia 84532",
+    "reactive": "Reactive Lasna 5318007"
+  },
+  "contracts": {
+    "pair": "0x1bC9aB7D74f12897A44717B9497478e2b01CE2D6",
+    "guardian": "0x057A04Ad09c9A1fD83088F9863E81b181f8a4D9A",
+    "callback": "0x7858F9f40dBdB2Edfd32c781a98c69294cd009d0",
+    "owner": "0xfe332e01162D5408211DAAC305254E2456e5e437"
+  },
+  "band": {
+    "stopLoss": 2700,
+    "takeProfit": 3300,
+    "protectedAmountWETH": 10
+  },
+  "phase1Verification": {
+    "at": "2026-11-16T10:02:43.490Z",
+    "baseBlock": 59507480,
+    "lasnaBlock": 8481288,
+    "reserves": {
+      "weth": 103.6231204259356,
+      "usdc": 290050.2828925185
+    },
+    "price": 2799.0884823800625,
+    "guardianState": 1,
+    "callbackStatus": 0,
+    "owner": {
+      "weth": 896.3768795740644,
+      "usdc": 709949.7171074814,
+      "baseETH": 0.01997920626727592,
+      "lasnaLREACT": 5.386120399998862
+    },
+    "guardianLREACT": 4.9420125,
+    "callbackETH": 0.0099966524866,
+    "allowanceWETH": 80
+  },
+  "loops": [
+    {
+      "n": 1,
+      "kind": "stop-loss",
+      "kindCode": 1,
+      "source": "original DEPLOYMENT.md run 1",
+      "triggerPrice": 2084.3755,
+      "executedPrice": 2084.3755,
+      "amountInWETH": 10,
+      "amountOutUSDC": 19187.096,
+      "originTx": "0x790b838a0f612a4bf1f1cee07e07da3c90b91662d3298e638b426bc02fa462db",
+      "originBlock": 59029446,
+      "reactiveTx": "0x6b8c818cf5bcab84d1baf0b5a6c6d3663eb88d76f2d0b08c1171b68b2c0b1e0f",
+      "reactiveBlock": 8391301,
+      "callbackTx": "0xec6a18cf3f7eadf1538dd6f97fca69af09a5f2812c676bcfc55d8fba13d5efa7",
+      "callbackBlock": 59029451,
+      "latencyBlocksBase": 5
+    },
+    {
+      "n": 2,
+      "kind": "take-profit",
+      "kindCode": 2,
+      "source": "original DEPLOYMENT.md run 2",
+      "triggerPrice": 3427.9777,
+      "executedPrice": 3427.9777,
+      "amountInWETH": 10,
+      "amountOutUSDC": 30887.684,
+      "originTx": "0x8bdab6d3447de2ce89b8217c96d362c2d6ed0bd47f4e2d138de576e99796685a",
+      "originBlock": 59029831,
+      "reactiveTx": "0xa3966763ede1513e97e29440535603f75d26b4ee10c03012e4f36aab9a6a91b8",
+      "reactiveBlock": 8391374,
+      "callbackTx": "0x259cef4b7b45be065b058fea2a3778f0e5ed31e4bb5c41f5bc0d6897a88d1791",
+      "callbackBlock": 59029838,
+      "latencyBlocksBase": 7
+    },
+    {
+      "n": 3,
+      "kind": "stop-loss",
+      "kindCode": 1,
+      "label": "upgrade-sl-1",
+      "recoveredRecord": true,
+      "priceBefore": 2859.0884823771007,
+      "triggerPrice": 2200.0000029357398,
+      "executedPrice": 2200.0000029357398,
+      "amountInWETH": 10,
+      "amountOutUSDC": 20210.42583626519,
+      "triggerSwap": {
+        "originTx": "0xe65f87821b82cd5c19d53143c306f5f1093ed342c94ba89d7802346c59133f1d",
+        "originBlock": 59507658,
+        "amountIn": 14.375355575540338,
+        "amountOut": 35951.66526180449
+      },
+      "originTx": "0xe65f87821b82cd5c19d53143c306f5f1093ed342c94ba89d7802346c59133f1d",
+      "originBlock": 59507658,
+      "reactiveTx": "0xaba9c4ad2e24471a9d71d52978f7704ec872f7049206f6bf17e1b6e3714cb4bc",
+      "reactiveBlock": 8481323,
+      "callbackTx": "0x912d1deb444ea9dbd5ad89085c6b53dab9516c543984468d4f6aedf1c7056b1c",
+      "callbackBlock": 59507665,
+      "latencyBlocksBase": 7,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 102.53167773084688,
+          "usdc": 293147.138879065
+        },
+        "price": 2859.0884823771007,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 897.4683222691531,
+          "usdc": 706852.861120935,
+          "baseETH": 0.019978492705273663,
+          "lasnaLREACT": 5.386120399998862
+        },
+        "guardianLREACT": 4.9295512,
+        "callbackETH": 0.0099966524866
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 126.90703330638722,
+          "usdc": 236985.04778099532
+        },
+        "price": 1867.3909680707025,
+        "guardianState": 2,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 873.0929666936128,
+          "usdc": 763014.9522190046,
+          "baseETH": 0.019977769987271538,
+          "lasnaLREACT": 5.386120399998862
+        },
+        "guardianLREACT": 4.9031236,
+        "callbackETH": 0.009995325705933847
+      },
+      "reconciliation": {
+        "predictedUsdc": 763014.9522190046,
+        "actualUsdc": 763014.9522190046,
+        "usdcDiff": 0,
+        "predictedWeth": 873.0929666936128,
+        "actualWeth": 873.0929666936128,
+        "wethDiff": 0
+      },
+      "rearm": {
+        "callbackRearmTx": "0xa007e90d9f4eb40666ad542d973fe06e81ccfd8e87b246ee1ff3a72ab3dd39d1",
+        "callbackRearmBlock": 59508335,
+        "guardianRearmTx": "0x323dc019747509a6793cd316f4ce6e7aa496760bf3038e96c75b2ed93b4d7eba",
+        "guardianRearmBlock": 8481456,
+        "stateAfter": {
+          "reserves": {
+            "weth": 126.90703330638722,
+            "usdc": 236985.04778099532
+          },
+          "price": 1867.3909680707025,
+          "guardianState": 1,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 873.0929666936128,
+            "usdc": 763014.9522190046,
+            "baseETH": 0.019977574525270787,
+            "lasnaLREACT": 5.382849199998861
+          },
+          "guardianLREACT": 4.9031236,
+          "callbackETH": 0.009995325705933847
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 126.90703330638722,
+          "usdc": 236985.04778099532
+        },
+        "price": 1867.3909680707025,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 873.0929666936128,
+          "usdc": 763014.9522190046,
+          "baseETH": 0.019977574525270787,
+          "lasnaLREACT": 5.382849199998861
+        },
+        "guardianLREACT": 4.9031236,
+        "callbackETH": 0.009995325705933847
+      }
+    },
+    {
+      "n": 4,
+      "kind": "take-profit",
+      "kindCode": 2,
+      "label": "upgrade-tp-1",
+      "priceBefore": 1867.3909680707025,
+      "triggerPrice": 3599.999999994124,
+      "executedPrice": 3599.999999994124,
+      "amountInWETH": 10,
+      "amountOutUSDC": 32363.3101202208,
+      "triggerSwap": {
+        "transferTx": "0x06e384d6e566c83ab129178a4b1357f0057c5bab01fa69834f85c5f8090694a9",
+        "transferBlock": 59508487,
+        "originTx": "0x5d0fa80118540fb3c6cf2c34002fafbce738f541a00ec5eaff5a0fadbe2e9f72",
+        "originBlock": 59508512,
+        "amountIn": 92197.72725080699,
+        "amountOut": 35.46737357518178,
+        "targetPrice": 3600,
+        "priceAfter": 3599.9999999941247
+      },
+      "originTx": "0x5d0fa80118540fb3c6cf2c34002fafbce738f541a00ec5eaff5a0fadbe2e9f72",
+      "originBlock": 59508512,
+      "reactiveTx": "0x6ea119d91091842acdc1bf320cb477a5edbfdb1e2519370c21c0fb038f7ea13a",
+      "reactiveBlock": 8481485,
+      "callbackTx": "0x6d1cfd0021d2f971d1cda00b9ac3c3b88dd42904d2c2c619e9881ece71966bec",
+      "callbackBlock": 59508519,
+      "latencyBlocksBase": 7,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 126.90703330638722,
+          "usdc": 236985.04778099532
+        },
+        "price": 1867.3909680707025,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 873.0929666936128,
+          "usdc": 763014.9522190046,
+          "baseETH": 0.019977574525270787,
+          "lasnaLREACT": 5.382849199998861
+        },
+        "guardianLREACT": 4.9031236,
+        "callbackETH": 0.009995325705933847
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 101.43965973120544,
+          "usdc": 296819.4649115815
+        },
+        "price": 2926.0692090065463,
+        "guardianState": 2,
+        "callbackStatus": 1,
+        "owner": {
+          "weth": 898.5603402687946,
+          "usdc": 703180.5350884185,
+          "baseETH": 0.019977035197269018,
+          "lasnaLREACT": 5.382849199998861
+        },
+        "guardianLREACT": 4.8879318,
+        "callbackETH": 0.009993999177796222
+      },
+      "reconciliation": {
+        "predictedUsdc": 703180.5350884184,
+        "actualUsdc": 703180.5350884185,
+        "usdcDiff": 1.1641532182693481e-10,
+        "predictedWeth": 898.5603402687946,
+        "actualWeth": 898.5603402687946,
+        "wethDiff": 0
+      },
+      "rearm": {
+        "callbackRearmTx": "0x25aba8fc02b150e9bef16bb1a84cfc7f393e706986a026066bcde69694b51f73",
+        "callbackRearmBlock": 59508527,
+        "guardianRearmTx": "0xfb6c1b9c51378a216b62f78bb143a82a7d890f0b3fba407060d6e207e22825ba",
+        "guardianRearmBlock": 8481497,
+        "stateAfter": {
+          "reserves": {
+            "weth": 101.43965973120544,
+            "usdc": 296819.4649115815
+          },
+          "price": 2926.0692090065463,
+          "guardianState": 1,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 898.5603402687946,
+            "usdc": 703180.5350884185,
+            "baseETH": 0.019976851735268135,
+            "lasnaLREACT": 5.379577999998861
+          },
+          "guardianLREACT": 4.8766937,
+          "callbackETH": 0.009993999177796222
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 101.43965973120544,
+          "usdc": 296819.4649115815
+        },
+        "price": 2926.0692090065463,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 898.5603402687946,
+          "usdc": 703180.5350884185,
+          "baseETH": 0.019976851735268135,
+          "lasnaLREACT": 5.379577999998861
+        },
+        "guardianLREACT": 4.8766937,
+        "callbackETH": 0.009993999177796222
+      }
+    },
+    {
+      "n": 5,
+      "kind": "stop-loss",
+      "kindCode": 1,
+      "label": "upgrade-sl-abort-attempt",
+      "priceBefore": 2926.0692090065463,
+      "triggerPrice": 2299.9999979168433,
+      "executedPrice": 2299.9999979168433,
+      "amountInWETH": 10,
+      "amountOutUSDC": 21093.280842669516,
+      "triggerSwap": {
+        "transferTx": "0xe01ec937e25f454dd24b48c3ef4b01b9953d1babcf9302fe51e0e3359a102813",
+        "transferBlock": 59508613,
+        "originTx": "0x2c0ef49ebcffb04ad261386f54ae5155c732ae4abf98dd4dce51ca444c7b04de",
+        "originBlock": 59508639,
+        "amountIn": 12.995677974920214,
+        "amountOut": 33618.188425879234,
+        "targetPrice": 2300,
+        "priceAfter": 2299.9999979168433
+      },
+      "originTx": "0x2c0ef49ebcffb04ad261386f54ae5155c732ae4abf98dd4dce51ca444c7b04de",
+      "originBlock": 59508639,
+      "reactiveTx": "0x89f4b7a68c0f953d70a2f11f93d6d6b524f74a7bab33f4e18c62437cab517203",
+      "reactiveBlock": 8481509,
+      "callbackTx": "0xa2abe34033b4a9625f869748cad6d6566c9eabeddef203c931b9e813bcf7d558",
+      "callbackBlock": 59508645,
+      "latencyBlocksBase": 6,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 101.43965973120544,
+          "usdc": 296819.4649115815
+        },
+        "price": 2926.0692090065463,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 898.5603402687946,
+          "usdc": 703180.5350884185,
+          "baseETH": 0.019976851735268135,
+          "lasnaLREACT": 5.379577999998861
+        },
+        "guardianLREACT": 4.8766937,
+        "callbackETH": 0.009993999177796222
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 100.24040508994075,
+          "usdc": 300721.2152702702
+        },
+        "price": 3000.000000004469,
+        "guardianState": 2,
+        "callbackStatus": 1,
+        "owner": {
+          "weth": 899.7595949100593,
+          "usdc": 699278.7847297299,
+          "baseETH": 0.01997577315126447,
+          "lasnaLREACT": 5.379577999998861
+        },
+        "guardianLREACT": 4.839028,
+        "callbackETH": 0.009992673316996221
+      },
+      "reconciliation": {
+        "predictedUsdc": 757892.0043569673,
+        "actualUsdc": 699278.7847297299,
+        "usdcDiff": -58613.21962723741,
+        "predictedWeth": 875.5646622938743,
+        "actualWeth": 899.7595949100593,
+        "wethDiff": 24.19493261618493
+      },
+      "abortAttempt": {
+        "guardianTriggeredSeen": true,
+        "seenAfterMs": 956,
+        "recovery": {
+          "transferTx": "0x77b63712965362de3cb37698a84c66837fde409857edf67e8f529f84537ca2c0",
+          "transferBlock": 59508671,
+          "originTx": "0x92396ef865fd76f2d0e2f4b2bbd344c90a6df14c76c366e8dd7ae7e9a98857c4",
+          "originBlock": 59508696,
+          "amountIn": 58613.21962723741,
+          "amountOut": 24.1949326161849,
+          "targetPrice": 3000,
+          "priceAfter": 3000.0000000044683
+        }
+      },
+      "rearm": {
+        "callbackRearmTx": "0x190baae896d9af33c5b2f3d18d80c22138f392dedfbca91cbe37465e824a92e8",
+        "callbackRearmBlock": 59508710,
+        "guardianRearmTx": "0x6f390abce5ba7c0647a2cd5bd286960d00726d0843dbff731e5dd5f753049fba",
+        "guardianRearmBlock": 8481531,
+        "stateAfter": {
+          "reserves": {
+            "weth": 100.24040508994075,
+            "usdc": 300721.2152702702
+          },
+          "price": 3000.000000004469,
+          "guardianState": 1,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 899.7595949100593,
+            "usdc": 699278.7847297299,
+            "baseETH": 0.019975589689263582,
+            "lasnaLREACT": 5.376306799998861
+          },
+          "guardianLREACT": 4.839028,
+          "callbackETH": 0.009992673316996221
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 100.24040508994075,
+          "usdc": 300721.2152702702
+        },
+        "price": 3000.000000004469,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 899.7595949100593,
+          "usdc": 699278.7847297299,
+          "baseETH": 0.019975589689263582,
+          "lasnaLREACT": 5.376306799998861
+        },
+        "guardianLREACT": 4.839028,
+        "callbackETH": 0.009992673316996221
+      },
+      "reconciliationNote": "Reconciliation diffs are exactly the interleaved recovery swap amounts (USDC diff -58613.21962723741 equals recovery swap input 58613.21962723741, WETH diff 24.19493261618493 equals recovery swap output 24.1949326161849), so balances reconcile fully once the recovery swap is accounted for. The callback executed at block 59508645, before the recovery swap landed at block 59508696, so no abort occurred."
+    },
+    {
+      "n": 6,
+      "kind": "take-profit",
+      "kindCode": 2,
+      "label": "upgrade-tp-2",
+      "priceBefore": 3000.000000004469,
+      "triggerPrice": 3650.0000000073655,
+      "executedPrice": 3650.0000000073655,
+      "amountInWETH": 10,
+      "amountOutUSDC": 32793.316799434746,
+      "triggerSwap": {
+        "transferTx": "0x5b2b8676a6d436d7baff6e2432d514e22a3a755590fdad04e77064989c79b005",
+        "transferBlock": 59508845,
+        "originTx": "0xc2a7862773203651adaf0d72a7d9890388efbad8a5be7f7c51bd4ffc0f6d1a45",
+        "originBlock": 59508869,
+        "amountIn": 31028.692485429485,
+        "amountOut": 9.350019403631116,
+        "targetPrice": 3650,
+        "priceAfter": 3650.0000000073655
+      },
+      "originTx": "0xc2a7862773203651adaf0d72a7d9890388efbad8a5be7f7c51bd4ffc0f6d1a45",
+      "originBlock": 59508869,
+      "reactiveTx": "0x34835255585ef4059d5a1ba0abe3574571d964896e3e7eab54919eb6e4cf57af",
+      "reactiveBlock": 8481552,
+      "callbackTx": "0x623ad760a2b72b8a9468ad2d3d8fbb3f53f5fb1d1b1ac46069d36696cf1b6d97",
+      "callbackBlock": 59508875,
+      "latencyBlocksBase": 6,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 100.24040508994075,
+          "usdc": 300721.2152702702
+        },
+        "price": 3000.000000004469,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 899.7595949100593,
+          "usdc": 699278.7847297299,
+          "baseETH": 0.019975589689263582,
+          "lasnaLREACT": 5.376306799998861
+        },
+        "guardianLREACT": 4.839028,
+        "callbackETH": 0.009992673316996221
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 100.89038568630964,
+          "usdc": 298956.59095626493
+        },
+        "price": 2963.1821597529283,
+        "guardianState": 2,
+        "callbackStatus": 1,
+        "owner": {
+          "weth": 899.1096143136904,
+          "usdc": 701043.4090437351,
+          "baseETH": 0.01997505043326208,
+          "lasnaLREACT": 5.376306799998861
+        },
+        "guardianLREACT": 4.8125981,
+        "callbackETH": 0.009991347304396221
+      },
+      "reconciliation": {
+        "predictedUsdc": 701043.4090437351,
+        "actualUsdc": 701043.4090437351,
+        "usdcDiff": 0,
+        "predictedWeth": 899.1096143136904,
+        "actualWeth": 899.1096143136904,
+        "wethDiff": 0
+      },
+      "rearm": {
+        "callbackRearmTx": "0x86b297c141aa359e4a3c5ad44ca152c9b3b22c167e92250c8d6a28fdcefe47ca",
+        "callbackRearmBlock": 59508901,
+        "guardianRearmTx": "0xd318bb653f53f6ccc281a2279c6667787a280db9ab0b6a5e05a42c2437ec65f0",
+        "guardianRearmBlock": 8481566,
+        "stateAfter": {
+          "reserves": {
+            "weth": 100.89038568630964,
+            "usdc": 298956.59095626493
+          },
+          "price": 2963.1821597529283,
+          "guardianState": 1,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 899.1096143136904,
+            "usdc": 701043.4090437351,
+            "baseETH": 0.019974866971261326,
+            "lasnaLREACT": 5.373035599998861
+          },
+          "guardianLREACT": 4.8125981,
+          "callbackETH": 0.009991347304396221
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 100.89038568630964,
+          "usdc": 298956.59095626493
+        },
+        "price": 2963.1821597529283,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 899.1096143136904,
+          "usdc": 701043.4090437351,
+          "baseETH": 0.019974866971261326,
+          "lasnaLREACT": 5.373035599998861
+        },
+        "guardianLREACT": 4.8125981,
+        "callbackETH": 0.009991347304396221
+      }
+    },
+    {
+      "n": 7,
+      "kind": "stop-loss",
+      "kindCode": 1,
+      "label": "upgrade-sl-2",
+      "priceBefore": 2963.1821597529283,
+      "triggerPrice": 2349.999999023958,
+      "executedPrice": 2349.999999023958,
+      "amountInWETH": 10,
+      "amountOutUSDC": 21534.683270062065,
+      "triggerSwap": {
+        "transferTx": "0x3c17cc7084f5225de06dda27413dff0808aa0ca8b65010624c6ea54defc711fc",
+        "transferBlock": 59508974,
+        "originTx": "0xee295a9c623f8d3cba86c14682f9eaf23eb949b8b2373bb20352ee464c21e967",
+        "originBlock": 59508999,
+        "amountIn": 12.41914441910692,
+        "amountOut": 32679.19531913084,
+        "targetPrice": 2350,
+        "priceAfter": 2349.999999023958
+      },
+      "originTx": "0xee295a9c623f8d3cba86c14682f9eaf23eb949b8b2373bb20352ee464c21e967",
+      "originBlock": 59508999,
+      "reactiveTx": "0xb2e362a8f15ac5cb6510d45da24cdc93ed2c3e5eed4e10e2e8f155900d79a77c",
+      "reactiveBlock": 8481577,
+      "callbackTx": "0x57d352e0358c2c12c7abb61e793b1d708e48cce66dcbea67575eae5f365482d5",
+      "callbackBlock": 59509007,
+      "latencyBlocksBase": 8,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 100.89038568630964,
+          "usdc": 298956.59095626493
+        },
+        "price": 2963.1821597529283,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 899.1096143136904,
+          "usdc": 701043.4090437351,
+          "baseETH": 0.019974866971261326,
+          "lasnaLREACT": 5.373035599998861
+        },
+        "guardianLREACT": 4.8125981,
+        "callbackETH": 0.009991347304396221
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 123.30953010541656,
+          "usdc": 244742.712367072
+        },
+        "price": 1984.7834320497611,
+        "guardianState": 2,
+        "callbackStatus": 1,
+        "owner": {
+          "weth": 876.6904698945834,
+          "usdc": 755257.287632928,
+          "baseETH": 0.019974327715259692,
+          "lasnaLREACT": 5.373035599998861
+        },
+        "guardianLREACT": 4.7861705,
+        "callbackETH": 0.009990021369066774
+      },
+      "reconciliation": {
+        "predictedUsdc": 755257.287632928,
+        "actualUsdc": 755257.287632928,
+        "usdcDiff": 0,
+        "predictedWeth": 876.6904698945834,
+        "actualWeth": 876.6904698945834,
+        "wethDiff": 0
+      },
+      "rearm": {
+        "callbackRearmTx": "0xc1453f97e832b3c44dda9ca4a51c12b72a3790cff264fdf57db9b3eef01a8631",
+        "callbackRearmBlock": 59509027,
+        "guardianRearmTx": "0x9bdd7e1d95d3ab1f77744dbde01686ca8c260444210fc1ae3cef0203ad5697cf",
+        "guardianRearmBlock": 8481591,
+        "stateAfter": {
+          "reserves": {
+            "weth": 123.30953010541656,
+            "usdc": 244742.712367072
+          },
+          "price": 1984.7834320497611,
+          "guardianState": 1,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 876.6904698945834,
+            "usdc": 755257.287632928,
+            "baseETH": 0.01997414425325887,
+            "lasnaLREACT": 5.369764399998862
+          },
+          "guardianLREACT": 4.7861705,
+          "callbackETH": 0.009990021369066774
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 123.30953010541656,
+          "usdc": 244742.712367072
+        },
+        "price": 1984.7834320497611,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 876.6904698945834,
+          "usdc": 755257.287632928,
+          "baseETH": 0.01997414425325887,
+          "lasnaLREACT": 5.369764399998862
+        },
+        "guardianLREACT": 4.7861705,
+        "callbackETH": 0.009990021369066774
+      }
+    },
+    {
+      "n": 8,
+      "kind": "take-profit",
+      "kindCode": 2,
+      "label": "upgrade-tp-3",
+      "priceBefore": 1984.7834320497611,
+      "triggerPrice": 3549.9999999936517,
+      "executedPrice": 3549.9999999936517,
+      "amountInWETH": 10,
+      "amountOutUSDC": 31940.954359241863,
+      "triggerSwap": {
+        "transferTx": "0xf314c58d8241bcd28c96c2f58617c572384ddf2d595e399440e65298fb738602",
+        "transferBlock": 59509107,
+        "originTx": "0xe0aa93a0443da4fd54f634f2b9a5526e4215fc439a1ebb61a73086e616cd1f55",
+        "originBlock": 59509131,
+        "amountIn": 82697.46823088407,
+        "amountOut": 31.072859514278072,
+        "targetPrice": 3550,
+        "priceAfter": 3549.999999993651
+      },
+      "originTx": "0xe0aa93a0443da4fd54f634f2b9a5526e4215fc439a1ebb61a73086e616cd1f55",
+      "originBlock": 59509131,
+      "reactiveTx": "0x42afbb8d9843e6d7d0cf83968e77a3142144834a5eaba5394876aad1a6e63eb2",
+      "reactiveBlock": 8481602,
+      "callbackTx": "0xde842c8851719012d830c1df57eaf93a9fe56d5a2d408da2e8c829b81ac594e2",
+      "callbackBlock": 59509140,
+      "latencyBlocksBase": 9,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 123.30953010541656,
+          "usdc": 244742.712367072
+        },
+        "price": 1984.7834320497611,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 876.6904698945834,
+          "usdc": 755257.287632928,
+          "baseETH": 0.01997414425325887,
+          "lasnaLREACT": 5.369764399998862
+        },
+        "guardianLREACT": 4.7861705,
+        "callbackETH": 0.009990021369066774
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 102.23667059113849,
+          "usdc": 295499.22623871424
+        },
+        "price": 2890.3447709136085,
+        "guardianState": 2,
+        "callbackStatus": 1,
+        "owner": {
+          "weth": 897.7633294088615,
+          "usdc": 704500.7737612858,
+          "baseETH": 0.01997360492525737,
+          "lasnaLREACT": 5.369764399998862
+        },
+        "guardianLREACT": 4.7597406,
+        "callbackETH": 0.009988695356466773
+      },
+      "reconciliation": {
+        "predictedUsdc": 704500.7737612858,
+        "actualUsdc": 704500.7737612858,
+        "usdcDiff": 0,
+        "predictedWeth": 897.7633294088615,
+        "actualWeth": 897.7633294088615,
+        "wethDiff": 0
+      },
+      "rearm": {
+        "callbackRearmTx": "0xc78686af0aaecf4cc0b6a226989aaecc4ee43c9e3b2724426e6ef885b4f3ec4d",
+        "callbackRearmBlock": 59509163,
+        "guardianRearmTx": "0xbb9c7b833dbf4bb27a39992241a4647101abf67284aa5c3829a4e0f426c8401e",
+        "guardianRearmBlock": 8481615,
+        "stateAfter": {
+          "reserves": {
+            "weth": 102.23667059113849,
+            "usdc": 295499.22623871424
+          },
+          "price": 2890.3447709136085,
+          "guardianState": 1,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 897.7633294088615,
+            "usdc": 704500.7737612858,
+            "baseETH": 0.019973421407025516,
+            "lasnaLREACT": 5.366493199998861
+          },
+          "guardianLREACT": 4.7597406,
+          "callbackETH": 0.009988695356466773
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 102.23667059113849,
+          "usdc": 295499.22623871424
+        },
+        "price": 2890.3447709136085,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 897.7633294088615,
+          "usdc": 704500.7737612858,
+          "baseETH": 0.019973421407025516,
+          "lasnaLREACT": 5.366493199998861
+        },
+        "guardianLREACT": 4.7597406,
+        "callbackETH": 0.009988695356466773
+      }
+    },
+    {
+      "n": 9,
+      "kind": "stop-loss",
+      "kindCode": 1,
+      "label": "upgrade-sl-crash-37pct",
+      "priceBefore": 2890.3447709136085,
+      "triggerPrice": 1819.9999991099498,
+      "executedPrice": 1819.9999991099498,
+      "amountInWETH": 10,
+      "amountOutUSDC": 16842.471886423078,
+      "triggerSwap": {
+        "transferTx": "0xeeade692afa8add1635f511708d9458303d66341fba5d9ecfb19532751b0c3ab",
+        "transferBlock": 59509251,
+        "originTx": "0x51bab7be76b78f7be6b9caac0dc7d56b494305b8d4697d43344ebee0fc0cca11",
+        "originBlock": 59509276,
+        "amountIn": 26.64184857005443,
+        "amountOut": 60940.32148005143,
+        "targetPrice": 1820,
+        "priceAfter": 1819.9999991099498
+      },
+      "originTx": "0x51bab7be76b78f7be6b9caac0dc7d56b494305b8d4697d43344ebee0fc0cca11",
+      "originBlock": 59509276,
+      "reactiveTx": "0x77b2ed7d44beafe0105dab60170fefb7b6edf295ff24ac3a16b8296b38179e09",
+      "reactiveBlock": 8481629,
+      "callbackTx": "0x3a5bc06b692fa913c1b8dbe12f10053a022ca5d9550e6b3d3d5930476f97780a",
+      "callbackBlock": 59509284,
+      "latencyBlocksBase": 8,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 102.23667059113849,
+          "usdc": 295499.22623871424
+        },
+        "price": 2890.3447709136085,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 897.7633294088615,
+          "usdc": 704500.7737612858,
+          "baseETH": 0.019973421407025516,
+          "lasnaLREACT": 5.366493199998861
+        },
+        "guardianLREACT": 4.7597406,
+        "callbackETH": 0.009988695356466773
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 138.8785191611929,
+          "usdc": 217716.4328722397
+        },
+        "price": 1567.675362519826,
+        "guardianState": 2,
+        "callbackStatus": 1,
+        "owner": {
+          "weth": 861.1214808388071,
+          "usdc": 782283.5671277603,
+          "baseETH": 0.019972882070016008,
+          "lasnaLREACT": 5.366493199998861
+        },
+        "guardianLREACT": 4.733313,
+        "callbackETH": 0.009987369495666774
+      },
+      "reconciliation": {
+        "predictedUsdc": 782283.5671277603,
+        "actualUsdc": 782283.5671277603,
+        "usdcDiff": 0,
+        "predictedWeth": 861.1214808388071,
+        "actualWeth": 861.1214808388071,
+        "wethDiff": 0
+      },
+      "rearm": {
+        "callbackRearmTx": "0xf0f664c16a666d56fe23aa02b2b61e17aae81da2e9501f0c5c9d75cf77456e08",
+        "callbackRearmBlock": 59509305,
+        "guardianRearmTx": "0xbd6c90fbbbaa8fc4588c8c62442500044199dbcdb00173455a25188f5c7f600a",
+        "guardianRearmBlock": 8481639,
+        "stateAfter": {
+          "reserves": {
+            "weth": 138.8785191611929,
+            "usdc": 217716.4328722397
+          },
+          "price": 1567.675362519826,
+          "guardianState": 1,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 861.1214808388071,
+            "usdc": 782283.5671277603,
+            "baseETH": 0.01997269860801519,
+            "lasnaLREACT": 5.363221999998861
+          },
+          "guardianLREACT": 4.733313,
+          "callbackETH": 0.009987369495666774
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 138.8785191611929,
+          "usdc": 217716.4328722397
+        },
+        "price": 1567.675362519826,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 861.1214808388071,
+          "usdc": 782283.5671277603,
+          "baseETH": 0.01997269860801519,
+          "lasnaLREACT": 5.363221999998861
+        },
+        "guardianLREACT": 4.733313,
+        "callbackETH": 0.009987369495666774
+      }
+    },
+    {
+      "n": 10,
+      "kind": "take-profit",
+      "kindCode": 2,
+      "label": "upgrade-tp-4",
+      "priceBefore": 1567.675362519826,
+      "triggerPrice": 3499.9999999945817,
+      "executedPrice": 3499.9999999945817,
+      "amountInWETH": 10,
+      "amountOutUSDC": 31516.048102912755,
+      "triggerSwap": {
+        "transferTx": "0x111b12d44ae8bf411c572799a905f1aa20bcecf5940037b11ca91ab9d25bcdff",
+        "transferBlock": 59509363,
+        "originTx": "0xc2195d8805af7c3cb1d771d77803c7d3ae849863e79839281aa927bf811c4743",
+        "originBlock": 59509387,
+        "amountIn": 107755.05416344124,
+        "amountOut": 45.88666572228298,
+        "targetPrice": 3500,
+        "priceAfter": 3499.9999999945817
+      },
+      "originTx": "0xc2195d8805af7c3cb1d771d77803c7d3ae849863e79839281aa927bf811c4743",
+      "originBlock": 59509387,
+      "reactiveTx": "0xf7832fa2ac9e70711c8b4a86f73a93c0248b7a9aeb3fa08675d28e4debb04518",
+      "reactiveBlock": 8481650,
+      "callbackTx": "0x326f19d127a1280dfd0ab5ca77e41665663070cc7bda85e9728e709ba851ead9",
+      "callbackBlock": 59509395,
+      "latencyBlocksBase": 8,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 138.8785191611929,
+          "usdc": 217716.4328722397
+        },
+        "price": 1567.675362519826,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 861.1214808388071,
+          "usdc": 782283.5671277603,
+          "baseETH": 0.01997269860801519,
+          "lasnaLREACT": 5.363221999998861
+        },
+        "guardianLREACT": 4.733313,
+        "callbackETH": 0.009987369495666774
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 102.99185343890994,
+          "usdc": 293955.4389327682
+        },
+        "price": 2854.1620440603983,
+        "guardianState": 2,
+        "callbackStatus": 1,
+        "owner": {
+          "weth": 897.00814656109,
+          "usdc": 706044.5610672318,
+          "baseETH": 0.019972159176141542,
+          "lasnaLREACT": 5.363221999998861
+        },
+        "guardianLREACT": 4.7068831,
+        "callbackETH": 0.009986043483066774
+      },
+      "reconciliation": {
+        "predictedUsdc": 706044.5610672317,
+        "actualUsdc": 706044.5610672318,
+        "usdcDiff": 1.1641532182693481e-10,
+        "predictedWeth": 897.00814656109,
+        "actualWeth": 897.00814656109,
+        "wethDiff": 0
+      },
+      "rearm": {
+        "callbackRearmTx": "0x46495a6066493b184aa05ff1296fd8052159fbcf31a75bdd919bac6a56abbd01",
+        "callbackRearmBlock": 59509419,
+        "guardianRearmTx": "0x9530cc839898b0c6b95f72987cb0e4f74ac1c8ffc7a34e3fae0cfb2e8227a38f",
+        "guardianRearmBlock": 8481664,
+        "stateAfter": {
+          "reserves": {
+            "weth": 102.99185343890994,
+            "usdc": 293955.4389327682
+          },
+          "price": 2854.1620440603983,
+          "guardianState": 1,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 897.00814656109,
+            "usdc": 706044.5610672318,
+            "baseETH": 0.01997197571414066,
+            "lasnaLREACT": 5.359950799998861
+          },
+          "guardianLREACT": 4.7068831,
+          "callbackETH": 0.009986043483066774
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 102.99185343890994,
+          "usdc": 293955.4389327682
+        },
+        "price": 2854.1620440603983,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 897.00814656109,
+          "usdc": 706044.5610672318,
+          "baseETH": 0.01997197571414066,
+          "lasnaLREACT": 5.359950799998861
+        },
+        "guardianLREACT": 4.7068831,
+        "callbackETH": 0.009986043483066774
+      }
+    },
+    {
+      "n": 11,
+      "kind": "stop-loss",
+      "kindCode": 1,
+      "label": "upgrade-sl-3",
+      "priceBefore": 2854.1620440603983,
+      "triggerPrice": 2400.0000034098703,
+      "executedPrice": 2400.0000034098703,
+      "amountInWETH": 10,
+      "amountOutUSDC": 21977.348339975677,
+      "triggerSwap": {
+        "transferTx": "0xecd53f1bfe6ad02735954981defcf6622c96d414e3a97939220a3d0796c33da2",
+        "transferBlock": 59509494,
+        "originTx": "0x7de5acd81f0887ff4762f2d989a8ee58c27c92223111a352b39cb406e1ea6c5e",
+        "originBlock": 59509518,
+        "amountIn": 9.336843488994207,
+        "amountOut": 24366.565922771922,
+        "targetPrice": 2400,
+        "priceAfter": 2400.0000034098703
+      },
+      "originTx": "0x7de5acd81f0887ff4762f2d989a8ee58c27c92223111a352b39cb406e1ea6c5e",
+      "originBlock": 59509518,
+      "reactiveTx": "0x25d8e75aeac832b78ee7aa355a39a56094726c32ceceaf015a4e669d377c9ce2",
+      "reactiveBlock": 8481675,
+      "callbackTx": "0x301f70877c6f556881b6fb8c84556dd0a11dd6236c23acf981d6af9f9bfbaa0e",
+      "callbackBlock": 59509528,
+      "latencyBlocksBase": 10,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 102.99185343890994,
+          "usdc": 293955.4389327682
+        },
+        "price": 2854.1620440603983,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 897.00814656109,
+          "usdc": 706044.5610672318,
+          "baseETH": 0.01997197571414066,
+          "lasnaLREACT": 5.359950799998861
+        },
+        "guardianLREACT": 4.7068831,
+        "callbackETH": 0.009986043483066774
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 122.32869692790415,
+          "usdc": 247611.5246700206
+        },
+        "price": 2024.1491235368374,
+        "guardianState": 2,
+        "callbackStatus": 1,
+        "owner": {
+          "weth": 877.6713030720958,
+          "usdc": 752388.4753299794,
+          "baseETH": 0.01997143645813889,
+          "lasnaLREACT": 5.359950799998861
+        },
+        "guardianLREACT": 4.6804555,
+        "callbackETH": 0.009984717622266773
+      },
+      "reconciliation": {
+        "predictedUsdc": 752388.4753299794,
+        "actualUsdc": 752388.4753299794,
+        "usdcDiff": 0,
+        "predictedWeth": 877.6713030720958,
+        "actualWeth": 877.6713030720958,
+        "wethDiff": 0
+      },
+      "rearm": {
+        "callbackRearmTx": "0xd013c134de8e602ebe7661aefcfe0a81a7e36ea3489bfb55c6ba3ba76d68d298",
+        "callbackRearmBlock": 59509551,
+        "guardianRearmTx": "0xf59be198f58e0d3805ebb392272db72d101cf8a61b268ec4eb7cda62a8c2f5dc",
+        "guardianRearmBlock": 8481689,
+        "stateAfter": {
+          "reserves": {
+            "weth": 122.32869692790415,
+            "usdc": 247611.5246700206
+          },
+          "price": 2024.1491235368374,
+          "guardianState": 1,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 877.6713030720958,
+            "usdc": 752388.4753299794,
+            "baseETH": 0.019971252996138073,
+            "lasnaLREACT": 5.356679599998861
+          },
+          "guardianLREACT": 4.6804555,
+          "callbackETH": 0.009984717622266773
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 122.32869692790415,
+          "usdc": 247611.5246700206
+        },
+        "price": 2024.1491235368374,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 877.6713030720958,
+          "usdc": 752388.4753299794,
+          "baseETH": 0.019971252996138073,
+          "lasnaLREACT": 5.356679599998861
+        },
+        "guardianLREACT": 4.6804555,
+        "callbackETH": 0.009984717622266773
+      }
+    },
+    {
+      "n": 12,
+      "kind": "take-profit",
+      "kindCode": 2,
+      "label": "upgrade-tp-5",
+      "priceBefore": 2024.1491235368374,
+      "triggerPrice": 3599.99999999648,
+      "executedPrice": 3599.99999999648,
+      "amountInWETH": 10,
+      "amountOutUSDC": 32374.481279475556,
+      "triggerSwap": {
+        "transferTx": "0x786833fc0a36951214c5ce8eadbd2ae4fca35977c0d2ba29f614364207a6fc3a",
+        "transferBlock": 59509633,
+        "originTx": "0x190e7478d0af18119b0056f67e13cd7c2954c4be2f74f196a6225270730f60ee",
+        "originBlock": 59509658,
+        "amountIn": 82730.67800634455,
+        "amountOut": 30.56697396215744,
+        "targetPrice": 3600,
+        "priceAfter": 3599.9999999964803
+      },
+      "originTx": "0x190e7478d0af18119b0056f67e13cd7c2954c4be2f74f196a6225270730f60ee",
+      "originBlock": 59509658,
+      "reactiveTx": "0x8e264dc9f0458a330df880583bd721d9e023b85c4fc2bf25ba198049171fe0e3",
+      "reactiveBlock": 8481701,
+      "callbackTx": "0x117acb12f307196796e73d0eda0c002553cff61a66337ea77ac569e3e62f6cc3",
+      "callbackBlock": 59509667,
+      "latencyBlocksBase": 9,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 122.32869692790415,
+          "usdc": 247611.5246700206
+        },
+        "price": 2024.1491235368374,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 877.6713030720958,
+          "usdc": 752388.4753299794,
+          "baseETH": 0.019971252996138073,
+          "lasnaLREACT": 5.356679599998861
+        },
+        "guardianLREACT": 4.6804555,
+        "callbackETH": 0.009984717622266773
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 101.76172296574671,
+          "usdc": 297967.7213968896
+        },
+        "price": 2928.0923387783673,
+        "guardianState": 2,
+        "callbackStatus": 1,
+        "owner": {
+          "weth": 898.2382770342533,
+          "usdc": 702032.2786031105,
+          "baseETH": 0.019970713668136304,
+          "lasnaLREACT": 5.356679599998861
+        },
+        "guardianLREACT": 4.6540256,
+        "callbackETH": 0.009983391609666775
+      },
+      "reconciliation": {
+        "predictedUsdc": 702032.2786031105,
+        "actualUsdc": 702032.2786031105,
+        "usdcDiff": 0,
+        "predictedWeth": 898.2382770342533,
+        "actualWeth": 898.2382770342533,
+        "wethDiff": 0
+      },
+      "rearm": {
+        "callbackRearmTx": "0xed9cc6073fa2bd32c0256914314790b60553d9c5ea1505e8164d1fb8a74b6aaf",
+        "callbackRearmBlock": 59509693,
+        "guardianRearmTx": "0xf201a3fc0d3082ee3ce232fdb95fa94d29a1d3acb954bdbf70d5e2363afcb140",
+        "guardianRearmBlock": 8481712,
+        "stateAfter": {
+          "reserves": {
+            "weth": 101.76172296574671,
+            "usdc": 297967.7213968896
+          },
+          "price": 2928.0923387783673,
+          "guardianState": 1,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 898.2382770342533,
+            "usdc": 702032.2786031105,
+            "baseETH": 0.019970530206135487,
+            "lasnaLREACT": 5.3534083999988615
+          },
+          "guardianLREACT": 4.6540256,
+          "callbackETH": 0.009983391609666775
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 101.76172296574671,
+          "usdc": 297967.7213968896
+        },
+        "price": 2928.0923387783673,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 898.2382770342533,
+          "usdc": 702032.2786031105,
+          "baseETH": 0.019970530206135487,
+          "lasnaLREACT": 5.3534083999988615
+        },
+        "guardianLREACT": 4.6540256,
+        "callbackETH": 0.009983391609666775
+      }
+    },
+    {
+      "n": 13,
+      "kind": "stop-loss",
+      "kindCode": 1,
+      "label": "upgrade-sl-4",
+      "priceBefore": 2928.0923387783673,
+      "triggerPrice": 2250.0000068604786,
+      "executedPrice": 2250.0000068604786,
+      "amountInWETH": 10,
+      "amountOutUSDC": 20658.596966283105,
+      "triggerSwap": {
+        "transferTx": "0xaab65964beab138500e9f6e358e813975538c1a918d4e6cc4eb98d4eeae84c76",
+        "transferBlock": 59509749,
+        "originTx": "0xdc76c55774f8bab71523524311b2305b2828db06c957a023d3972469bda3d01b",
+        "originBlock": 59509774,
+        "amountIn": 14.347331417309041,
+        "amountOut": 36722.34823845043,
+        "targetPrice": 2250,
+        "priceAfter": 2250.0000068604786
+      },
+      "originTx": "0xdc76c55774f8bab71523524311b2305b2828db06c957a023d3972469bda3d01b",
+      "originBlock": 59509774,
+      "reactiveTx": "0x3048d2dd3458e2dd5292ac4063e2ff7a73102224e1dcf32c2a359c05bd68a1ec",
+      "reactiveBlock": 8481723,
+      "callbackTx": "0x48a027466e0aa9b0317f51ab71b16c9dd1b38bd98a3647cd19f3e3d1236d7a69",
+      "callbackBlock": 59509782,
+      "latencyBlocksBase": 8,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 101.76172296574671,
+          "usdc": 297967.7213968896
+        },
+        "price": 2928.0923387783673,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 898.2382770342533,
+          "usdc": 702032.2786031105,
+          "baseETH": 0.019970530206135487,
+          "lasnaLREACT": 5.3534083999988615
+        },
+        "guardianLREACT": 4.6540256,
+        "callbackETH": 0.009983391609666775
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 126.10905438305575,
+          "usdc": 240586.77619215604
+        },
+        "price": 1907.767664813144,
+        "guardianState": 2,
+        "callbackStatus": 1,
+        "owner": {
+          "weth": 873.8909456169442,
+          "usdc": 759413.223807844,
+          "baseETH": 0.019969990826150086,
+          "lasnaLREACT": 5.3534083999988615
+        },
+        "guardianLREACT": 4.627598,
+        "callbackETH": 0.009982065748866774
+      },
+      "reconciliation": {
+        "predictedUsdc": 759413.2238078441,
+        "actualUsdc": 759413.223807844,
+        "usdcDiff": -1.1641532182693481e-10,
+        "predictedWeth": 873.8909456169442,
+        "actualWeth": 873.8909456169442,
+        "wethDiff": 0
+      },
+      "rearm": {
+        "callbackRearmTx": "0xa4c4dda909e9e8d8f6d9a96aa83f2917340c666ffa74cc3a6a9fbfb91a07628f",
+        "callbackRearmBlock": 59509809,
+        "guardianRearmTx": "0xc94d25dfee5f2fd72817808088b1ae2e92923a60470ff97d9fe0295c736cae93",
+        "guardianRearmBlock": 8481734,
+        "stateAfter": {
+          "reserves": {
+            "weth": 126.10905438305575,
+            "usdc": 240586.77619215604
+          },
+          "price": 1907.767664813144,
+          "guardianState": 1,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 873.8909456169442,
+            "usdc": 759413.223807844,
+            "baseETH": 0.019969807364149265,
+            "lasnaLREACT": 5.350137199998861
+          },
+          "guardianLREACT": 4.627598,
+          "callbackETH": 0.009982065748866774
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 126.10905438305575,
+          "usdc": 240586.77619215604
+        },
+        "price": 1907.767664813144,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 873.8909456169442,
+          "usdc": 759413.223807844,
+          "baseETH": 0.019969807364149265,
+          "lasnaLREACT": 5.350137199998861
+        },
+        "guardianLREACT": 4.627598,
+        "callbackETH": 0.009982065748866774
+      }
+    },
+    {
+      "n": 14,
+      "kind": "take-profit",
+      "kindCode": 2,
+      "label": "upgrade-tp-6",
+      "priceBefore": 1907.767664813144,
+      "triggerPrice": 3499.9999999989327,
+      "executedPrice": 3499.9999999989327,
+      "amountInWETH": 10,
+      "amountOutUSDC": 31520.969576596486,
+      "triggerSwap": {
+        "transferTx": "0x61d49d130eaa17e10a104016ca94039a3c6384fbb7bd5874f04caddc48b83e60",
+        "transferBlock": 59509864,
+        "originTx": "0xb997a57ad02ed7665cf72b5fbe60069917293eee9bdb6aae83910ffd3110dd21",
+        "originBlock": 59509890,
+        "amountIn": 85410.35345699878,
+        "amountOut": 32.96701734041168,
+        "targetPrice": 3500,
+        "priceAfter": 3499.9999999989323
+      },
+      "originTx": "0xb997a57ad02ed7665cf72b5fbe60069917293eee9bdb6aae83910ffd3110dd21",
+      "originBlock": 59509890,
+      "reactiveTx": "0xac8fc9e9958326c2c79f3a04d7087cb6a5e1f1f6da3ae9d9987942e318226564",
+      "reactiveBlock": 8481745,
+      "callbackTx": "0x72c27dde91197f9e6456f30fc6d739d7512bdfe560f85db8f8af9be6847f92ef",
+      "callbackBlock": 59509898,
+      "latencyBlocksBase": 8,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 126.10905438305575,
+          "usdc": 240586.77619215604
+        },
+        "price": 1907.767664813144,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 873.8909456169442,
+          "usdc": 759413.223807844,
+          "baseETH": 0.019969807364149265,
+          "lasnaLREACT": 5.350137199998861
+        },
+        "guardianLREACT": 4.627598,
+        "callbackETH": 0.009982065748866774
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 103.14203704264408,
+          "usdc": 294476.1600725583
+        },
+        "price": 2855.0547237185856,
+        "guardianState": 2,
+        "callbackStatus": 1,
+        "owner": {
+          "weth": 896.8579629573559,
+          "usdc": 705523.8399274417,
+          "baseETH": 0.019969267733206397,
+          "lasnaLREACT": 5.350137199998861
+        },
+        "guardianLREACT": 4.6011681,
+        "callbackETH": 0.009980739736266774
+      },
+      "reconciliation": {
+        "predictedUsdc": 705523.8399274417,
+        "actualUsdc": 705523.8399274417,
+        "usdcDiff": 0,
+        "predictedWeth": 896.8579629573559,
+        "actualWeth": 896.8579629573559,
+        "wethDiff": 0
+      },
+      "rearm": {
+        "callbackRearmTx": "0x723724a158ada5e31a56a4886d450530d250b90a651761bf4bf9bd0b6122342f",
+        "callbackRearmBlock": 59509925,
+        "guardianRearmTx": "0x55c3c48b8f50f43323b683d0c29fc9ef7e6316cb4b4e5d3b35e1ed8da515e7d3",
+        "guardianRearmBlock": 8481756,
+        "stateAfter": {
+          "reserves": {
+            "weth": 103.14203704264408,
+            "usdc": 294476.1600725583
+          },
+          "price": 2855.0547237185856,
+          "guardianState": 1,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 896.8579629573559,
+            "usdc": 705523.8399274417,
+            "baseETH": 0.01996908427120558,
+            "lasnaLREACT": 5.346865999998861
+          },
+          "guardianLREACT": 4.6011681,
+          "callbackETH": 0.009980739736266774
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 103.14203704264408,
+          "usdc": 294476.1600725583
+        },
+        "price": 2855.0547237185856,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 896.8579629573559,
+          "usdc": 705523.8399274417,
+          "baseETH": 0.01996908427120558,
+          "lasnaLREACT": 5.346865999998861
+        },
+        "guardianLREACT": 4.6011681,
+        "callbackETH": 0.009980739736266774
+      }
+    },
+    {
+      "n": 15,
+      "kind": "stop-loss",
+      "kindCode": 1,
+      "label": "upgrade-sl-5",
+      "priceBefore": 2855.0547237185856,
+      "triggerPrice": 2449.999998913319,
+      "executedPrice": 2449.999998913319,
+      "amountInWETH": 10,
+      "amountOutUSDC": 22419.220969725462,
+      "triggerSwap": {
+        "transferTx": "0x2d2a9413ebc3ea9a0b823be73822327890dd130fa4e45d1b330eaba6385b0a73",
+        "transferBlock": 59509989,
+        "originTx": "0xbb9715c51bede378e8b104ccd9561bbff2c53bee85fe856d0e84116e7e49f528",
+        "originBlock": 59510013,
+        "amountIn": 8.212503558534854,
+        "amountOut": 21657.535720676835,
+        "targetPrice": 2450,
+        "priceAfter": 2449.999998913319
+      },
+      "originTx": "0xbb9715c51bede378e8b104ccd9561bbff2c53bee85fe856d0e84116e7e49f528",
+      "originBlock": 59510013,
+      "reactiveTx": "0xe282f9c189db2d65cdc2790b245a12eb0aac09227d95d3a3b6ed4f1994cb4d42",
+      "reactiveBlock": 8481768,
+      "callbackTx": "0xe3530e63fdfa352ec00adb747e91fc808f585d6f3849d15ef9d5018d84fdf4d3",
+      "callbackBlock": 59510021,
+      "latencyBlocksBase": 8,
+      "balancesBefore": {
+        "reserves": {
+          "weth": 103.14203704264408,
+          "usdc": 294476.1600725583
+        },
+        "price": 2855.0547237185856,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 896.8579629573559,
+          "usdc": 705523.8399274417,
+          "baseETH": 0.01996908427120558,
+          "lasnaLREACT": 5.346865999998861
+        },
+        "guardianLREACT": 4.6011681,
+        "callbackETH": 0.009980739736266774
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 121.35454060117893,
+          "usdc": 250399.40338215604
+        },
+        "price": 2063.370699948276,
+        "guardianState": 2,
+        "callbackStatus": 1,
+        "owner": {
+          "weth": 878.6454593988211,
+          "usdc": 749600.596617844,
+          "baseETH": 0.01996854453653431,
+          "lasnaLREACT": 5.346865999998861
+        },
+        "guardianLREACT": 4.5747405,
+        "callbackETH": 0.009979413875466773
+      },
+      "reconciliation": {
+        "predictedUsdc": 749600.5966178441,
+        "actualUsdc": 749600.596617844,
+        "usdcDiff": -1.1641532182693481e-10,
+        "predictedWeth": 878.645459398821,
+        "actualWeth": 878.6454593988211,
+        "wethDiff": 1.1368683772161603e-13
+      },
+      "rearm": {
+        "callbackRearmTx": "0x31f3265666dfad0f6235dbc83dee93993d214e4622330f8c91c5e361d5ebd010",
+        "callbackRearmBlock": 59510044,
+        "guardianRearmTx": "0xceb83bd9de3955345c2372f14e8127dcd90b260c67263aeae367c73a33297c7a",
+        "guardianRearmBlock": 8481782,
+        "stateAfter": {
+          "reserves": {
+            "weth": 121.35454060117893,
+            "usdc": 250399.40338215604
+          },
+          "price": 2063.370699948276,
+          "guardianState": 2,
+          "callbackStatus": 0,
+          "owner": {
+            "weth": 878.6454593988211,
+            "usdc": 749600.596617844,
+            "baseETH": 0.01996836107453343,
+            "lasnaLREACT": 5.346865999998861
+          },
+          "guardianLREACT": 4.5747405,
+          "callbackETH": 0.009979413875466773
+        }
+      },
+      "stateAfterRearm": {
+        "reserves": {
+          "weth": 121.35454060117893,
+          "usdc": 250399.40338215604
+        },
+        "price": 2063.370699948276,
+        "guardianState": 2,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 878.6454593988211,
+          "usdc": 749600.596617844,
+          "baseETH": 0.01996836107453343,
+          "lasnaLREACT": 5.346865999998861
+        },
+        "guardianLREACT": 4.5747405,
+        "callbackETH": 0.009979413875466773
+      }
+    }
+  ],
+  "negativeProof": {
+    "targetPrice": 2859.0884823800625,
+    "swap": {
+      "transferTx": "0x20529e5485fac2cade95d82a79e6304a8acd670c94a4f835bb721dad3596ee48",
+      "transferBlock": 59507516,
+      "originTx": "0x58076b553f7e579bd8c8465ecc7ef78dbe4c140d88127d6599450d701359ca20",
+      "originBlock": 59507539,
+      "amountIn": 3096.855986546475,
+      "amountOut": 1.0914426950887086,
+      "targetPrice": 2859.0884823800625,
+      "priceAfter": 2859.0884823771007
+    },
+    "priceBefore": 2799.0884823800625,
+    "priceAfterSwap": 2859.0884823771007,
+    "guardianLastPriceBefore": 3427.9776728501097,
+    "guardianLastPriceAfter": 2859.0884823771007,
+    "guardianStateBefore": 1,
+    "guardianStateAfter": 1,
+    "callbackStatusBefore": 0,
+    "callbackStatusAfter": 0,
+    "lasnaBlocksScanned": [
+      8481294,
+      8481315
+    ],
+    "triggeredLogsInWindow": 0,
+    "balancesAfter": {
+      "reserves": {
+        "weth": 102.53167773084688,
+        "usdc": 293147.138879065
+      },
+      "price": 2859.0884823771007,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 897.4683222691531,
+        "usdc": 706852.861120935,
+        "baseETH": 0.019978492705273663,
+        "lasnaLREACT": 5.386120399998862
+      },
+      "guardianLREACT": 4.9295512,
+      "callbackETH": 0.0099966524866
+    },
+    "verdict": "PASS: guardian priced the in band Sync (lastPrice updated) and did not fire; no Triggered event, no callback"
+  },
+  "abortProof": {
+    "attempted": true,
+    "succeeded": false,
+    "detail": "Stop loss triggered at 2300 (origin block 59508639). Guardian trigger was observed on Lasna and a recovery buy back to 3000 was sent immediately, but the recovery swap only landed at Base block 59508696 while the callback executed at block 59508645, six blocks after the origin swap. The full detect plus recovery path took about 57 Base blocks, far longer than the 6 block callback latency, so a manual or scripted recovery cannot beat the callback on this deployment. The abort path itself is covered by unit tests in the callback test suite (price back inside the band and trigger kind changed cases).",
+    "loopN": 5,
+    "recoverySwap": {
+      "transferTx": "0x77b63712965362de3cb37698a84c66837fde409857edf67e8f529f84537ca2c0",
+      "transferBlock": 59508671,
+      "originTx": "0x92396ef865fd76f2d0e2f4b2bbd344c90a6df14c76c366e8dd7ae7e9a98857c4",
+      "originBlock": 59508696,
+      "amountIn": 58613.21962723741,
+      "amountOut": 24.1949326161849,
+      "targetPrice": 3000,
+      "priceAfter": 3000.0000000044683
+    }
+  },
+  "finalBalances": {
+    "note": "After batch 1 (15 total loops), deployment re-armed and Watching",
+    "price": 2063.370699948276,
+    "reserves": {
+      "weth": 121.35454060117893,
+      "usdc": 250399.40338215604
+    },
+    "guardianState": 1,
+    "callbackStatus": 0,
+    "owner": {
+      "weth": 878.6454593988211,
+      "usdc": 749600.596617844,
+      "baseETH": 0.01996836107453343,
+      "lasnaLREACT": 5.343594799998861
+    },
+    "guardianLREACT": 4.5747405,
+    "callbackETH": 0.009979413875466773
+  },
+  "updated": "2026-11-16T10:11:26.880Z"
+}

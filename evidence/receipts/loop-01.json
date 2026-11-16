@@ -1,0 +1,18 @@
+{
+  "n": 1,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "triggerPrice": 2084.3755,
+  "executedPrice": 2084.3755,
+  "amountInWETH": 10,
+  "amountOutUSDC": 19187.096,
+  "originTx": "0x790b838a0f612a4bf1f1cee07e07da3c90b91662d3298e638b426bc02fa462db",
+  "originBlock": 59029446,
+  "reactiveTx": "0x6b8c818cf5bcab84d1baf0b5a6c6d3663eb88d76f2d0b08c1171b68b2c0b1e0f",
+  "reactiveBlock": 8391301,
+  "callbackTx": "0xec6a18cf3f7eadf1538dd6f97fca69af09a5f2812c676bcfc55d8fba13d5efa7",
+  "callbackBlock": 59029451,
+  "latencyBlocksBase": 5,
+  "triggerSwap": null,
+  "rearm": null
+}

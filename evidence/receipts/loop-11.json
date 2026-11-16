@@ -1,0 +1,59 @@
+{
+  "n": 11,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "upgrade-sl-3",
+  "priceBefore": 2854.1620440603983,
+  "triggerPrice": 2400.0000034098703,
+  "executedPrice": 2400.0000034098703,
+  "amountInWETH": 10,
+  "amountOutUSDC": 21977.348339975677,
+  "originTx": "0x7de5acd81f0887ff4762f2d989a8ee58c27c92223111a352b39cb406e1ea6c5e",
+  "originBlock": 59509518,
+  "reactiveTx": "0x25d8e75aeac832b78ee7aa355a39a56094726c32ceceaf015a4e669d377c9ce2",
+  "reactiveBlock": 8481675,
+  "callbackTx": "0x301f70877c6f556881b6fb8c84556dd0a11dd6236c23acf981d6af9f9bfbaa0e",
+  "callbackBlock": 59509528,
+  "latencyBlocksBase": 10,
+  "reconciliation": {
+    "predictedUsdc": 752388.4753299794,
+    "actualUsdc": 752388.4753299794,
+    "usdcDiff": 0,
+    "predictedWeth": 877.6713030720958,
+    "actualWeth": 877.6713030720958,
+    "wethDiff": 0
+  },
+  "triggerSwap": {
+    "transferTx": "0xecd53f1bfe6ad02735954981defcf6622c96d414e3a97939220a3d0796c33da2",
+    "transferBlock": 59509494,
+    "originTx": "0x7de5acd81f0887ff4762f2d989a8ee58c27c92223111a352b39cb406e1ea6c5e",
+    "originBlock": 59509518,
+    "amountIn": 9.336843488994207,
+    "amountOut": 24366.565922771922,
+    "targetPrice": 2400,
+    "priceAfter": 2400.0000034098703
+  },
+  "rearm": {
+    "callbackRearmTx": "0xd013c134de8e602ebe7661aefcfe0a81a7e36ea3489bfb55c6ba3ba76d68d298",
+    "callbackRearmBlock": 59509551,
+    "guardianRearmTx": "0xf59be198f58e0d3805ebb392272db72d101cf8a61b268ec4eb7cda62a8c2f5dc",
+    "guardianRearmBlock": 8481689,
+    "stateAfter": {
+      "reserves": {
+        "weth": 122.32869692790415,
+        "usdc": 247611.5246700206
+      },
+      "price": 2024.1491235368374,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 877.6713030720958,
+        "usdc": 752388.4753299794,
+        "baseETH": 0.019971252996138073,
+        "lasnaLREACT": 5.356679599998861
+      },
+      "guardianLREACT": 4.6804555,
+      "callbackETH": 0.009984717622266773
+    }
+  }
+}

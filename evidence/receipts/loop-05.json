@@ -1,0 +1,60 @@
+{
+  "n": 5,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "upgrade-sl-abort-attempt",
+  "priceBefore": 2926.0692090065463,
+  "triggerPrice": 2299.9999979168433,
+  "executedPrice": 2299.9999979168433,
+  "amountInWETH": 10,
+  "amountOutUSDC": 21093.280842669516,
+  "originTx": "0x2c0ef49ebcffb04ad261386f54ae5155c732ae4abf98dd4dce51ca444c7b04de",
+  "originBlock": 59508639,
+  "reactiveTx": "0x89f4b7a68c0f953d70a2f11f93d6d6b524f74a7bab33f4e18c62437cab517203",
+  "reactiveBlock": 8481509,
+  "callbackTx": "0xa2abe34033b4a9625f869748cad6d6566c9eabeddef203c931b9e813bcf7d558",
+  "callbackBlock": 59508645,
+  "latencyBlocksBase": 6,
+  "reconciliation": {
+    "predictedUsdc": 757892.0043569673,
+    "actualUsdc": 699278.7847297299,
+    "usdcDiff": -58613.21962723741,
+    "predictedWeth": 875.5646622938743,
+    "actualWeth": 899.7595949100593,
+    "wethDiff": 24.19493261618493
+  },
+  "reconciliationNote": "Reconciliation diffs are exactly the interleaved recovery swap amounts (USDC diff -58613.21962723741 equals recovery swap input 58613.21962723741, WETH diff 24.19493261618493 equals recovery swap output 24.1949326161849), so balances reconcile fully once the recovery swap is accounted for. The callback executed at block 59508645, before the recovery swap landed at block 59508696, so no abort occurred.",
+  "triggerSwap": {
+    "transferTx": "0xe01ec937e25f454dd24b48c3ef4b01b9953d1babcf9302fe51e0e3359a102813",
+    "transferBlock": 59508613,
+    "originTx": "0x2c0ef49ebcffb04ad261386f54ae5155c732ae4abf98dd4dce51ca444c7b04de",
+    "originBlock": 59508639,
+    "amountIn": 12.995677974920214,
+    "amountOut": 33618.188425879234,
+    "targetPrice": 2300,
+    "priceAfter": 2299.9999979168433
+  },
+  "rearm": {
+    "callbackRearmTx": "0x190baae896d9af33c5b2f3d18d80c22138f392dedfbca91cbe37465e824a92e8",
+    "callbackRearmBlock": 59508710,
+    "guardianRearmTx": "0x6f390abce5ba7c0647a2cd5bd286960d00726d0843dbff731e5dd5f753049fba",
+    "guardianRearmBlock": 8481531,
+    "stateAfter": {
+      "reserves": {
+        "weth": 100.24040508994075,
+        "usdc": 300721.2152702702
+      },
+      "price": 3000.000000004469,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 899.7595949100593,
+        "usdc": 699278.7847297299,
+        "baseETH": 0.019975589689263582,
+        "lasnaLREACT": 5.376306799998861
+      },
+      "guardianLREACT": 4.839028,
+      "callbackETH": 0.009992673316996221
+    }
+  }
+}

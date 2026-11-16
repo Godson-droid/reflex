@@ -1,101 +1,93 @@
-import { useCallback, useEffect, useState } from 'react';
-import { connectWallet, hasInjectedWallet, readWalletState } from '../lib/chain';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import {
+  connectWallet,
+  disconnectWallet,
+  getWalletState,
+  hasInjectedWallet,
+  readWalletState,
+  subscribeWallet,
+  type WalletKind,
+} from '../lib/chain';
 
-export type WalletStatus = 'idle' | 'connecting' | 'connected' | 'no-wallet' | 'error';
+export type { WalletKind };
+
+export type WalletStatus = 'idle' | 'connecting' | 'connected' | 'error';
 
 export interface Wallet {
   status: WalletStatus;
   address: string | null;
   chainId: number | null;
+  /** Which path the current connection used, if any. */
+  kind: WalletKind | null;
   error: string | null;
-  connect: () => Promise<void>;
-  disconnect: () => void;
+  /** True when a browser wallet (extension or in-app browser) is present. */
+  hasInjected: boolean;
+  connect: (kind: WalletKind) => Promise<void>;
+  disconnect: () => Promise<void>;
 }
 
 /**
- * Real wallet state via window.ethereum. "Disconnect" resets the local UI
- * state — injected wallets can't be force-disconnected from the dApp side,
- * the user revokes the connection inside MetaMask itself.
+ * Wallet state for both connection paths. The adapter (lib/chain) owns the
+ * actual state and emits changes — account switches, chain switches and
+ * wallet-side disconnects included — this hook just mirrors it into React.
+ * Disconnect really ends a WalletConnect session; for injected wallets it
+ * resets the local UI state (the user revokes inside MetaMask itself).
  */
 export function useWallet(): Wallet {
   const [status, setStatus] = useState<WalletStatus>('idle');
   const [address, setAddress] = useState<string | null>(null);
   const [chainId, setChainId] = useState<number | null>(null);
+  const [kind, setKind] = useState<WalletKind | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [hasInjected] = useState<boolean>(() => hasInjectedWallet());
+  const connectingRef = useRef(false);
 
-  // Restore an already-authorized connection on load.
+  // Mirror adapter state: restore on load + follow live changes.
   useEffect(() => {
-    let cancelled = false;
-    readWalletState()
-      .then((state) => {
-        if (cancelled || !state.address) return;
-        setAddress(state.address);
-        setChainId(state.chainId);
+    const apply = () => {
+      const state = getWalletState();
+      setAddress(state.address);
+      setChainId(state.chainId);
+      setKind(state.kind);
+      if (state.address) {
         setStatus('connected');
-      })
-      .catch(() => undefined);
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  // Follow account / network changes made inside the wallet.
-  useEffect(() => {
-    if (!hasInjectedWallet()) return;
-    type Listener = (...args: never[]) => void;
-    const ethereum = window.ethereum as unknown as {
-      on(event: string, listener: Listener): void;
-      removeListener(event: string, listener: Listener): void;
-    };
-    const onAccounts = (accounts: string[]) => {
-      if (!accounts || accounts.length === 0) {
-        setAddress(null);
+      } else if (!connectingRef.current) {
         setStatus('idle');
-      } else {
-        setAddress(accounts[0]);
-        setStatus('connected');
       }
     };
-    const onChain = (hexChainId: string) => {
-      setChainId(parseInt(hexChainId, 16));
-    };
-    ethereum.on('accountsChanged', onAccounts as Listener);
-    ethereum.on('chainChanged', onChain as Listener);
-    return () => {
-      ethereum.removeListener('accountsChanged', onAccounts as Listener);
-      ethereum.removeListener('chainChanged', onChain as Listener);
-    };
+    apply();
+    const unsubscribe = subscribeWallet(apply);
+    readWalletState()
+      .then(apply)
+      .catch(() => undefined);
+    return unsubscribe;
   }, []);
 
-  const connect = useCallback(async () => {
-    if (!hasInjectedWallet()) {
-      setStatus('no-wallet');
-      setError('No wallet detected. Install MetaMask to connect on testnet.');
-      return;
-    }
+  const connect = useCallback(async (connectKind: WalletKind) => {
+    connectingRef.current = true;
     setStatus('connecting');
     setError(null);
     try {
-      const state = await connectWallet();
-      setAddress(state.address);
-      setChainId(state.chainId);
-      setStatus('connected');
+      await connectWallet(connectKind);
+      // The connected state flows back through subscribeWallet.
     } catch (err) {
-      const message =
-        err instanceof Error && err.message.includes('rejected')
-          ? 'Connection request rejected in the wallet.'
+      const raw = err instanceof Error ? err.message : String(err);
+      const message = /reject|closed|cancel|reset/i.test(raw)
+        ? 'Connection request rejected in the wallet.'
+        : connectKind === 'walletconnect'
+          ? 'Could not connect with WalletConnect. Check your connection and try again.'
           : 'Could not connect. Check your wallet and try again.';
       setError(message);
       setStatus('error');
+    } finally {
+      connectingRef.current = false;
     }
   }, []);
 
-  const disconnect = useCallback(() => {
-    setAddress(null);
-    setChainId(null);
-    setStatus('idle');
-    setError(null);
+  const disconnect = useCallback(async () => {
+    await disconnectWallet();
+    // The cleared state flows back through subscribeWallet.
   }, []);
 
-  return { status, address, chainId, error, connect, disconnect };
+  return { status, address, chainId, kind, error, hasInjected, connect, disconnect };
 }

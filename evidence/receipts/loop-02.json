@@ -1,0 +1,18 @@
+{
+  "n": 2,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "triggerPrice": 3427.9777,
+  "executedPrice": 3427.9777,
+  "amountInWETH": 10,
+  "amountOutUSDC": 30887.684,
+  "originTx": "0x8bdab6d3447de2ce89b8217c96d362c2d6ed0bd47f4e2d138de576e99796685a",
+  "originBlock": 59029831,
+  "reactiveTx": "0xa3966763ede1513e97e29440535603f75d26b4ee10c03012e4f36aab9a6a91b8",
+  "reactiveBlock": 8391374,
+  "callbackTx": "0x259cef4b7b45be065b058fea2a3778f0e5ed31e4bb5c41f5bc0d6897a88d1791",
+  "callbackBlock": 59029838,
+  "latencyBlocksBase": 7,
+  "triggerSwap": null,
+  "rearm": null
+}

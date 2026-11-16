@@ -1,0 +1,59 @@
+{
+  "n": 13,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "upgrade-sl-4",
+  "priceBefore": 2928.0923387783673,
+  "triggerPrice": 2250.0000068604786,
+  "executedPrice": 2250.0000068604786,
+  "amountInWETH": 10,
+  "amountOutUSDC": 20658.596966283105,
+  "originTx": "0xdc76c55774f8bab71523524311b2305b2828db06c957a023d3972469bda3d01b",
+  "originBlock": 59509774,
+  "reactiveTx": "0x3048d2dd3458e2dd5292ac4063e2ff7a73102224e1dcf32c2a359c05bd68a1ec",
+  "reactiveBlock": 8481723,
+  "callbackTx": "0x48a027466e0aa9b0317f51ab71b16c9dd1b38bd98a3647cd19f3e3d1236d7a69",
+  "callbackBlock": 59509782,
+  "latencyBlocksBase": 8,
+  "reconciliation": {
+    "predictedUsdc": 759413.2238078441,
+    "actualUsdc": 759413.223807844,
+    "usdcDiff": -1.1641532182693481e-10,
+    "predictedWeth": 873.8909456169442,
+    "actualWeth": 873.8909456169442,
+    "wethDiff": 0
+  },
+  "triggerSwap": {
+    "transferTx": "0xaab65964beab138500e9f6e358e813975538c1a918d4e6cc4eb98d4eeae84c76",
+    "transferBlock": 59509749,
+    "originTx": "0xdc76c55774f8bab71523524311b2305b2828db06c957a023d3972469bda3d01b",
+    "originBlock": 59509774,
+    "amountIn": 14.347331417309041,
+    "amountOut": 36722.34823845043,
+    "targetPrice": 2250,
+    "priceAfter": 2250.0000068604786
+  },
+  "rearm": {
+    "callbackRearmTx": "0xa4c4dda909e9e8d8f6d9a96aa83f2917340c666ffa74cc3a6a9fbfb91a07628f",
+    "callbackRearmBlock": 59509809,
+    "guardianRearmTx": "0xc94d25dfee5f2fd72817808088b1ae2e92923a60470ff97d9fe0295c736cae93",
+    "guardianRearmBlock": 8481734,
+    "stateAfter": {
+      "reserves": {
+        "weth": 126.10905438305575,
+        "usdc": 240586.77619215604
+      },
+      "price": 1907.767664813144,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 873.8909456169442,
+        "usdc": 759413.223807844,
+        "baseETH": 0.019969807364149265,
+        "lasnaLREACT": 5.350137199998861
+      },
+      "guardianLREACT": 4.627598,
+      "callbackETH": 0.009982065748866774
+    }
+  }
+}

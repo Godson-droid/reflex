@@ -1,0 +1,59 @@
+{
+  "n": 4,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "upgrade-tp-1",
+  "priceBefore": 1867.3909680707025,
+  "triggerPrice": 3599.999999994124,
+  "executedPrice": 3599.999999994124,
+  "amountInWETH": 10,
+  "amountOutUSDC": 32363.3101202208,
+  "originTx": "0x5d0fa80118540fb3c6cf2c34002fafbce738f541a00ec5eaff5a0fadbe2e9f72",
+  "originBlock": 59508512,
+  "reactiveTx": "0x6ea119d91091842acdc1bf320cb477a5edbfdb1e2519370c21c0fb038f7ea13a",
+  "reactiveBlock": 8481485,
+  "callbackTx": "0x6d1cfd0021d2f971d1cda00b9ac3c3b88dd42904d2c2c619e9881ece71966bec",
+  "callbackBlock": 59508519,
+  "latencyBlocksBase": 7,
+  "reconciliation": {
+    "predictedUsdc": 703180.5350884184,
+    "actualUsdc": 703180.5350884185,
+    "usdcDiff": 1.1641532182693481e-10,
+    "predictedWeth": 898.5603402687946,
+    "actualWeth": 898.5603402687946,
+    "wethDiff": 0
+  },
+  "triggerSwap": {
+    "transferTx": "0x06e384d6e566c83ab129178a4b1357f0057c5bab01fa69834f85c5f8090694a9",
+    "transferBlock": 59508487,
+    "originTx": "0x5d0fa80118540fb3c6cf2c34002fafbce738f541a00ec5eaff5a0fadbe2e9f72",
+    "originBlock": 59508512,
+    "amountIn": 92197.72725080699,
+    "amountOut": 35.46737357518178,
+    "targetPrice": 3600,
+    "priceAfter": 3599.9999999941247
+  },
+  "rearm": {
+    "callbackRearmTx": "0x25aba8fc02b150e9bef16bb1a84cfc7f393e706986a026066bcde69694b51f73",
+    "callbackRearmBlock": 59508527,
+    "guardianRearmTx": "0xfb6c1b9c51378a216b62f78bb143a82a7d890f0b3fba407060d6e207e22825ba",
+    "guardianRearmBlock": 8481497,
+    "stateAfter": {
+      "reserves": {
+        "weth": 101.43965973120544,
+        "usdc": 296819.4649115815
+      },
+      "price": 2926.0692090065463,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 898.5603402687946,
+        "usdc": 703180.5350884185,
+        "baseETH": 0.019976851735268135,
+        "lasnaLREACT": 5.379577999998861
+      },
+      "guardianLREACT": 4.8766937,
+      "callbackETH": 0.009993999177796222
+    }
+  }
+}

@@ -134,10 +134,60 @@ export interface CreateGuardianInput {
   amount: number;
 }
 
+/** The callback contract's stored record of its most recent execution. */
+export interface LastExecution {
+  /** 1 = stop-loss, 2 = take-profit (0 when nothing has executed yet). */
+  kind: number;
+  /** Price the guardian observed on Lasna when it fired (USDC per WETH). */
+  observedPrice: number;
+  /** Price re-derived on Base Sepolia at execution time (USDC per WETH). */
+  executedPrice: number;
+  amountIn: number;
+  amountOut: number;
+  /** Unix seconds; 0 when nothing has executed yet. */
+  timestamp: number;
+}
+
+/**
+ * Live snapshot used by the hero counter, the band gauge and the Loop
+ * Ledger's verification badge. Read in one pass from the guardian
+ * (Lasna), the callback (Base Sepolia) and the pair reserves.
+ *
+ * Note on counting: the callback stores only its LAST execution and the
+ * public Base RPC caps eth_getLogs at a 200 block window, so a total
+ * execution count cannot be derived on-chain in the browser. The count
+ * shown in the UI comes from the bundled verified evidence pack
+ * (src/data/evidence.ts); this snapshot is what verifies that pack —
+ * when lastExecution matches the pack's newest row, the ledger is live.
+ */
+export interface LiveLoopState {
+  /** Guardian GuardState: 0 Unconfigured, 1 Armed, 2 Triggered. */
+  guardianState: number;
+  /** Callback GuardStatus: 0 Armed, 1 Executed, 2 Disarmed. */
+  callbackStatus: number;
+  /** Watching = guardian Armed (1) and callback Armed (0). */
+  watching: boolean;
+  lastExecution: LastExecution;
+  /** Spot price from live pair reserves (USDC per WETH). */
+  price: number;
+  stopLoss: number;
+  takeProfit: number;
+  /** Protected amount configured on the callback (WETH). */
+  amount: number;
+  /** ISO timestamp of when this snapshot was read. */
+  fetchedAt: string;
+}
+
 export interface ChainAdapter {
   getMarket(): Promise<MarketData>;
   /** Re-read the market (live reserves) and return the fresh snapshot. */
   tickMarket(): Promise<MarketData>;
+  /**
+   * Live guardian + callback + price snapshot for the hero and the Loop
+   * Ledger. Rejects when either RPC is unreachable so callers can render
+   * an honest error state instead of stale numbers.
+   */
+  getLiveLoopState(): Promise<LiveLoopState>;
   getGuardians(): Promise<Guardian[]>;
   createGuardian(input: CreateGuardianInput): Promise<Guardian>;
   /**
@@ -166,12 +216,16 @@ const GUARDIAN_ABI = [
   'function sellToken0() view returns (bool)',
   'function stopLossPrice() view returns (uint256)',
   'function takeProfitPrice() view returns (uint256)',
+  'function lastPrice() view returns (uint256)',
   'function lastTriggerPrice() view returns (uint256)',
   'function lastTriggerKind() view returns (uint8)',
 ];
 const CALLBACK_ABI = [
   'function status() view returns (uint8)',
   'function amount() view returns (uint256)',
+  'function stopLossPrice() view returns (uint256)',
+  'function takeProfitPrice() view returns (uint256)',
+  'function lastExecution() view returns (uint8 kind, uint256 observedPrice, uint256 executedPrice, uint256 amountIn, uint256 amountOut, uint256 timestamp)',
 ];
 
 const baseProvider = new JsonRpcProvider(BASE_RPC);
@@ -382,6 +436,43 @@ export const chain: ChainAdapter = {
 
   async tickMarket() {
     return marketSnapshot();
+  },
+
+  async getLiveLoopState() {
+    const [gState, cStatus, cAmount, cStop, cTake, lastExec, price] = await Promise.all([
+      guardianContract.state(),
+      callbackContract.status(),
+      callbackContract.amount(),
+      callbackContract.stopLossPrice(),
+      callbackContract.takeProfitPrice(),
+      callbackContract.lastExecution(),
+      readLivePrice(),
+    ]);
+    const guardianState = Number(gState);
+    const callbackStatus = Number(cStatus);
+    // lastExecution() returns the Execution struct positionally:
+    // (kind, observedPrice, executedPrice, amountIn, amountOut, timestamp).
+    // Both tokens on this pair are 18-decimal mocks, so every amount and
+    // price un-scales by 1e18 (verified against the evidence pack).
+    const lastExecution: LastExecution = {
+      kind: Number(lastExec[0]),
+      observedPrice: fromWei(lastExec[1] as bigint),
+      executedPrice: fromWei(lastExec[2] as bigint),
+      amountIn: fromWei(lastExec[3] as bigint),
+      amountOut: fromWei(lastExec[4] as bigint),
+      timestamp: Number(lastExec[5]),
+    };
+    return {
+      guardianState,
+      callbackStatus,
+      watching: guardianState === 1 && callbackStatus === 0,
+      lastExecution,
+      price,
+      stopLoss: fromWei(cStop as bigint),
+      takeProfit: fromWei(cTake as bigint),
+      amount: fromWei(cAmount as bigint),
+      fetchedAt: new Date().toISOString(),
+    };
   },
 
   async getGuardians() {

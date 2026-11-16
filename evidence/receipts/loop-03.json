@@ -1,0 +1,55 @@
+{
+  "n": 3,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "upgrade-sl-1",
+  "priceBefore": 2859.0884823771007,
+  "triggerPrice": 2200.0000029357398,
+  "executedPrice": 2200.0000029357398,
+  "amountInWETH": 10,
+  "amountOutUSDC": 20210.42583626519,
+  "originTx": "0xe65f87821b82cd5c19d53143c306f5f1093ed342c94ba89d7802346c59133f1d",
+  "originBlock": 59507658,
+  "reactiveTx": "0xaba9c4ad2e24471a9d71d52978f7704ec872f7049206f6bf17e1b6e3714cb4bc",
+  "reactiveBlock": 8481323,
+  "callbackTx": "0x912d1deb444ea9dbd5ad89085c6b53dab9516c543984468d4f6aedf1c7056b1c",
+  "callbackBlock": 59507665,
+  "latencyBlocksBase": 7,
+  "reconciliation": {
+    "predictedUsdc": 763014.9522190046,
+    "actualUsdc": 763014.9522190046,
+    "usdcDiff": 0,
+    "predictedWeth": 873.0929666936128,
+    "actualWeth": 873.0929666936128,
+    "wethDiff": 0
+  },
+  "triggerSwap": {
+    "originTx": "0xe65f87821b82cd5c19d53143c306f5f1093ed342c94ba89d7802346c59133f1d",
+    "originBlock": 59507658,
+    "amountIn": 14.375355575540338,
+    "amountOut": 35951.66526180449
+  },
+  "rearm": {
+    "callbackRearmTx": "0xa007e90d9f4eb40666ad542d973fe06e81ccfd8e87b246ee1ff3a72ab3dd39d1",
+    "callbackRearmBlock": 59508335,
+    "guardianRearmTx": "0x323dc019747509a6793cd316f4ce6e7aa496760bf3038e96c75b2ed93b4d7eba",
+    "guardianRearmBlock": 8481456,
+    "stateAfter": {
+      "reserves": {
+        "weth": 126.90703330638722,
+        "usdc": 236985.04778099532
+      },
+      "price": 1867.3909680707025,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 873.0929666936128,
+        "usdc": 763014.9522190046,
+        "baseETH": 0.019977574525270787,
+        "lasnaLREACT": 5.382849199998861
+      },
+      "guardianLREACT": 4.9031236,
+      "callbackETH": 0.009995325705933847
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "n": 15,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "upgrade-sl-5",
+  "priceBefore": 2855.0547237185856,
+  "triggerPrice": 2449.999998913319,
+  "executedPrice": 2449.999998913319,
+  "amountInWETH": 10,
+  "amountOutUSDC": 22419.220969725462,
+  "originTx": "0xbb9715c51bede378e8b104ccd9561bbff2c53bee85fe856d0e84116e7e49f528",
+  "originBlock": 59510013,
+  "reactiveTx": "0xe282f9c189db2d65cdc2790b245a12eb0aac09227d95d3a3b6ed4f1994cb4d42",
+  "reactiveBlock": 8481768,
+  "callbackTx": "0xe3530e63fdfa352ec00adb747e91fc808f585d6f3849d15ef9d5018d84fdf4d3",
+  "callbackBlock": 59510021,
+  "latencyBlocksBase": 8,
+  "reconciliation": {
+    "predictedUsdc": 749600.5966178441,
+    "actualUsdc": 749600.596617844,
+    "usdcDiff": -1.1641532182693481e-10,
+    "predictedWeth": 878.645459398821,
+    "actualWeth": 878.6454593988211,
+    "wethDiff": 1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0x2d2a9413ebc3ea9a0b823be73822327890dd130fa4e45d1b330eaba6385b0a73",
+    "transferBlock": 59509989,
+    "originTx": "0xbb9715c51bede378e8b104ccd9561bbff2c53bee85fe856d0e84116e7e49f528",
+    "originBlock": 59510013,
+    "amountIn": 8.212503558534854,
+    "amountOut": 21657.535720676835,
+    "targetPrice": 2450,
+    "priceAfter": 2449.999998913319
+  },
+  "rearm": {
+    "callbackRearmTx": "0x31f3265666dfad0f6235dbc83dee93993d214e4622330f8c91c5e361d5ebd010",
+    "callbackRearmBlock": 59510044,
+    "guardianRearmTx": "0xceb83bd9de3955345c2372f14e8127dcd90b260c67263aeae367c73a33297c7a",
+    "guardianRearmBlock": 8481782,
+    "stateAfter": {
+      "reserves": {
+        "weth": 121.35454060117893,
+        "usdc": 250399.40338215604
+      },
+      "price": 2063.370699948276,
+      "guardianState": 2,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 878.6454593988211,
+        "usdc": 749600.596617844,
+        "baseETH": 0.01996836107453343,
+        "lasnaLREACT": 5.346865999998861
+      },
+      "guardianLREACT": 4.5747405,
+      "callbackETH": 0.009979413875466773
+    }
+  }
+}
