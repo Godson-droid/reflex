@@ -1,0 +1,59 @@
+{
+  "n": 46,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "batch4-tp-1",
+  "priceBefore": 2028.690091470019,
+  "triggerPrice": 3500.00000000629,
+  "executedPrice": 3500.00000000629,
+  "amountInWETH": 10,
+  "amountOutUSDC": 31560.22882804166,
+  "originTx": "0x6e96d445e693e8d0bff1ef6feb1f8fdc7777d5d7ecdf9b81c1171aa752062750",
+  "originBlock": 59520027,
+  "reactiveTx": "0x22c0f9f6626cdb189d7ca72de4442eae8ac0418bc38da6e30dfad8ddeb864dfb",
+  "reactiveBlock": 8483608,
+  "callbackTx": "0xb9564224561871b097a7714884688887ac510cb384e78d0a10aebfe4b21b66e7",
+  "callbackBlock": 59520034,
+  "latencyBlocksBase": 7,
+  "reconciliation": {
+    "predictedUsdc": 701314.4253988819,
+    "actualUsdc": 701314.4253988818,
+    "usdcDiff": -1.1641532182693481e-10,
+    "predictedWeth": 895.6440561632667,
+    "actualWeth": 895.6440561632668,
+    "wethDiff": 1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0xca810f564f2383ed11f52a39d1c0a3a08fb091b2627ffd16806549c263ef7202",
+    "transferBlock": 59520003,
+    "originTx": "0x6e96d445e693e8d0bff1ef6feb1f8fdc7777d5d7ecdf9b81c1171aa752062750",
+    "originBlock": 59520027,
+    "amountIn": 78909.38201120353,
+    "amountOut": 29.535044971633337,
+    "targetPrice": 3500,
+    "priceAfter": 3500.0000000062905
+  },
+  "rearm": {
+    "callbackRearmTx": "0x454f9b419db0edadd6ba599281fe7f85b6cd5303ddbe466b0c4b71b633183a14",
+    "callbackRearmBlock": 59520063,
+    "guardianRearmTx": "0x889b044984758a6b3fbd9558fe6999fa246c0810ef59068641179a7195c676a7",
+    "guardianRearmBlock": 8483624,
+    "stateAfter": {
+      "reserves": {
+        "weth": 104.35594383673323,
+        "usdc": 298685.57460111816
+      },
+      "price": 2862.180759616502,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 895.6440561632668,
+        "usdc": 701314.4253988818,
+        "baseETH": 0.019946040099045964,
+        "lasnaLREACT": 5.242732799998834
+      },
+      "guardianLREACT": 3.7554481,
+      "callbackETH": 0.00993830763832594
+    }
+  }
+}

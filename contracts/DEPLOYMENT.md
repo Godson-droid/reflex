@@ -147,3 +147,17 @@ After loop 15 the deployment is re-armed and Watching at 2,063.37, reserves
 121.35 WETH / 250,399.40 USDC; owner 878.65 WETH / 749,600.60 USDC /
 0.01997 Base Sepolia ETH / 5.3436 lREACT; guardian holds 4.5747 lREACT;
 callback holds 0.009979 ETH.
+
+## Upgrade runs — batches 2 to 4 (2026-11-16)
+
+Loops 16 to 61 were executed in three further batches (batch 2: loops 17 to
+30 plus loop 16 fired with the published one command runner; batch 3: loops
+31 to 45; batch 4: loops 46 to 61), alternating stop-loss and take-profit
+with the same reconciliation discipline. Final totals across all 61 loops:
+31 stop-loss, 30 take-profit. Guardian lREACT went from 4.5747 after batch 1
+to 3.3590 after loop 61 (about 0.027 lREACT per reactive transaction, no
+top-up needed). After loop 61 the deployment is re-armed and Watching at
+2,030.82, reserves 124.64 WETH / 253,113.78 USDC; owner 875.36 WETH /
+746,886.22 USDC / 0.01994 Base Sepolia ETH / 5.1937 lREACT; callback holds
+0.009918 ETH. Full per-loop evidence is in the submission repo evidence
+pack, which is regenerated from the same evidence.json after every batch.

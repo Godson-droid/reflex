@@ -1,0 +1,59 @@
+{
+  "n": 48,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "batch4-tp-2",
+  "priceBefore": 1872.6959395101185,
+  "triggerPrice": 3599.999999997776,
+  "executedPrice": 3599.999999997776,
+  "amountInWETH": 10,
+  "amountOutUSDC": 32420.71335932104,
+  "originTx": "0x09283fc53c2c42b6713756507730ce824d5af17353c094fa93f1e5b08d770555",
+  "originBlock": 59520234,
+  "reactiveTx": "0x26e77fc1ac50a698c96d1d2d6f56e5e18b15443da74ec465944ef4f84e569021",
+  "reactiveBlock": 8483647,
+  "callbackTx": "0xec1e496caee0da0e61ad19ffe77610c346613a0b18c32a8683e43dbfe4d4ea78",
+  "callbackBlock": 59520240,
+  "latencyBlocksBase": 6,
+  "reconciliation": {
+    "predictedUsdc": 697200.8469665346,
+    "actualUsdc": 697200.8469665347,
+    "usdcDiff": 1.1641532182693481e-10,
+    "predictedWeth": 896.8833704463908,
+    "actualWeth": 896.8833704463907,
+    "wethDiff": -1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0xa9a8be36b174db8080bb094fe3a781021972910cd4f642f648926a5ca0c3121d",
+    "transferBlock": 59520230,
+    "originTx": "0x09283fc53c2c42b6713756507730ce824d5af17353c094fa93f1e5b08d770555",
+    "originBlock": 59520234,
+    "amountIn": 93545.67914953172,
+    "amountOut": 35.934852934505976,
+    "targetPrice": 3600,
+    "priceAfter": 3599.999999997776
+  },
+  "rearm": {
+    "callbackRearmTx": "0x187b706a33b091021adf60f8841603baeb958738034e54e71d5e2de0fec63278",
+    "callbackRearmBlock": 59520260,
+    "guardianRearmTx": "0x706500408a1bfc57161d7b0e5226a3b2c16047c27aa595d28982c2a0d264de78",
+    "guardianRearmBlock": 8483661,
+    "stateAfter": {
+      "reserves": {
+        "weth": 103.11662955360929,
+        "usdc": 302799.15303346526
+      },
+      "price": 2936.472558735476,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 896.8833704463907,
+        "usdc": 697200.8469665347,
+        "baseETH": 0.019944594591034766,
+        "lasnaLREACT": 5.236190399998834
+      },
+      "guardianLREACT": 3.7025906,
+      "callbackETH": 0.009935655764925938
+    }
+  }
+}

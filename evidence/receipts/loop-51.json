@@ -1,0 +1,59 @@
+{
+  "n": 51,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "batch4-sl-3",
+  "priceBefore": 2900.034269562338,
+  "triggerPrice": 2300.0000109779635,
+  "executedPrice": 2300.0000109779635,
+  "amountInWETH": 10,
+  "amountOutUSDC": 21125.04624237854,
+  "originTx": "0x7a392f2511f73f4d8c1206f2640f4a49ad9ea2fc0e091994d1bf91334d113155",
+  "originBlock": 59520588,
+  "reactiveTx": "0x3aca15ba62998b43f9ae44e839c45e27b970342eb04a468cb4141f6578c5d28c",
+  "reactiveBlock": 8483713,
+  "callbackTx": "0x1d76fe58cf04efa2a123204d6a3581352d79825d80fa2bbb14c8d333f0b1b30b",
+  "callbackBlock": 59520593,
+  "latencyBlocksBase": 5,
+  "reconciliation": {
+    "predictedUsdc": 752890.9310035553,
+    "actualUsdc": 752890.9310035553,
+    "usdcDiff": 0,
+    "predictedWeth": 873.3764721919416,
+    "actualWeth": 873.3764721919415,
+    "wethDiff": -1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0xcbb5ab8bbedab4ca6011e16c15d74db1e4ee473b8b6f1600b3f7fea30a191d68",
+    "transferBlock": 59520563,
+    "originTx": "0x7a392f2511f73f4d8c1206f2640f4a49ad9ea2fc0e091994d1bf91334d113155",
+    "originBlock": 59520588,
+    "amountIn": 12.780551659600901,
+    "amountOut": 32914.074245048105,
+    "targetPrice": 2300,
+    "priceAfter": 2300.000010977964
+  },
+  "rearm": {
+    "callbackRearmTx": "0xa9affa9dab72681cb8cf24304b2e7e0b7003fde9ffeb21f19b191358ed215b9a",
+    "callbackRearmBlock": 59520623,
+    "guardianRearmTx": "0x89f7d10fd90c569fa251abe1069a26d7b62aec754d6d7fb085d9833ef0565393",
+    "guardianRearmBlock": 8483724,
+    "stateAfter": {
+      "reserves": {
+        "weth": 126.62352780805844,
+        "usdc": 247109.06899644475
+      },
+      "price": 1951.5257020087422,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 873.3764721919415,
+        "usdc": 752890.9310035553,
+        "baseETH": 0.019942426081311006,
+        "lasnaLREACT": 5.2263767999988335
+      },
+      "guardianLREACT": 3.6233055,
+      "callbackETH": 0.009931677303109603
+    }
+  }
+}

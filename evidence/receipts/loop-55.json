@@ -1,0 +1,59 @@
+{
+  "n": 55,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "batch4-sl-5",
+  "priceBefore": 2863.9461025401456,
+  "triggerPrice": 2349.9999920855107,
+  "executedPrice": 2349.9999920855107,
+  "amountInWETH": 10,
+  "amountOutUSDC": 21568.600464206454,
+  "originTx": "0x2e6b15559abfe454d4c7313b9fc8cb7150d846254940feea91d9d4a0aad6894c",
+  "originBlock": 59520999,
+  "reactiveTx": "0x802dd26995dc71c993e5490c1577a92c1cced5842bad47058eca5b0d894f4b43",
+  "reactiveBlock": 8483790,
+  "callbackTx": "0x35abfb3cab7ec9bc8ec45ddbac5b26e282f76ab2d5199362b7918f9b9bcd931b",
+  "callbackBlock": 59521006,
+  "latencyBlocksBase": 7,
+  "reconciliation": {
+    "predictedUsdc": 750010.9292508411,
+    "actualUsdc": 750010.9292508411,
+    "usdcDiff": 0,
+    "predictedWeth": 874.4435437753465,
+    "actualWeth": 874.4435437753466,
+    "wethDiff": 1.1368683772161603e-13
+  },
+  "triggerSwap": {
+    "transferTx": "0xc4fc0593fdeb2ca15da6015af9352d6fa0d5f5b3e5ae53f06365dba8c21e8ebd",
+    "transferBlock": 59520973,
+    "originTx": "0x2e6b15559abfe454d4c7313b9fc8cb7150d846254940feea91d9d4a0aad6894c",
+    "originBlock": 59520999,
+    "amountIn": 10.895597659626626,
+    "amountOut": 28185.38676244869,
+    "targetPrice": 2350,
+    "priceAfter": 2349.9999920855107
+  },
+  "rearm": {
+    "callbackRearmTx": "0x9f6b504921e3370c57af5961e6bf28f4351d373773aef66dda2e3bd69c01c89c",
+    "callbackRearmBlock": 59521035,
+    "guardianRearmTx": "0x5b1d97d2ca3691d137e6db05b9e54e73ac70022a0bdc57b591dbdc22458ce6d9",
+    "guardianRearmBlock": 8483806,
+    "stateAfter": {
+      "reserves": {
+        "weth": 125.55645622465346,
+        "usdc": 249989.07074915883
+      },
+      "price": 1991.0491126148286,
+      "guardianState": 1,
+      "callbackStatus": 0,
+      "owner": {
+        "weth": 874.4435437753466,
+        "usdc": 750010.9292508411,
+        "baseETH": 0.01993953475063136,
+        "lasnaLREACT": 5.213291999998834
+      },
+      "guardianLREACT": 3.5175905,
+      "callbackETH": 0.00992637256722475
+    }
+  }
+}
