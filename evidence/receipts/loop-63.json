@@ -1,0 +1,28 @@
+{
+  "n": 63,
+  "kind": "stop-loss",
+  "kindCode": 1,
+  "label": "runner-fix-test",
+  "priceBefore": 2865.75,
+  "triggerPrice": 2199.999999445793,
+  "executedPrice": 2199.999999445793,
+  "amountInWETH": 10,
+  "amountOutUSDC": 20249.24492846381,
+  "originTx": "0x00ea6f3018e248ded6fe61536a7b9135eb09d7c2791c8b815d6609a470fb86f2",
+  "originBlock": 59531032,
+  "reactiveTx": "0x1c02b6feec9221c0e21d5d237b2e81277185ad19fd7816e74975027096056b97",
+  "reactiveBlock": 8485636,
+  "callbackTx": "0x655d0ce3904cadf683fd9814b9ffa5569a7e59b7e3578ec8b775a515308d67d2",
+  "callbackBlock": 59531042,
+  "latencyBlocksBase": 10,
+  "triggerSwap": {
+    "originTx": "0x00ea6f3018e248ded6fe61536a7b9135eb09d7c2791c8b815d6609a470fb86f2",
+    "originBlock": 59531032,
+    "amountIn": 14.857124,
+    "amountOut": 37199.818583
+  },
+  "rearm": {
+    "callbackRearmTx": "0x64be7f60d7aa7c4ca6bca13fcc89345590ad86640994786c9cc9073b94efeb8e",
+    "guardianRearmTx": "0x377d65fa3b9f3f4f379fecba7b8ed9b3e839a3719239ec61cc982d7ed2f27d46"
+  }
+}

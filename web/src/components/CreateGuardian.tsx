@@ -196,7 +196,7 @@ export function CreateGuardian({
       <p className="mt-3 text-center text-[12px] leading-relaxed text-mist-500">
         Arming registers your thresholds with the Reflex contract on Lasna.
         <br />
-        It can react in ~1 block. It never sleeps, and neither do the markets.
+        It reacts on its own, in blocks, not bot polling cycles. It never sleeps, and neither do the markets.
       </p>
     </Card>
   );

@@ -18,6 +18,13 @@
 #   4. Re-arms both contracts and prints origin / reactive / callback hashes.
 #
 # Requirements: foundry (cast) on PATH, python3. Testnet only.
+#
+# Wallet: the runner fires from the DEPLOYER wallet, so it needs a local
+# .env in this directory holding PRIVATE_KEY and WALLET_ADDRESS for the
+# deployment in deployments.env (the key is never committed; the published
+# repo intentionally does not contain it). Point deployments.env and .env
+# at your own deployment to run it against yours. Verifying any published
+# loop needs no key at all: every hash is on the public explorers.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 export PATH="$HOME/.foundry/bin:$PATH"

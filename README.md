@@ -1,10 +1,10 @@
 # Reflex — a stop-loss & take-profit guardian that reacts so you don't have to
 
-## Loop evidence — 61 executed loops on testnet, both directions
+## Loop evidence — 64 executed loops on testnet, both directions
 
-Reflex has executed its full reactive loop **61 times** on Base Sepolia +
-Reactive Lasna: **31 stop-loss** and **30 take-profit** executions, every one a
-10 WETH protective sale, 1,614,592.49 USDC of protective sales in total, with
+Reflex has executed its full reactive loop **64 times** on Base Sepolia +
+Reactive Lasna: **32 stop-loss** and **32 take-profit** executions, every one a
+10 WETH protective sale, 1,698,003.97 USDC of protective sales in total, with
 latencies of 5 to 17 Base blocks between the origin swap and the
 callback execution. Every loop's balances were reconciled to the token: the
 owner's USDC and WETH balances after each execution match the trigger swap
@@ -14,7 +14,8 @@ so far). The batch includes one single-move crash of 37 percent (2,890.34 to
 1,820.00, loop 9), an in-band negative proof (a move to 2,859.09 that the
 guardian priced and correctly ignored), and a documented recovery-abort
 attempt (see [evidence/abort-attempt](evidence/receipts/abort-attempt.json)).
-Full data: [evidence/LOOPS.md](evidence/LOOPS.md),
+Row amounts below are rounded to cents; the headline total is computed from
+the unrounded on-chain values. Full data: [evidence/LOOPS.md](evidence/LOOPS.md),
 [evidence/evidence.json](evidence/evidence.json), and one receipt file per
 loop in [evidence/receipts/](evidence/receipts/).
 
@@ -81,6 +82,9 @@ loop in [evidence/receipts/](evidence/receipts/).
 | 59 | stop-loss | 2,200.00 | 2,200.00 | 10 WETH | 20,246.68 | 5 | [0x45f6e4a5…](https://sepolia.basescan.org/tx/0x45f6e4a5970011f519495467b7c600e5215cbb8fe59d7a7cafc58a7fd4d67007) | [0x5f9a9864…](https://lasna.reactscan.net/tx/0x5f9a986492420eb08b0aa5404a8272e51066ecbae9ed13b19aa0d4c4512347a5) | [0x835a3c95…](https://sepolia.basescan.org/tx/0x835a3c95e380372ea93a2159e9554c464d6c1b85483c2693132fb31a3afc2bc3) |
 | 60 | take-profit | 3,650.00 | 3,650.00 | 10 WETH | 32,864.59 | 9 | [0x6edb558a…](https://sepolia.basescan.org/tx/0x6edb558a5dec7cdc54e6aadb0c11eace75b82df48749341d9e2faf66a35efd28) | [0xb23474eb…](https://lasna.reactscan.net/tx/0xb23474eb1e7b617b448f0784f4aad5e47c4decf0e3a8058c202d0d4332f8f54a) | [0xf5f3bb33…](https://sepolia.basescan.org/tx/0xf5f3bb339c63adc85ecf954c91f529c4262a1af25a834bb8b9c8dd927bd1170d) |
 | 61 | stop-loss | 2,400.00 | 2,400.00 | 10 WETH | 22,013.47 | 7 | [0xc1552694…](https://sepolia.basescan.org/tx/0xc1552694658f8484ef066ff3f0ddca7c699c5faf19a4096f7ff87be60ed8d970) | [0xf0748cb6…](https://lasna.reactscan.net/tx/0xf0748cb6636e7386e0447fa5449d295bf02f4f60d6c68d1289f312108b6bd24b) | [0x0d997044…](https://sepolia.basescan.org/tx/0x0d9970442e275d2758ffbe424777823f0a7aec4a6fef03d12826b005ecbd6d1f) |
+| 62 | take-profit | 3,500.00 | 3,500.00 | 10 WETH | 31,579.85 | 9 | [0xa534a9f9…](https://sepolia.basescan.org/tx/0xa534a9f9d3effb9b372c830577fa2dfc256bee5e7da33190dc999bd601405f86) | [0x22612c21…](https://lasna.reactscan.net/tx/0x22612c21fcc028ff0160afaf1d3c8efbec30afd4446ad412296dcb32a07a8c44) | [0x7102461f…](https://sepolia.basescan.org/tx/0x7102461fd948737fab73db90efc9eda1b504725ffbbeac7613a9081a44f9e30f) |
+| 63 | stop-loss | 2,200.00 | 2,200.00 | 10 WETH | 20,249.24 | 10 | [0x00ea6f30…](https://sepolia.basescan.org/tx/0x00ea6f3018e248ded6fe61536a7b9135eb09d7c2791c8b815d6609a470fb86f2) | [0x1c02b6fe…](https://lasna.reactscan.net/tx/0x1c02b6feec9221c0e21d5d237b2e81277185ad19fd7816e74975027096056b97) | [0x655d0ce3…](https://sepolia.basescan.org/tx/0x655d0ce3904cadf683fd9814b9ffa5569a7e59b7e3578ec8b775a515308d67d2) |
+| 64 | take-profit | 3,500.00 | 3,500.00 | 10 WETH | 31,582.39 | 7 | [0xa086c89c…](https://sepolia.basescan.org/tx/0xa086c89c6684e22f5500cad2070bc3319a46b5848c7b731a01267873d94e515c) | [0x5b1797c3…](https://lasna.reactscan.net/tx/0x5b1797c3adf8e65e2f1fca9505c464403d45371532f9a34df4de025651a7cd48) | [0x79e584dc…](https://sepolia.basescan.org/tx/0x79e584dc51a461b8b00315f4181db3de09bd13388816efd57cb0fa411e11480b) |
 
 ## Watches any V2-style pair — the Sync signal is the interface
 
@@ -108,7 +112,7 @@ reaction is a property of the network, not of your infrastructure.
 > Built for the **Reactive Omni Buildathon** (DoraHacks), track
 > **Every Second Counts**.
 >
-> **Live on testnet, loop proven on-chain 61 times** (see the evidence table
+> **Live on testnet, loop proven on-chain 64 times** (see the evidence table
 > above): stop-loss and take-profit both fire end to end, and the deployment
 > is currently re-armed and **watching**.
 
@@ -286,8 +290,8 @@ npm run dev      # or: npm run build && npm run preview
 
 The UI reads the live deployment: `CONTRACTS` in `web/src/lib/chain.ts` carries
 the addresses above, and price plus guardian/callback state are read directly
-from the contracts. The two recorded loop runs are presented with their real
-transaction hashes.
+from the contracts. Every recorded loop run is presented in the Loop Ledger
+with its real transaction hashes.
 
 ## Deployment runbook (testnet)
 

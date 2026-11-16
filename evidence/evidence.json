@@ -42,34 +42,36 @@
       "kind": "stop-loss",
       "kindCode": 1,
       "source": "original DEPLOYMENT.md run 1",
-      "triggerPrice": 2084.3755,
-      "executedPrice": 2084.3755,
+      "triggerPrice": 2084.3755210938803,
+      "executedPrice": 2084.3755210938803,
       "amountInWETH": 10,
-      "amountOutUSDC": 19187.096,
+      "amountOutUSDC": 19187.096048601357,
       "originTx": "0x790b838a0f612a4bf1f1cee07e07da3c90b91662d3298e638b426bc02fa462db",
       "originBlock": 59029446,
       "reactiveTx": "0x6b8c818cf5bcab84d1baf0b5a6c6d3663eb88d76f2d0b08c1171b68b2c0b1e0f",
       "reactiveBlock": 8391301,
       "callbackTx": "0xec6a18cf3f7eadf1538dd6f97fca69af09a5f2812c676bcfc55d8fba13d5efa7",
       "callbackBlock": 59029451,
-      "latencyBlocksBase": 5
+      "latencyBlocksBase": 5,
+      "precisionNote": "Values replaced with the exact Executed event integers (QA defect D7); earlier record carried the rounded DEPLOYMENT.md figures."
     },
     {
       "n": 2,
       "kind": "take-profit",
       "kindCode": 2,
       "source": "original DEPLOYMENT.md run 2",
-      "triggerPrice": 3427.9777,
-      "executedPrice": 3427.9777,
+      "triggerPrice": 3427.9776728501097,
+      "executedPrice": 3427.9776728501097,
       "amountInWETH": 10,
-      "amountOutUSDC": 30887.684,
+      "amountOutUSDC": 30887.683590145745,
       "originTx": "0x8bdab6d3447de2ce89b8217c96d362c2d6ed0bd47f4e2d138de576e99796685a",
       "originBlock": 59029831,
       "reactiveTx": "0xa3966763ede1513e97e29440535603f75d26b4ee10c03012e4f36aab9a6a91b8",
       "reactiveBlock": 8391374,
       "callbackTx": "0x259cef4b7b45be065b058fea2a3778f0e5ed31e4bb5c41f5bc0d6897a88d1791",
       "callbackBlock": 59029838,
-      "latencyBlocksBase": 7
+      "latencyBlocksBase": 7,
+      "precisionNote": "Values replaced with the exact Executed event integers (QA defect D7); earlier record carried the rounded DEPLOYMENT.md figures."
     },
     {
       "n": 3,
@@ -6532,6 +6534,195 @@
         "guardianLREACT": 3.359018,
         "callbackETH": 0.00991841517900795
       }
+    },
+    {
+      "n": 62,
+      "kind": "take-profit",
+      "kindCode": 2,
+      "label": "qa-runner-test",
+      "viaRunner": true,
+      "recoveredRecord": true,
+      "priceBefore": 2030.8182115023858,
+      "triggerPrice": 3500.000000004703,
+      "executedPrice": 3500.000000004703,
+      "amountInWETH": 10,
+      "amountOutUSDC": 31579.84767489652,
+      "triggerSwap": {
+        "originTx": "0xa534a9f9d3effb9b372c830577fa2dfc256bee5e7da33190dc999bd601405f86",
+        "originBlock": 59529780,
+        "amountIn": 79292.898226,
+        "amountOut": 29.663019
+      },
+      "originTx": "0xa534a9f9d3effb9b372c830577fa2dfc256bee5e7da33190dc999bd601405f86",
+      "originBlock": 59529780,
+      "reactiveTx": "0x22612c21fcc028ff0160afaf1d3c8efbec30afd4446ad412296dcb32a07a8c44",
+      "reactiveBlock": 8485403,
+      "callbackTx": "0x7102461fd948737fab73db90efc9eda1b504725ffbbeac7613a9081a44f9e30f",
+      "callbackBlock": 59529789,
+      "latencyBlocksBase": 9,
+      "balancesBefore": {
+        "note": "After batch 4 (61 total loops), deployment re-armed and Watching",
+        "price": 2030.8182115023858,
+        "reserves": {
+          "weth": 124.63635706385666,
+          "usdc": 253113.78374059414
+        },
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 875.3636429361434,
+          "usdc": 746886.2162594058,
+          "baseETH": 0.019935197528555004,
+          "lasnaLREACT": 5.193664799998834
+        },
+        "guardianLREACT": 3.359018,
+        "callbackETH": 0.00991841517900795
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 104.9733377046067,
+          "usdc": 300826.8342916736
+        },
+        "price": 2865.745158434378,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 895.0266622953933,
+          "usdc": 699173.1657083264,
+          "baseETH": 0.019934584305038854,
+          "lasnaLREACT": 5.190938799998807
+        },
+        "guardianLREACT": 3.3325881,
+        "callbackETH": 0.00991708916640795
+      },
+      "note": "Fired by the independent QA agent running script/run-loop.sh exactly as a judge would (QA-REPORT.md item 4), then folded into the pack. Trigger amounts are the runner printed values (6dp), so reconciliation carries dust at the 1e-6 level."
+    },
+    {
+      "n": 63,
+      "kind": "stop-loss",
+      "kindCode": 1,
+      "label": "runner-fix-test",
+      "viaRunner": true,
+      "recoveredRecord": true,
+      "priceBefore": 2865.75,
+      "triggerPrice": 2199.999999445793,
+      "executedPrice": 2199.999999445793,
+      "amountInWETH": 10,
+      "amountOutUSDC": 20249.24492846381,
+      "triggerSwap": {
+        "originTx": "0x00ea6f3018e248ded6fe61536a7b9135eb09d7c2791c8b815d6609a470fb86f2",
+        "originBlock": 59531032,
+        "amountIn": 14.857124,
+        "amountOut": 37199.818583
+      },
+      "originTx": "0x00ea6f3018e248ded6fe61536a7b9135eb09d7c2791c8b815d6609a470fb86f2",
+      "originBlock": 59531032,
+      "reactiveTx": "0x1c02b6feec9221c0e21d5d237b2e81277185ad19fd7816e74975027096056b97",
+      "reactiveBlock": 8485636,
+      "callbackTx": "0x655d0ce3904cadf683fd9814b9ffa5569a7e59b7e3578ec8b775a515308d67d2",
+      "callbackBlock": 59531042,
+      "latencyBlocksBase": 10,
+      "balancesBefore": {
+        "note": "After loop 62 (QA runner loop), deployment re-armed and Watching",
+        "reserves": {
+          "weth": 104.9733377046067,
+          "usdc": 300826.8342916736
+        },
+        "price": 2865.745158434378,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 895.0266622953933,
+          "usdc": 699173.1657083264,
+          "baseETH": 0.019934584305038854,
+          "lasnaLREACT": 5.190938799998807
+        },
+        "guardianLREACT": 3.3325881,
+        "callbackETH": 0.00991708916640795
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 129.8304619874911,
+          "usdc": 243377.7707799077
+        },
+        "price": 1874.581412206302,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 870.1695380125088,
+          "usdc": 756622.2292200923,
+          "baseETH": 0.019933978348664932,
+          "lasnaLREACT": 5.188212799998779
+        },
+        "guardianLREACT": 3.3061605,
+        "callbackETH": 0.00991576330560795
+      },
+      "rearm": {
+        "callbackRearmTx": "0x64be7f60d7aa7c4ca6bca13fcc89345590ad86640994786c9cc9073b94efeb8e",
+        "guardianRearmTx": "0x377d65fa3b9f3f4f379fecba7b8ed9b3e839a3719239ec61cc982d7ed2f27d46"
+      },
+      "note": "Fired while re-testing the fixed runner (QA defect D3): the runner printed origin and reactive hashes, then hit a Base RPC 403 on eth_getLogs (missing User Agent, since fixed in loop.py) before printing the callback hash and re-arming. The loop executed fully on chain; the callback hash was recovered from the Executed event and both contracts were re-armed by cast, all recorded here."
+    },
+    {
+      "n": 64,
+      "kind": "take-profit",
+      "kindCode": 2,
+      "label": "runner-fix-proof",
+      "viaRunner": true,
+      "priceBefore": 1874.581412206302,
+      "triggerPrice": 3500.0,
+      "executedPrice": 3500.0,
+      "amountInWETH": 10,
+      "amountOutUSDC": 31582.388912,
+      "triggerSwap": {
+        "originTx": "0xa086c89c6684e22f5500cad2070bc3319a46b5848c7b731a01267873d94e515c",
+        "originBlock": 59531335,
+        "amountIn": 89310.683125,
+        "amountOut": 34.776618
+      },
+      "originTx": "0xa086c89c6684e22f5500cad2070bc3319a46b5848c7b731a01267873d94e515c",
+      "originBlock": 59531335,
+      "reactiveTx": "0x5b1797c3adf8e65e2f1fca9505c464403d45371532f9a34df4de025651a7cd48",
+      "reactiveBlock": 8485691,
+      "callbackTx": "0x79e584dc51a461b8b00315f4181db3de09bd13388816efd57cb0fa411e11480b",
+      "callbackBlock": 59531342,
+      "latencyBlocksBase": 7,
+      "balancesBefore": {
+        "note": "After loop 63 (runner fix test), deployment re-armed and Watching",
+        "reserves": {
+          "weth": 129.8304619874911,
+          "usdc": 243377.7707799077
+        },
+        "price": 1874.581412206302,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 870.1695380125088,
+          "usdc": 756622.2292200923,
+          "baseETH": 0.019933978348664932,
+          "lasnaLREACT": 5.188212799998779
+        },
+        "guardianLREACT": 3.3061605,
+        "callbackETH": 0.00991576330560795
+      },
+      "balancesAfterExecution": {
+        "reserves": {
+          "weth": 105.05384397290631,
+          "usdc": 301106.0649924013
+        },
+        "price": 2866.207019231561,
+        "guardianState": 1,
+        "callbackStatus": 0,
+        "owner": {
+          "weth": 894.9461560270937,
+          "usdc": 698893.9350075987,
+          "baseETH": 0.019933369580779167,
+          "lasnaLREACT": 5.185486799998752
+        },
+        "guardianLREACT": 3.2797306,
+        "callbackETH": 0.00991443729300795
+      },
+      "note": "Clean end to end run of the fixed runner (QA defect D3): stdout printed origin, reactive and callback hashes, latency, executed amounts, and re-armed both contracts. Amounts here are the runner printed values at 6dp; the exact Executed event values are in the receipt file."
     }
   ],
   "negativeProof": {
@@ -6581,7 +6772,7 @@
   "abortProof": {
     "attempted": true,
     "succeeded": false,
-    "detail": "Stop loss triggered at 2300 (origin block 59508639). Guardian trigger was observed on Lasna and a recovery buy back to 3000 was sent immediately, but the recovery swap only landed at Base block 59508696 while the callback executed at block 59508645, six blocks after the origin swap. The full detect plus recovery path took about 57 Base blocks, far longer than the 6 block callback latency, so a manual or scripted recovery cannot beat the callback on this deployment. The abort path itself is covered by unit tests in the callback test suite (price back inside the band and trigger kind changed cases).",
+    "detail": "Stop loss triggered at 2300 (origin block 59508639). Guardian trigger was observed on Lasna and a recovery buy back to 3000 was sent immediately, but the recovery swap only landed at Base block 59508696 while the callback executed at block 59508645, six blocks after the origin swap. The full detect plus recovery path took about 57 Base blocks, far longer than the 6 block callback latency, so a manual or scripted recovery cannot beat the callback on this deployment. The abort path itself is covered by the unit test test_executeGuard_abortsWhenPriceBackInsideBand in the callback test suite.",
     "loopN": 5,
     "recoverySwap": {
       "transferTx": "0x77b63712965362de3cb37698a84c66837fde409857edf67e8f529f84537ca2c0",
@@ -6595,22 +6786,22 @@
     }
   },
   "finalBalances": {
-    "note": "After batch 4 (61 total loops), deployment re-armed and Watching",
-    "price": 2030.8182115023858,
+    "note": "After loop 64 (runner fix proof), deployment re-armed and Watching",
     "reserves": {
-      "weth": 124.63635706385666,
-      "usdc": 253113.78374059414
+      "weth": 105.05384397290631,
+      "usdc": 301106.0649924013
     },
+    "price": 2866.207019231561,
     "guardianState": 1,
     "callbackStatus": 0,
     "owner": {
-      "weth": 875.3636429361434,
-      "usdc": 746886.2162594058,
-      "baseETH": 0.019935197528555004,
-      "lasnaLREACT": 5.193664799998834
+      "weth": 894.9461560270937,
+      "usdc": 698893.9350075987,
+      "baseETH": 0.019933369580779167,
+      "lasnaLREACT": 5.185486799998752
     },
-    "guardianLREACT": 3.359018,
-    "callbackETH": 0.00991841517900795
+    "guardianLREACT": 3.2797306,
+    "callbackETH": 0.00991443729300795
   },
   "updated": "2026-11-16T10:50:17.116Z"
 }

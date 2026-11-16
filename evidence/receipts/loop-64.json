@@ -1,0 +1,25 @@
+{
+  "n": 64,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "runner-fix-proof",
+  "priceBefore": 1874.581412206302,
+  "triggerPrice": 3500.0,
+  "executedPrice": 3500.0,
+  "amountInWETH": 10,
+  "amountOutUSDC": 31582.388912,
+  "originTx": "0xa086c89c6684e22f5500cad2070bc3319a46b5848c7b731a01267873d94e515c",
+  "originBlock": 59531335,
+  "reactiveTx": "0x5b1797c3adf8e65e2f1fca9505c464403d45371532f9a34df4de025651a7cd48",
+  "reactiveBlock": 8485691,
+  "callbackTx": "0x79e584dc51a461b8b00315f4181db3de09bd13388816efd57cb0fa411e11480b",
+  "callbackBlock": 59531342,
+  "latencyBlocksBase": 7,
+  "triggerSwap": {
+    "originTx": "0xa086c89c6684e22f5500cad2070bc3319a46b5848c7b731a01267873d94e515c",
+    "originBlock": 59531335,
+    "amountIn": 89310.683125,
+    "amountOut": 34.776618
+  },
+  "rearm": null
+}

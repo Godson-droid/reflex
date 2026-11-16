@@ -26,7 +26,7 @@ E18 = 10 ** 18
 
 def rpc(url, method, params):
     body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode()
-    req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
+    req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json", "User-Agent": "reflex-loop-runner/1.0"})
     with urllib.request.urlopen(req, timeout=30) as r:
         out = json.loads(r.read())
     if "error" in out:
@@ -89,6 +89,28 @@ def poll(fn, want, timeout=180, label=""):
     raise TimeoutError(f"timed out waiting for {label}")
 
 
+def topic0(sig):
+    return subprocess.run(["cast", "keccak", sig], capture_output=True, text=True, check=True).stdout.strip()
+
+
+def find_log(url, address, sig, from_block, match=None, timeout=120):
+    """eth_getLogs in <=150-block windows (public RPCs cap the range)."""
+    topic = topic0(sig)
+    t0 = time.time()
+    while time.time() - t0 < timeout:
+        head = int(rpc(url, "eth_blockNumber", []), 16)
+        b = from_block
+        while b <= head:
+            logs = rpc(url, "eth_getLogs", [{"address": address, "topics": [topic],
+                                             "fromBlock": hex(b), "toBlock": hex(min(b + 149, head))}])
+            for lg in logs:
+                if match is None or match(lg):
+                    return lg["transactionHash"], int(lg["blockNumber"], 16)
+            b += 150
+        time.sleep(3)
+    return None, None
+
+
 def main():
     kind, target = sys.argv[1], float(sys.argv[2])
     sell0 = kind == "stop-loss"
@@ -104,14 +126,24 @@ def main():
     cast_send(BASE, token, "transfer(address,uint256)", PAIR, str(inn))
     swap = cast_send(BASE, PAIR, "swap(uint256,uint256,address)",
                      "0" if sell0 else str(out), str(out) if sell0 else "0", OWNER)
-    print(f"origin tx:   {swap['transactionHash']} (block {int(swap['blockNumber'], 16)})")
+    origin_block = int(swap["blockNumber"], 16)
+    print(f"origin tx:   {swap['transactionHash']} (block {origin_block})")
+    lasna_start = int(rpc(LASNA, "eth_blockNumber", []), 16)
     poll(lambda: cast_call(LASNA, GUARDIAN, "state()(uint8)"), "2", label="guardian Triggered")
-    print("guardian:    Triggered on Lasna")
+    origin_word = "%064x" % int(swap["transactionHash"], 16)
+    rtx, rblock = find_log(LASNA, GUARDIAN, "Triggered(uint8,uint256,uint256)", lasna_start,
+                           match=lambda lg: origin_word in lg["data"].lower())
+    print(f"reactive tx: {rtx} (block {rblock})")
     poll(lambda: cast_call(BASE, CALLBACK, "status()(uint8)"), "1", label="callback Executed")
+    ctx, cblock = find_log(BASE, CALLBACK,
+                           "Executed(uint8,uint256,uint256,uint256,uint256)", origin_block)
     le = cast_call(BASE, CALLBACK,
                    "lastExecution()(uint8,uint256,uint256,uint256,uint256,uint256)")
-    print(f"callback:    Executed; lastExecution = {le.splitlines()[0]} kind, "
-          f"amountOut on chain record")
+    vals = [int(x.split()[0]) for x in le.splitlines()]
+    print(f"callback tx: {ctx} (block {cblock}, latency {cblock - origin_block} blocks)")
+    print(f"executed:    kind {vals[0]} ({'stop-loss' if vals[0] == 1 else 'take-profit'}), "
+          f"price {vals[2] / E18:.2f}, amountIn {vals[3] / E18:.4f} WETH, "
+          f"amountOut {vals[4] / E18:.6f} USDC")
     cast_send(BASE, CALLBACK, "rearm(uint256,uint256,uint256)",
               str(10 * E18), str(2700 * E18), str(3300 * E18))
     cast_send(LASNA, GUARDIAN, "rearm()", legacy_gas=120_000_000_000)

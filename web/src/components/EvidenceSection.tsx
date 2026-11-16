@@ -83,8 +83,7 @@ export function EvidenceSection() {
           <MicroLabel>Abort path · recovery attempt, loop #{ABORT_PROOF.loopN}</MicroLabel>
           <p className="mt-2.5 text-[13.5px] leading-relaxed text-mist-400">
             When loop #{ABORT_PROOF.loopN} triggered at $2,300, a recovery buy-back to $3,000 was
-            sent the moment the trigger was seen on Lasna. It landed 51 Base blocks later; the
-            callback had already executed in 6. The race is documented, not hidden — beating the
+            sent the moment the trigger was seen on Lasna. It landed 57 Base blocks after the trigger swap, 51 after the callback, which had already executed in 6. The race is documented, not hidden — beating the
             callback by hand is not possible on this deployment, and the abort branch itself is
             covered by the callback test suite.
           </p>
@@ -110,8 +109,9 @@ export function EvidenceSection() {
             <p className="mt-2 max-w-xl text-[13.5px] leading-relaxed text-mist-400">
               The runner sizes a trigger swap from live reserves, lands the price on your target,
               waits for the guardian to trigger and the callback to execute, re-arms both
-              contracts, and prints the three transaction hashes. Testnet only; needs Foundry and
-              python3.
+              contracts, and prints the three transaction hashes. Testnet only; needs Foundry,
+              python3, and the deployer wallet key in a local .env, because the runner fires
+              from the deployer wallet. Verifying any published hash needs no key at all.
             </p>
           </div>
           <div className="border-t border-line bg-ink-900/70 p-6 sm:p-7 md:border-l md:border-t-0">

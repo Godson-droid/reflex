@@ -1,0 +1,25 @@
+{
+  "n": 62,
+  "kind": "take-profit",
+  "kindCode": 2,
+  "label": "qa-runner-test",
+  "priceBefore": 2030.8182115023858,
+  "triggerPrice": 3500.000000004703,
+  "executedPrice": 3500.000000004703,
+  "amountInWETH": 10,
+  "amountOutUSDC": 31579.84767489652,
+  "originTx": "0xa534a9f9d3effb9b372c830577fa2dfc256bee5e7da33190dc999bd601405f86",
+  "originBlock": 59529780,
+  "reactiveTx": "0x22612c21fcc028ff0160afaf1d3c8efbec30afd4446ad412296dcb32a07a8c44",
+  "reactiveBlock": 8485403,
+  "callbackTx": "0x7102461fd948737fab73db90efc9eda1b504725ffbbeac7613a9081a44f9e30f",
+  "callbackBlock": 59529789,
+  "latencyBlocksBase": 9,
+  "triggerSwap": {
+    "originTx": "0xa534a9f9d3effb9b372c830577fa2dfc256bee5e7da33190dc999bd601405f86",
+    "originBlock": 59529780,
+    "amountIn": 79292.898226,
+    "amountOut": 29.663019
+  },
+  "rearm": null
+}

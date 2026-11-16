@@ -104,11 +104,20 @@ export function BandGauge({
           stop-loss
         </span>
         <span
-          className="absolute top-0 z-10 -translate-x-1/2 text-center"
-          style={{ left: `${Math.max(9, Math.min(91, pricePct))}%` }}
+          className="absolute top-0 z-10 -translate-x-1/2 whitespace-nowrap text-center"
+          style={{
+            left: `${Math.max(9, Math.min(91, pricePct))}%`,
+            // On narrow screens the price label collides with a band label when
+            // the marker sits near a tick; drop the word "now" there and let
+            // the value ride slightly higher instead.
+            transform:
+              Math.abs(pricePct - slPct) < 15 || Math.abs(pricePct - tpPct) < 15
+                ? 'translate(-50%, -13px)'
+                : undefined,
+          }}
         >
           <span className="tnum block text-[12.5px] font-bold text-mist-100">{fmtUsd(price)}</span>
-          now
+          {Math.abs(pricePct - slPct) >= 15 && Math.abs(pricePct - tpPct) >= 15 ? 'now' : null}
         </span>
         <span className="absolute top-0 -translate-x-1/2 text-center" style={{ left: `${tpPct}%` }}>
           <span className="tnum block font-semibold text-volt-300">{fmtUsd(takeProfit, 0)}</span>

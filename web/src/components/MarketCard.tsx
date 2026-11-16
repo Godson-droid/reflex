@@ -88,7 +88,7 @@ export function MarketCard({
           { label: '24h high', value: fmtUsd(market.high24h) },
           { label: '24h low', value: fmtUsd(market.low24h) },
           { label: '24h volume', value: `$${fmtNum(market.volume24hUsd / 1_000_000, 1)}M` },
-          { label: 'Reaction time', value: '~1 block · Lasna' },
+          { label: 'Loop latency', value: '5–17 blocks · measured' },
         ].map((stat) => (
           <div key={stat.label} className="bg-ink-850 px-6 py-4">
             <MicroLabel>{stat.label}</MicroLabel>

@@ -1,7 +1,7 @@
 {
   "attempted": true,
   "succeeded": false,
-  "detail": "Stop loss triggered at 2300 (origin block 59508639). Guardian trigger was observed on Lasna and a recovery buy back to 3000 was sent immediately, but the recovery swap only landed at Base block 59508696 while the callback executed at block 59508645, six blocks after the origin swap. The full detect plus recovery path took about 57 Base blocks, far longer than the 6 block callback latency, so a manual or scripted recovery cannot beat the callback on this deployment. The abort path itself is covered by unit tests in the callback test suite (price back inside the band and trigger kind changed cases).",
+  "detail": "Stop loss triggered at 2300 (origin block 59508639). Guardian trigger was observed on Lasna and a recovery buy back to 3000 was sent immediately, but the recovery swap only landed at Base block 59508696 while the callback executed at block 59508645, six blocks after the origin swap. The full detect plus recovery path took about 57 Base blocks, far longer than the 6 block callback latency, so a manual or scripted recovery cannot beat the callback on this deployment. The abort path itself is covered by the unit test test_executeGuard_abortsWhenPriceBackInsideBand in the callback test suite.",
   "loopN": 5,
   "recoverySwap": {
     "transferTx": "0x77b63712965362de3cb37698a84c66837fde409857edf67e8f529f84537ca2c0",

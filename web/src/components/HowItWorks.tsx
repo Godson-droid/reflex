@@ -21,8 +21,8 @@ const STEPS = [
     n: '03',
     chain: 'Base Sepolia',
     title: 'The swap executes itself',
-    copy: 'On a cross, the contract requests a callback and the destination chain settles the protective swap in the same block window — roughly a second after the price moved, not whenever a bot wakes up.',
-    chip: 'callback · sell 2.5 WETH',
+    copy: 'On a cross, the contract requests a callback and the destination chain settles the protective swap on its own — measured at 5 to 17 Base blocks end to end across 62 live loops, typically 7 to 8, not whenever a bot wakes up.',
+    chip: 'callback · sell 10 WETH',
     chipTone: 'text-volt-300 ring-volt-400/25 bg-volt-400/10',
   },
 ];
@@ -84,7 +84,7 @@ export function HowItWorks() {
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-center text-[12.5px] text-mist-500">
           <span>
-            <strong className="font-semibold text-mist-200">~1 block</strong> from print to protection
+            <strong className="font-semibold text-mist-200">5 to 17 blocks</strong> from print to protection, measured live
           </span>
           <span aria-hidden className="hidden h-1 w-1 rounded-full bg-mist-500 sm:block" />
           <span>

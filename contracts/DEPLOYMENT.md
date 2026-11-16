@@ -4,6 +4,12 @@ Deployed and exercised end-to-end on **2026-11-15**. All contracts are verified
 on Sourcify with `exact_match` (creation + runtime). Deployer / position owner:
 `0xfe332e01162D5408211DAAC305254E2456e5e437` (testnet-only wallet).
 
+> **Update 2026-11-16:** the original two runs recorded below were followed by
+> 62 further executed loops in the Ripcord-beater upgrade (64 total: 32
+> stop-loss, 32 take-profit), an in-band negative proof, and a documented
+> recovery-abort attempt. See the upgrade sections at the end of this file
+> and the submission repo's `evidence/` pack for the full record.
+
 ## Contracts
 
 | Contract | Chain | Address | Deploy tx | Sourcify |
@@ -161,3 +167,17 @@ top-up needed). After loop 61 the deployment is re-armed and Watching at
 746,886.22 USDC / 0.01994 Base Sepolia ETH / 5.1937 lREACT; callback holds
 0.009918 ETH. Full per-loop evidence is in the submission repo evidence
 pack, which is regenerated from the same evidence.json after every batch.
+
+## Upgrade runs — QA loops 62 to 64 (2026-11-16)
+
+Loop 62 (take-profit, 31,579.85 USDC out) was fired by the independent QA
+agent running `script/run-loop.sh take-profit 3500` exactly as a judge
+would. Loop 63 (stop-loss, 20,249.24 USDC out) was fired while re-testing
+the runner after the QA fix pass; the runner's callback-hash lookup hit a
+Base RPC 403 (missing User-Agent, since fixed), so its re-arm was completed
+by cast and recorded in the pack. Loop 64 (take-profit, 31,582.39 USDC out)
+was the clean end-to-end proof of the fixed runner: origin, reactive and
+callback hashes, latency and amounts all printed, both contracts re-armed.
+Totals after loop 64: 64 executed loops, 32 stop-loss and 32 take-profit,
+1,698,003.97 USDC of protective sales. Deployment re-armed and Watching at
+2,866.21.
