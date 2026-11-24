@@ -118,6 +118,10 @@ reaction is a property of the network, not of your infrastructure.
 
 ![Reflex UI, wired live to the deployment](web/docs/screenshots/wired-live.png)
 
+![Reflex replay: all 64 loops, replayed](web/docs/screenshots/replay-desktop.png)
+
+![Reflex reaction speed: latency across all 64 loops](web/docs/screenshots/latency-desktop.png)
+
 ## The problem
 
 A stop-loss that depends on a person (or a person's server) is not a stop-loss.
