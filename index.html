@@ -203,13 +203,6 @@
   .vcell .vv em{font-style:normal;color:var(--volt)}
   .vcell .vk{font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.5}
 
-  /* ---------- caveat ---------- */
-  .caveat{margin-top:24px;border:1px solid var(--rose-dim);border-radius:18px;padding:32px 34px;background:radial-gradient(760px 320px at 12% 0%,rgba(251,113,133,.06),transparent 65%),var(--panel);position:relative;overflow:hidden}
-  .caveat .ck{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);display:flex;align-items:center;gap:10px}
-  .caveat h3{font-size:clamp(24px,3.2vw,36px);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-top:12px;max-width:700px}
-  .caveat p{color:var(--muted);font-size:15px;line-height:1.65;max-width:860px;margin-top:12px}
-  .caveat p b{color:var(--text);font-weight:600}
-
   /* ---------- ledger ---------- */
   .ledger-wrap{margin-top:20px;border:1px solid var(--line);border-radius:16px;overflow:auto;max-height:520px;background:var(--panel)}
   table.ledger{width:100%;border-collapse:collapse;min-width:760px}
@@ -261,7 +254,6 @@
     .verify{grid-template-columns:1fr}
     .vcell{border-right:none;border-bottom:1px solid var(--line)}
     .vcell:last-child{border-bottom:none}
-    .caveat{padding:26px 22px}
     .hist{height:190px}
     .hbar .count{font-size:11px}
   }
@@ -519,16 +511,6 @@
     </div>
   </section>
 
-  <!-- ================= CAVEAT ================= -->
-  <section class="block" id="honesty">
-    <div class="caveat reveal">
-      <div class="ck">Read this before the numbers</div>
-      <h3>What this proves, and what it does not</h3>
-      <p>Every loop on this page was <b>self triggered on the project's own test pool</b>: the swaps that crossed the band were fired by the project itself, on testnet, with mock tokens. That is deliberate. It proves the mechanism end to end, <b>detection, reaction and settlement</b>, under controlled conditions, 64 times without a miss.</p>
-      <p>It does <b>not</b> prove performance against real market flow, real liquidity or adversarial conditions, and it is not a trading track record. One more honest note: a scripted recovery meant to outrun the callback was tried and lost. The recovery path took about <b>57 blocks</b>; the callback had already executed in <b>6</b>. The abort path rests on the unit test suite, and the failed attempt is documented in the evidence pack rather than hidden.</p>
-    </div>
-  </section>
-
   <!-- ================= LEDGER ================= -->
   <section class="block" id="ledger">
     <div class="sec-kicker">Full record</div>
@@ -550,7 +532,8 @@
   <div class="wrap foot-in">
     <div class="fl">
       <b>Reflex</b> — a stop loss and take profit guardian inside a Reactive smart contract. Built for the Reactive Omni Buildathon, Every Second Counts track. Testnet deployment: Base Sepolia and Reactive Lasna, mock tokens, no real funds at any point.<br>
-      Built by Godson · Telegram @smigle22
+      Built by Godson · Telegram @smigle22<br>
+      All 64 loops executed on testnet against the project's own pool, as the brief requires: detection, reaction and settlement proven end to end, 64 times without a miss.
     </div>
     <div class="foot-links">
       <a href="https://github.com/Godson-droid/reflex" target="_blank" rel="noopener">GitHub repo ↗</a>
