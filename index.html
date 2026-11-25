@@ -268,6 +268,129 @@
     .mech .mech-fill{transition:none}
     *{animation-duration:.01s !important}
   }
+  /* ---------- arm a guardian ---------- */
+  .arm-shell [hidden]{display:none !important}
+  .arm-shell{margin-top:20px;border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden}
+  .arm-walletbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .arm-wallet-id{display:flex;flex-direction:column;gap:3px}
+  .arm-wallet-state{font-size:14px;font-weight:600}
+  .arm-wallet-state .sub{color:var(--faint);font-weight:500;font-size:12.5px}
+  .arm-connect{position:relative}
+  .arm-connect-btn{appearance:none;border:1px solid var(--volt);background:var(--volt);color:#131503;font-family:var(--sans);font-size:13.5px;font-weight:700;padding:9px 18px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .1s;white-space:nowrap}
+  .arm-connect-btn:hover{background:var(--volt-hi)}
+  .arm-connect-btn:active{transform:scale(.98)}
+  .arm-connect-btn[disabled]{opacity:.65;cursor:wait}
+  .arm-chooser{position:absolute;right:0;top:calc(100% + 10px);z-index:60;width:292px;max-width:calc(100vw - 36px);border:1px solid var(--line2);border-radius:16px;background:var(--panel);padding:8px;box-shadow:0 24px 60px rgba(0,0,0,.55)}
+  .arm-chooser-k{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);padding:8px 12px 6px}
+  .arm-chooser-opt{display:flex;width:100%;align-items:center;gap:12px;border:none;background:transparent;border-radius:12px;padding:10px 12px;text-align:left;cursor:pointer;color:var(--text);font-family:var(--sans);transition:background .15s}
+  .arm-chooser-opt:hover{background:rgba(255,255,255,.04)}
+  .arm-chooser-opt .ic{width:36px;height:36px;flex:none;display:flex;align-items:center;justify-content:center;border:1px solid var(--line2);border-radius:10px;background:var(--inset);color:var(--muted)}
+  .arm-chooser-opt b{display:block;font-size:13.5px;font-weight:600}
+  .arm-chooser-opt i{display:block;font-style:normal;font-size:12px;color:var(--faint);line-height:1.35;margin-top:1px}
+  .arm-chooser-note{font-size:11.5px;color:var(--faint);line-height:1.5;padding:8px 12px 6px}
+  .arm-conn-pill{display:inline-flex;align-items:center;gap:8px;background:var(--volt);color:#131503;border-radius:999px;padding:7px 8px 7px 14px;font-size:13px;font-weight:700}
+  .arm-conn-dot{width:8px;height:8px;border-radius:50%;background:rgba(19,21,3,.7);flex:none}
+  .arm-wc-badge{background:rgba(19,21,3,.16);border-radius:4px;padding:2px 5px;font-size:9.5px;font-weight:800;letter-spacing:.08em}
+  .arm-disconnect{appearance:none;border:none;background:rgba(19,21,3,.16);color:#131503;width:20px;height:20px;border-radius:50%;font-size:11px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;padding:0}
+  .arm-disconnect:hover{background:rgba(19,21,3,.3)}
+  .arm-werror{border-bottom:1px solid rgba(251,113,133,.25);background:rgba(251,113,133,.08);color:var(--rose);font-size:12.5px;padding:9px 20px;text-align:center}
+  .arm-live{display:grid;grid-template-columns:1.25fr 1fr 1fr .8fr;border-bottom:1px solid var(--line)}
+  .arm-live-cell{padding:16px 20px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:5px;justify-content:center}
+  .arm-live-cell:last-child{border-right:none}
+  .arm-live-cell b{font-family:var(--mono);font-size:16.5px;font-weight:600;white-space:nowrap}
+  .arm-live-cell b small{font-size:.62em;color:var(--muted);font-weight:500}
+  .arm-state-pill{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700}
+  .arm-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr)}
+  .arm-form{padding:24px;border-right:1px solid var(--line)}
+  .arm-form-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .arm-form-head h3{font-size:19px;font-weight:700;letter-spacing:-.02em}
+  .arm-chip{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--cyan);border:1px solid #2f4148;border-radius:999px;padding:4px 11px;white-space:nowrap;background:rgba(103,232,249,.05)}
+  .arm-form-sub{color:var(--muted);font-size:13.5px;line-height:1.55;margin-top:6px}
+  .arm-field{margin-top:20px}
+  .arm-field-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:7px}
+  .arm-field-top label{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+  .arm-fdot{width:6px;height:6px;border-radius:50%;flex:none}
+  .arm-fdot.rose{background:var(--rose)} .arm-fdot.volt{background:var(--volt)} .arm-fdot.plain{background:var(--faint)}
+  .arm-hint{font-size:11.5px;color:var(--faint);text-align:right}
+  .arm-input{position:relative}
+  .arm-input input{width:100%;background:var(--inset);border:1px solid var(--line2);border-radius:12px;color:var(--text);font-family:var(--mono);font-size:15.5px;font-weight:600;padding:13px 58px 13px 30px;outline:none;transition:border-color .2s}
+  .arm-input input:focus{border-color:var(--volt-dim)}
+  .arm-input input.arm-invalid{border-color:var(--rose-dim)}
+  .arm-input input::-webkit-outer-spin-button,.arm-input input::-webkit-inner-spin-button{-webkit-appearance:none}
+  .arm-input input[type=number]{-moz-appearance:textfield;appearance:textfield}
+  .arm-affix{position:absolute;top:50%;transform:translateY(-50%);color:var(--faint);font-size:13.5px;font-weight:600;pointer-events:none}
+  .arm-affix.left{left:14px} .arm-affix.right{right:14px;font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+  .arm-input.no-prefix input{padding-left:14px}
+  .arm-err{color:var(--rose);font-size:12px;font-weight:500;margin-top:6px}
+  .arm-summary{margin-top:22px;border:1px solid var(--line);border-radius:14px;background:var(--inset);padding:15px 17px}
+  .arm-summary p{font-size:13.5px;line-height:1.6;color:var(--muted);margin-top:6px}
+  .arm-summary p b{color:var(--text);font-weight:600}
+  .arm-summary p b.rose{color:var(--rose)} .arm-summary p b.volt{color:var(--volt)}
+  .arm-btn{appearance:none;width:100%;margin-top:18px;border:1px solid var(--volt);background:var(--volt);color:#131503;font-family:var(--sans);font-size:15px;font-weight:700;padding:14px 18px;border-radius:12px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:background .2s,transform .1s,opacity .2s}
+  .arm-btn:hover{background:var(--volt-hi)}
+  .arm-btn:active{transform:scale(.99)}
+  .arm-btn[disabled]{opacity:.5;cursor:not-allowed}
+  .arm-spinner{width:14px;height:14px;flex:none;border-radius:50%;border:2px solid rgba(19,21,3,.3);border-top-color:#131503;animation:armspin .7s linear infinite}
+  .arm-spinner.light{border-color:rgba(238,242,233,.25);border-top-color:var(--text)}
+  @keyframes armspin{to{transform:rotate(360deg)}}
+  .arm-note{margin-top:13px;font-size:12px;line-height:1.6;color:var(--faint);text-align:center}
+  .arm-yours{padding:24px}
+  .arm-yours-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .arm-yours-count{font-family:var(--mono);font-size:11.5px;color:var(--faint)}
+  .arm-empty{color:var(--faint);font-size:13.5px;line-height:1.6;margin-top:14px;border:1px dashed var(--line2);border-radius:14px;padding:18px}
+  .g-item{border:1px solid var(--line);border-radius:14px;background:var(--inset);padding:18px;margin-top:14px}
+  .g-item.fresh{animation:armfadeup .6s cubic-bezier(.2,.6,.2,1)}
+  @keyframes armfadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .g-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .g-pair{font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+  .g-id{font-family:var(--mono);font-size:11.5px;color:var(--faint)}
+  .g-pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;border-radius:999px;padding:3px 9px}
+  .g-pill.watch{color:var(--volt);border:1px solid var(--volt-dim);background:rgba(207,249,77,.06)}
+  .g-pill.demo{color:var(--muted);border:1px solid var(--line2)}
+  .g-armed-at{margin-left:auto;font-size:11.5px;color:var(--faint)}
+  .g-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:15px}
+  .g-stat label{display:block;font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--faint)}
+  .g-stat b{font-family:var(--mono);font-size:15.5px;font-weight:600;display:block;margin-top:3px;white-space:nowrap}
+  .g-stat span{display:block;font-size:11.5px;color:var(--faint);margin-top:1px}
+  .g-bar{position:relative;height:8px;border-radius:99px;background:linear-gradient(90deg,rgba(251,113,133,.45),var(--line2) 45%,rgba(207,249,77,.45));margin-top:17px}
+  .g-marker{position:absolute;top:50%;width:15px;height:15px;border-radius:50%;background:var(--text);border:3px solid var(--panel);transform:translate(-50%,-50%);transition:left .5s}
+  .g-bar-labels{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-top:7px}
+  .g-bar-labels .now{color:var(--muted)}
+  .g-steps{margin-top:17px;border-top:1px solid var(--line);padding-top:15px}
+  .g-steps-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .g-steps ol{list-style:none;margin-top:11px}
+  .g-step{position:relative;display:flex;gap:12px;padding-bottom:15px}
+  .g-step:last-child{padding-bottom:0}
+  .g-step::before{content:"";position:absolute;left:8.5px;top:22px;bottom:0;width:1px;background:var(--line)}
+  .g-step:last-child::before{display:none}
+  .g-node{width:18px;height:18px;flex:none;border-radius:50%;border:1px solid var(--line2);background:var(--panel);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;margin-top:1px}
+  .g-node::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--faint)}
+  .g-step-main{flex:1;min-width:0}
+  .g-step-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .g-step-title{font-size:13px;font-weight:600;color:var(--muted)}
+  .g-step-net{font-size:10.5px;color:var(--faint);white-space:nowrap}
+  .g-step-detail{font-size:12px;color:var(--faint);line-height:1.5;margin-top:1px}
+  .g-step-pend{font-size:11px;color:var(--faint);margin-top:3px;font-weight:500}
+  @media (max-width:1020px){
+    .arm-grid{grid-template-columns:1fr}
+    .arm-form{border-right:none;border-bottom:1px solid var(--line)}
+    .arm-live{grid-template-columns:1fr 1fr}
+    .arm-live-cell:nth-child(2){border-right:none}
+    .arm-live-cell:nth-child(1),.arm-live-cell:nth-child(2){border-bottom:1px solid var(--line)}
+  }
+  @media (max-width:640px){
+    .arm-live-cell b{font-size:14.5px}
+    .arm-form,.arm-yours{padding:19px}
+    .g-stats{gap:10px}
+    .g-stat b{font-size:13.5px}
+    .arm-walletbar{padding:14px 16px}
+    .arm-live-cell{padding:14px 16px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .g-item.fresh{animation:none}
+    .arm-spinner{animation-duration:1.6s}
+    .g-marker{transition:none}
+  }
 </style>
 <body>
 
@@ -436,6 +559,128 @@
           <p>The callback contract receives the reaction back on Base Sepolia and <b>sells the protected 10 WETH</b> into the pair, settling USDC to the owner and recording the execution on chain. Median time from cross to settled sale across 64 loops: <b>8 blocks</b>.</p>
           <span class="evchip"><i>record</i> Execution(kind, observed, executed, amountIn, amountOut)</span>
           <span class="evchip"><i>then</i> both contracts re-arm and keep watching</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ARM A GUARDIAN ================= -->
+  <section class="block" id="arm">
+    <div class="sec-kicker">Hands on · the original demo flow</div>
+    <div class="sec-head reveal">
+      <h2>Arm a <em>guardian</em></h2>
+      <p class="note">Connect a wallet, set the two prices that matter, and arm. Your guardian joins the list as a watching entry with its three loop steps pending, exactly as the first Reflex demo modelled it.</p>
+    </div>
+
+    <div class="arm-shell reveal">
+      <div class="arm-walletbar">
+        <div class="arm-wallet-id">
+          <span class="ro-k">Wallet</span>
+          <span class="arm-wallet-state" id="armWalletState">Not connected <span class="sub">· Base Sepolia testnet</span></span>
+        </div>
+        <div class="arm-connect" id="armConnectWrap">
+          <button class="arm-connect-btn" id="armConnectBtn" type="button" aria-haspopup="menu" aria-expanded="false">Connect Wallet</button>
+          <div class="arm-chooser" id="armChooser" role="menu" hidden>
+            <p class="arm-chooser-k">Connect a wallet</p>
+            <button class="arm-chooser-opt" id="armOptInjected" type="button" role="menuitem" hidden>
+              <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9.2h18"/><circle cx="6.3" cy="6.9" r="0.6" fill="currentColor" stroke="none"/><circle cx="9.3" cy="6.9" r="0.6" fill="currentColor" stroke="none"/></svg></span>
+              <span><b>Browser wallet</b><i>MetaMask extension or in-app browser</i></span>
+            </button>
+            <button class="arm-chooser-opt" id="armOptWc" type="button" role="menuitem">
+              <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8.5v-2A2.5 2.5 0 0 1 6.5 4h2"/><path d="M15.5 4h2A2.5 2.5 0 0 1 20 6.5v2"/><path d="M20 15.5v2A2.5 2.5 0 0 1 17.5 20h-2"/><path d="M8.5 20h-2A2.5 2.5 0 0 1 4 17.5v-2"/><rect x="9.2" y="9.2" width="5.6" height="5.6" rx="1.4"/></svg></span>
+              <span><b>WalletConnect</b><i>Scan or tap to open your mobile wallet</i></span>
+            </button>
+            <p class="arm-chooser-note">Testnet only. Nothing moves without your signature in the wallet.</p>
+          </div>
+          <span class="arm-conn-pill" id="armConnected" hidden>
+            <span class="arm-conn-dot"></span>
+            <span class="tnum" id="armAddr"></span>
+            <span class="arm-wc-badge" id="armWcBadge" hidden>WC</span>
+            <button class="arm-disconnect" id="armDisconnect" type="button" aria-label="Disconnect wallet" title="Disconnect">✕</button>
+          </span>
+        </div>
+      </div>
+      <div class="arm-werror" id="armWalletError" role="alert" hidden></div>
+
+      <div class="arm-live" id="armLive">
+        <div class="arm-live-cell">
+          <span class="ro-k">The deployed guardian · <span id="armLiveSrc">last recorded</span></span>
+          <span class="arm-state-pill" id="armLiveState"><span class="dot rec"></span>Watching</span>
+        </div>
+        <div class="arm-live-cell">
+          <span class="ro-k">Pair price · ReflexPair reserves</span>
+          <b class="tnum" id="armLivePrice">—</b>
+        </div>
+        <div class="arm-live-cell">
+          <span class="ro-k">Armed band · stop / target</span>
+          <b class="tnum" id="armLiveBand">—</b>
+        </div>
+        <div class="arm-live-cell">
+          <span class="ro-k">Protected</span>
+          <b class="tnum" id="armLiveAmount">—</b>
+        </div>
+      </div>
+
+      <div class="arm-grid">
+        <div class="arm-form">
+          <div class="arm-form-head">
+            <h3>Create a guardian</h3>
+            <span class="arm-chip">Reactive Lasna</span>
+          </div>
+          <p class="arm-form-sub">Set the two prices that matter. Reflex watches them from inside the contract — around the clock, with nobody's server in between.</p>
+
+          <div class="arm-field">
+            <div class="arm-field-top">
+              <label for="armSl"><span class="arm-fdot rose"></span>Stop-loss price</label>
+              <span class="arm-hint">Sell everything if WETH falls to</span>
+            </div>
+            <div class="arm-input">
+              <span class="arm-affix left">$</span>
+              <input id="armSl" type="number" inputmode="decimal" min="0" step="0.01" aria-label="Stop-loss price in USD">
+            </div>
+            <p class="arm-err" id="armSlErr" role="alert" hidden></p>
+          </div>
+
+          <div class="arm-field">
+            <div class="arm-field-top">
+              <label for="armTp"><span class="arm-fdot volt"></span>Take-profit price</label>
+              <span class="arm-hint">Sell everything if WETH climbs to</span>
+            </div>
+            <div class="arm-input">
+              <span class="arm-affix left">$</span>
+              <input id="armTp" type="number" inputmode="decimal" min="0" step="0.01" aria-label="Take-profit price in USD">
+            </div>
+            <p class="arm-err" id="armTpErr" role="alert" hidden></p>
+          </div>
+
+          <div class="arm-field">
+            <div class="arm-field-top">
+              <label for="armAmt"><span class="arm-fdot plain"></span>Amount to protect</label>
+              <span class="arm-hint" id="armAmtHint">Balance 10.00 WETH · Base Sepolia</span>
+            </div>
+            <div class="arm-input no-prefix">
+              <input id="armAmt" type="number" inputmode="decimal" min="0" step="0.05" value="1.00" aria-label="Amount of WETH to protect">
+              <span class="arm-affix right">WETH</span>
+            </div>
+            <p class="arm-err" id="armAmtErr" role="alert" hidden></p>
+          </div>
+
+          <div class="arm-summary">
+            <span class="ro-k">What happens next</span>
+            <p id="armSummary" aria-live="polite"></p>
+          </div>
+
+          <button class="arm-btn" id="armBtn" type="button">Connect wallet to arm</button>
+          <p class="arm-note">Demo arm, exactly as the original demo ran it: the entry is created in this browser and no transaction is sent. The deployed guardian above was configured on Lasna by its owner, and its state is read live from chain. It reacts on its own, in blocks, not bot polling cycles.</p>
+        </div>
+
+        <div class="arm-yours">
+          <div class="arm-yours-head">
+            <span class="ro-k">Your guardians</span>
+            <span class="arm-yours-count" id="armYoursCount"></span>
+          </div>
+          <div id="armList"></div>
+          <p class="arm-empty" id="armEmpty">No demo guardians yet. Set your two prices and arm, and your guardian starts watching here, its three loop steps pending.</p>
         </div>
       </div>
     </div>
@@ -866,6 +1111,432 @@
       }
     });
   });
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  /* ================= Arm a guardian — restored original demo flow =================
+     Ported from the original Reflex demo app (reflex/web/src/lib/chain.ts and
+     components/CreateGuardian.tsx): wallet connect (injected + WalletConnect,
+     same project ID, same restore behaviour), the create guardian form with
+     its exact validation, and the arm. As in the original, arming is a local
+     demo action: it creates the guardian entry in this browser and sends no
+     transaction. The deployed guardian's state is read live from chain. */
+  var section = document.getElementById("arm");
+  if(!section) return;
+  var $ = function(id){ return document.getElementById(id); };
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- constants (from the old app's chain.ts) ---------- */
+  var GUARDIAN = "0x057A04Ad09c9A1fD83088F9863E81b181f8a4D9A";   // Reactive Lasna 5318007
+  var CALLBACK = "0x7858F9f40dBdB2Edfd32c781a98c69294cd009d0";   // Base Sepolia 84532
+  var PAIR     = "0x1bC9aB7D74f12897A44717B9497478e2b01CE2D6";   // Base Sepolia
+  var BASE_RPC = "https://sepolia.base.org";
+  var LASNA_RPC = "https://lasna-rpc.rnk.dev/";
+  var WC_PROJECT_ID = "5940522633ad9fc623dd1fb3f00b05f4";
+  var MOCK_BALANCE = 10; // WETH available in the connected demo wallet (old app)
+  var RECORDED = { price: 2866.21, sl: 2700, tp: 3300, amount: 10, label: "Watching" };
+  var SEL = { reserves: "0x0902f1ac", state: "0xc19d93fb", status: "0x200d2ed2",
+              amount: "0xaa8c217c", sl: "0xe0efb1fd", tp: "0x0cb479d8" };
+
+  /* ---------- formatting (ported from the old app's format.ts) ---------- */
+  function fmtUsd(v, dec){ if(dec === undefined) dec = 2; return v.toLocaleString("en-US",{style:"currency",currency:"USD",minimumFractionDigits:dec,maximumFractionDigits:dec}); }
+  function fmtNum(v, dec){ if(dec === undefined) dec = 2; return v.toLocaleString("en-US",{minimumFractionDigits:dec,maximumFractionDigits:dec}); }
+  function truncateMiddle(v, head, tail){ head = head || 6; tail = tail || 4; if(v.length <= head + tail + 1) return v; return v.slice(0, head) + "…" + v.slice(-tail); }
+  function timeAgo(ts){
+    var s = Math.max(1, Math.floor((Date.now() - ts) / 1000));
+    if(s < 60) return "just now";
+    var m = Math.floor(s / 60); if(m < 60) return m + "m ago";
+    var h = Math.floor(m / 60); if(h < 24) return h + "h ago";
+    return Math.floor(h / 24) + "d ago";
+  }
+
+  /* ---------- live read path (deployed guardian, from chain) ---------- */
+  var srcEl = $("armLiveSrc"), stateEl = $("armLiveState"),
+      priceEl = $("armLivePrice"), bandEl = $("armLiveBand"), amountEl = $("armLiveAmount");
+  var price = RECORDED.price;
+  var liveLoaded = false;
+
+  function renderLive(label, p, sl, tp, amt, src){
+    stateEl.innerHTML = '<span class="dot' + (label === "Watching" ? " rec" : "") + '"' +
+      (label === "Triggered" ? ' style="background:var(--rose)"' : "") + '></span>' + label;
+    priceEl.textContent = fmtUsd(p);
+    bandEl.textContent = fmtUsd(sl, 0) + " / " + fmtUsd(tp, 0);
+    amountEl.innerHTML = fmtNum(amt) + " <small>WETH</small>";
+    srcEl.textContent = src;
+  }
+  renderLive(RECORDED.label, RECORDED.price, RECORDED.sl, RECORDED.tp, RECORDED.amount, "last recorded");
+
+  function ethCall(url, to, data){
+    return fetch(url, { method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "eth_call", params: [{ to: to, data: data }, "latest"] })
+    }).then(function(r){ if(!r.ok) throw new Error("RPC " + r.status); return r.json(); })
+      .then(function(j){ if(j.error || !j.result) throw new Error("RPC error"); return j.result; });
+  }
+  function wordAt(hex, i){ return BigInt("0x" + hex.slice(2 + i * 64, 2 + (i + 1) * 64)); }
+  function asPrice(hex){ return Number(wordAt(hex, 0)) / 1e18; }
+  function asUint(hex){ return Number(wordAt(hex, 0)); }
+
+  function loadLive(){
+    return Promise.all([
+      ethCall(BASE_RPC, PAIR, SEL.reserves),
+      ethCall(LASNA_RPC, GUARDIAN, SEL.state),
+      ethCall(LASNA_RPC, GUARDIAN, SEL.sl),
+      ethCall(LASNA_RPC, GUARDIAN, SEL.tp),
+      ethCall(BASE_RPC, CALLBACK, SEL.status),
+      ethCall(BASE_RPC, CALLBACK, SEL.amount)
+    ]).then(function(res){
+      var r0 = Number(wordAt(res[0], 0)) / 1e18;
+      var r1 = Number(wordAt(res[0], 1)) / 1e18;
+      if(!(r0 > 0) || !(r1 > 0)) throw new Error("empty reserves");
+      var gState = asUint(res[1]), cStatus = asUint(res[4]);
+      var label = (gState === 1 && cStatus === 0) ? "Watching"
+        : (gState === 2 || cStatus === 1) ? "Triggered" : "Standby";
+      price = r1 / r0;
+      liveLoaded = true;
+      renderLive(label, price, asPrice(res[2]), asPrice(res[3]), asPrice(res[5]), "live from chain");
+      if(!formEdited) applyDefaults(); else renderForm();
+      if(demoGuardians.length) renderList(false);
+    }).catch(function(){
+      if(!liveLoaded) srcEl.textContent = "last recorded · live read unavailable";
+    });
+  }
+
+  /* ---------- wallet (ported from the old app's chain.ts wallet section) ---------- */
+  var wallet = { address: null, chainId: null, kind: null };
+  var activeProvider = null;
+  var connecting = false;
+  var walletError = null;
+  var watchedProviders = (typeof WeakSet !== "undefined") ? new WeakSet() : null;
+
+  var walletStateEl = $("armWalletState"), connectBtn = $("armConnectBtn"),
+      chooserEl = $("armChooser"), connectedEl = $("armConnected"),
+      addrEl = $("armAddr"), wcBadgeEl = $("armWcBadge"),
+      optInjected = $("armOptInjected"), optWc = $("armOptWc"),
+      errorEl = $("armWalletError"), wrapEl = $("armConnectWrap");
+  var chooserOpen = false;
+
+  function hasInjected(){ return typeof window !== "undefined" && typeof window.ethereum !== "undefined"; }
+  function chainLabel(id){
+    if(id === 84532) return "Base Sepolia";
+    if(id === 5318007) return "Reactive Lasna";
+    if(id == null) return "";
+    return "chain " + id;
+  }
+  function openChooser(){
+    optInjected.hidden = !hasInjected();
+    chooserOpen = true; chooserEl.hidden = false;
+    connectBtn.setAttribute("aria-expanded", "true");
+  }
+  function closeChooser(){
+    chooserOpen = false; chooserEl.hidden = true;
+    connectBtn.setAttribute("aria-expanded", "false");
+  }
+  function renderWallet(){
+    if(wallet.address) closeChooser();
+    if(connecting){
+      connectBtn.hidden = false; connectedEl.hidden = true;
+      connectBtn.disabled = true;
+      connectBtn.innerHTML = '<span class="arm-spinner"></span> Connecting…';
+      walletStateEl.innerHTML = 'Connecting… <span class="sub">· Base Sepolia testnet</span>';
+    } else if(wallet.address){
+      connectBtn.hidden = true; connectedEl.hidden = false;
+      addrEl.textContent = truncateMiddle(wallet.address);
+      wcBadgeEl.hidden = wallet.kind !== "walletconnect";
+      var sub = wallet.kind === "walletconnect" ? "WalletConnect" : "Browser wallet";
+      var cl = chainLabel(wallet.chainId);
+      walletStateEl.innerHTML = "Connected" + ' <span class="sub">· ' + sub + (cl ? " · " + cl : "") + "</span>";
+    } else {
+      connectBtn.hidden = false; connectedEl.hidden = true;
+      connectBtn.disabled = false; connectBtn.textContent = "Connect Wallet";
+      walletStateEl.innerHTML = 'Not connected <span class="sub">· Base Sepolia testnet</span>';
+    }
+    if(walletError){ errorEl.textContent = walletError; errorEl.hidden = false; }
+    else errorEl.hidden = true;
+    renderArmBtn();
+  }
+  function setWallet(state, provider){
+    wallet = state || { address: null, chainId: null, kind: null };
+    activeProvider = provider || null;
+    if(activeProvider && wallet.kind) watchProvider(activeProvider, wallet.kind);
+    renderWallet();
+  }
+  function watchProvider(provider, kind){
+    if(!provider || typeof provider.on !== "function") return;
+    if(watchedProviders){ if(watchedProviders.has(provider)) return; watchedProviders.add(provider); }
+    provider.on("accountsChanged", function(accs){
+      if(activeProvider !== provider) return;
+      if(!accs || !accs.length) setWallet(null, null);
+      else setWallet({ address: accs[0], chainId: wallet.chainId, kind: kind }, provider);
+    });
+    provider.on("chainChanged", function(hex){
+      if(activeProvider !== provider) return;
+      setWallet({ address: wallet.address, chainId: parseInt(hex, 16), kind: kind }, provider);
+    });
+    provider.on("disconnect", function(){
+      if(activeProvider === provider) setWallet(null, null);
+    });
+  }
+  function connectInjected(){
+    if(!hasInjected()) return Promise.reject(new Error("NO_WALLET"));
+    var p = window.ethereum;
+    return p.request({ method: "eth_requestAccounts" }).then(function(accs){
+      if(!accs || !accs.length) throw new Error("NO_ACCOUNTS");
+      return p.request({ method: "eth_chainId" }).then(function(cid){
+        setWallet({ address: accs[0], chainId: parseInt(cid, 16), kind: "injected" }, p);
+      });
+    });
+  }
+  var wcCtorPromise = null, wcProvider = null, wcProviderPromise = null;
+  function loadWCCtor(){
+    if(wcCtorPromise) return wcCtorPromise;
+    var urls = [
+      "https://cdn.jsdelivr.net/npm/@walletconnect/ethereum-provider@2.26.0/+esm",
+      "https://esm.sh/@walletconnect/ethereum-provider@2.26.0"
+    ];
+    wcCtorPromise = (function tryUrl(i){
+      if(i >= urls.length) return Promise.reject(new Error("WC_LOAD_FAILED"));
+      return import(urls[i]).then(function(m){
+        if(m && m.EthereumProvider) return m.EthereumProvider;
+        return tryUrl(i + 1);
+      }).catch(function(){ return tryUrl(i + 1); });
+    })(0);
+    wcCtorPromise.catch(function(){ wcCtorPromise = null; });
+    return wcCtorPromise;
+  }
+  function getWCProvider(){
+    if(wcProvider) return Promise.resolve(wcProvider);
+    if(wcProviderPromise) return wcProviderPromise;
+    wcProviderPromise = loadWCCtor().then(function(EthereumProvider){
+      return EthereumProvider.init({
+        projectId: WC_PROJECT_ID,
+        chains: [84532],
+        optionalChains: [5318007],
+        showQrModal: true,
+        metadata: {
+          name: "Reflex",
+          description: "Stop-loss and take-profit guardians that live inside a Reactive smart contract.",
+          url: "https://godson-droid.github.io/reflex/",
+          icons: ["https://godson-droid.github.io/reflex/favicon.svg"]
+        }
+      });
+    }).then(function(p){ wcProvider = p; return p; });
+    wcProviderPromise.catch(function(){ wcProviderPromise = null; });
+    return wcProviderPromise;
+  }
+  function connectWC(){
+    return getWCProvider().then(function(wc){
+      if(!wc.session || !wc.accounts || wc.accounts.length === 0){
+        return wc.connect().then(function(){ return wc; });
+      }
+      return wc;
+    }).then(function(wc){
+      var addr = wc.accounts && wc.accounts[0];
+      if(!addr) throw new Error("WC_NO_ACCOUNTS");
+      setWallet({ address: addr, chainId: wc.chainId != null ? wc.chainId : null, kind: "walletconnect" }, wc);
+    });
+  }
+  function connect(kind){
+    if(connecting) return;
+    connecting = true; walletError = null; renderWallet();
+    var p = kind === "walletconnect" ? connectWC() : connectInjected();
+    p.then(function(){ connecting = false; renderWallet(); })
+     .catch(function(err){
+       connecting = false;
+       var raw = err && err.message ? err.message : String(err);
+       if(/reject|closed|cancel|reset/i.test(raw)) walletError = "Connection request rejected in the wallet.";
+       else if(kind === "walletconnect") walletError = "Could not connect with WalletConnect. Check your connection and try again.";
+       else walletError = "Could not connect. Check your wallet and try again.";
+       renderWallet();
+     });
+  }
+  function disconnectWallet(){
+    var kind = wallet.kind, provider = activeProvider;
+    setWallet(null, null);
+    if(kind === "walletconnect" && provider && provider.disconnect){
+      try { var p = provider.disconnect(); if(p && p.catch) p.catch(function(){}); } catch(e){}
+    }
+  }
+  function restoreWC(){
+    var has = false;
+    try {
+      for(var i = 0; i < window.localStorage.length; i++){
+        var k = window.localStorage.key(i);
+        if(k && k.indexOf("wc@2:") === 0 && k.indexOf("session") !== -1){ has = true; break; }
+      }
+    } catch(e){}
+    if(!has) return;
+    getWCProvider().then(function(wc){
+      if(wc.session && wc.accounts && wc.accounts.length){
+        setWallet({ address: wc.accounts[0], chainId: wc.chainId != null ? wc.chainId : null, kind: "walletconnect" }, wc);
+      }
+    }).catch(function(){});
+  }
+  function restore(){
+    if(wallet.address) return;
+    if(hasInjected()){
+      var p = window.ethereum;
+      p.request({ method: "eth_accounts" }).then(function(accs){
+        if(accs && accs.length){
+          return p.request({ method: "eth_chainId" }).then(function(cid){
+            setWallet({ address: accs[0], chainId: parseInt(cid, 16), kind: "injected" }, p);
+          });
+        }
+        restoreWC();
+      }).catch(function(){ restoreWC(); });
+    } else {
+      restoreWC();
+    }
+  }
+  connectBtn.addEventListener("click", function(){
+    if(connecting) return;
+    if(chooserOpen) closeChooser(); else openChooser();
+  });
+  document.addEventListener("mousedown", function(e){
+    if(chooserOpen && wrapEl && !wrapEl.contains(e.target)) closeChooser();
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && chooserOpen) closeChooser();
+  });
+  optInjected.addEventListener("click", function(){ closeChooser(); connect("injected"); });
+  optWc.addEventListener("click", function(){ closeChooser(); connect("walletconnect"); });
+  $("armDisconnect").addEventListener("click", function(){ disconnectWallet(); });
+
+  /* ---------- create guardian form (ported from CreateGuardian.tsx) ---------- */
+  var slInput = $("armSl"), tpInput = $("armTp"), amtInput = $("armAmt");
+  var slErr = $("armSlErr"), tpErr = $("armTpErr"), amtErr = $("armAmtErr");
+  var summaryEl = $("armSummary"), armBtn = $("armBtn");
+  var listEl = $("armList"), emptyEl = $("armEmpty"), countEl = $("armYoursCount");
+  var touched = false, formEdited = false, arming = false, armedFlash = false;
+  var seq = 1043; // the old app's local guardian sequence start
+  var demoGuardians = [];
+
+  function computeErrors(){
+    var sl = parseFloat(slInput.value), tp = parseFloat(tpInput.value), amt = parseFloat(amtInput.value);
+    var e = {};
+    if(!slInput.value || isNaN(sl) || sl <= 0) e.sl = "Enter a stop-loss price.";
+    else if(sl >= price) e.sl = "Stop-loss must sit below the current price (" + fmtUsd(price) + ").";
+    if(!tpInput.value || isNaN(tp) || tp <= 0) e.tp = "Enter a take-profit price.";
+    else if(tp <= price) e.tp = "Take-profit must sit above the current price (" + fmtUsd(price) + ").";
+    if(!isNaN(sl) && !isNaN(tp) && sl > 0 && tp > 0 && sl >= tp) e.tp = "Take-profit must be above the stop-loss.";
+    if(!amtInput.value || isNaN(amt) || amt <= 0) e.amt = "Enter an amount to protect.";
+    else if(amt > MOCK_BALANCE) e.amt = "Amount exceeds your balance of " + fmtNum(MOCK_BALANCE) + " WETH.";
+    return e;
+  }
+  function setField(input, errEl, msg){
+    if(touched && msg){ errEl.textContent = msg; errEl.hidden = false; input.classList.add("arm-invalid"); }
+    else { errEl.hidden = true; input.classList.remove("arm-invalid"); }
+  }
+  function renderArmBtn(){
+    var errs = computeErrors();
+    if(arming){
+      armBtn.disabled = true;
+      armBtn.innerHTML = '<span class="arm-spinner"></span> Arming guardian…';
+    } else if(armedFlash){
+      armBtn.disabled = true;
+      armBtn.textContent = "✓ Guardian armed — now watching";
+    } else if(!wallet.address){
+      armBtn.disabled = false;
+      armBtn.textContent = "Connect wallet to arm";
+    } else {
+      armBtn.disabled = touched && Object.keys(errs).length > 0;
+      armBtn.textContent = "Arm guardian";
+    }
+  }
+  function renderForm(){
+    var errs = computeErrors();
+    setField(slInput, slErr, errs.sl);
+    setField(tpInput, tpErr, errs.tp);
+    setField(amtInput, amtErr, errs.amt);
+    if(!Object.keys(errs).length){
+      var sl = parseFloat(slInput.value), tp = parseFloat(tpInput.value), amt = parseFloat(amtInput.value);
+      summaryEl.innerHTML = "If WETH falls to <b class=\"rose\">" + fmtUsd(sl) + "</b>, Reflex sells my <b>" +
+        fmtNum(amt) + " WETH</b> automatically. If it climbs to <b class=\"volt\">" + fmtUsd(tp) +
+        "</b>, Reflex takes profit instead. No keeper, no bot — the contract itself reacts.";
+    } else {
+      summaryEl.textContent = "Fix the highlighted fields and Reflex will spell out exactly what your guardian will do.";
+    }
+    renderArmBtn();
+  }
+  function applyDefaults(){
+    slInput.value = (Math.round(price * 0.92 * 100) / 100).toString();
+    tpInput.value = (Math.round(price * 1.18 * 100) / 100).toString();
+    renderForm();
+  }
+  [slInput, tpInput, amtInput].forEach(function(inp){
+    inp.addEventListener("input", function(){ formEdited = true; renderForm(); });
+  });
+
+  /* ---------- your guardians (local demo entries, as the old app modelled) ---------- */
+  var PENDING_STEPS = [
+    { title: "Price event on the pair", detail: "Waiting for a Sync event that crosses a threshold", net: "Base Sepolia" },
+    { title: "Reactive contract evaluates", detail: "Threshold check runs inside react() on Lasna", net: "Reactive Lasna" },
+    { title: "Protective swap executes", detail: "Callback sells the position on Base Sepolia", net: "Base Sepolia" }
+  ];
+  function guardianHTML(g, fresh){
+    var pos = (price - g.sl) / (g.tp - g.sl) * 100;
+    pos = Math.max(0, Math.min(100, pos));
+    var dSl = ((price - g.sl) / price * 100).toFixed(1);
+    var dTp = ((g.tp - price) / price * 100).toFixed(1);
+    var steps = PENDING_STEPS.map(function(s){
+      return '<li class="g-step"><span class="g-node"></span><div class="g-step-main">' +
+        '<div class="g-step-top"><span class="g-step-title">' + s.title + '</span><span class="g-step-net">' + s.net + "</span></div>" +
+        '<p class="g-step-detail">' + s.detail + "</p>" +
+        '<p class="g-step-pend">Pending — fires automatically</p></div></li>';
+    }).join("");
+    return '<div class="g-item' + (fresh ? " fresh" : "") + '">' +
+      '<div class="g-head"><span class="g-pair">WETH / USDC</span><span class="g-id">' + g.id + "</span>" +
+      '<span class="g-pill watch"><span class="dot rec" style="width:6px;height:6px"></span>Watching</span>' +
+      '<span class="g-pill demo">Demo</span>' +
+      '<span class="g-armed-at">Armed ' + timeAgo(g.at) + "</span></div>" +
+      '<div class="g-stats">' +
+        '<div class="g-stat"><label>Protected</label><b class="tnum">' + fmtNum(g.amt) + " WETH</b><span>≈ " + fmtUsd(g.amt * price, 0) + "</span></div>" +
+        '<div class="g-stat"><label>Stop-loss</label><b class="tnum" style="color:var(--rose)">' + fmtUsd(g.sl) + "</b><span>" + dSl + "% away</span></div>" +
+        '<div class="g-stat"><label>Take-profit</label><b class="tnum" style="color:var(--volt)">' + fmtUsd(g.tp) + "</b><span>" + dTp + "% away</span></div>" +
+      "</div>" +
+      '<div class="g-bar"><span class="g-marker" style="left:' + pos + '%"></span></div>' +
+      '<div class="g-bar-labels"><span>' + fmtUsd(g.sl, 0) + '</span><span class="now">Now ' + fmtUsd(price) + '</span><span>' + fmtUsd(g.tp, 0) + "</span></div>" +
+      '<div class="g-steps"><div class="g-steps-head"><span class="ro-k">Automation loop</span><span style="font-size:11px;color:var(--faint)">Subscribed · Lasna</span></div><ol>' + steps + "</ol></div>" +
+    "</div>";
+  }
+  function renderList(freshFirst){
+    listEl.innerHTML = demoGuardians.map(function(g, i){ return guardianHTML(g, freshFirst && i === 0); }).join("");
+    emptyEl.hidden = demoGuardians.length > 0;
+    countEl.textContent = demoGuardians.length ? demoGuardians.length + " watching · demo" : "";
+  }
+  armBtn.addEventListener("click", function(){
+    if(arming || armedFlash) return;
+    if(!wallet.address){ openChooser(); return; }
+    touched = true;
+    var errs = computeErrors();
+    renderForm();
+    if(Object.keys(errs).length) return;
+    var g = {
+      id: "RFX-" + (seq++),
+      sl: parseFloat(slInput.value),
+      tp: parseFloat(tpInput.value),
+      amt: parseFloat(amtInput.value),
+      at: Date.now()
+    };
+    arming = true; renderArmBtn();
+    setTimeout(function(){
+      demoGuardians.unshift(g);
+      arming = false; armedFlash = true;
+      renderList(true); renderArmBtn();
+      var first = listEl.querySelector(".g-item");
+      if(first) first.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "nearest" });
+      setTimeout(function(){ armedFlash = false; renderArmBtn(); }, 3200);
+    }, 600);
+  });
+
+  /* ---------- init ---------- */
+  renderWallet();
+  applyDefaults();
+  renderList(false);
+  loadLive();
+  restore();
+  setInterval(loadLive, 30000);
 })();
 </script>
 </body>
