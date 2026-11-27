@@ -258,16 +258,6 @@
     .hbar .count{font-size:11px}
   }
 
-  /* ---------- reduced motion ---------- */
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto}
-    .reveal{opacity:1;transform:none;transition:none}
-    .ticker-track{animation:none}
-    .dot.rec{animation:none}
-    .hbar .bar{transition:none}
-    .mech .mech-fill{transition:none}
-    *{animation-duration:.01s !important}
-  }
   /* ---------- arm a guardian ---------- */
   .arm-shell [hidden]{display:none !important}
   .arm-shell{margin-top:20px;border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden}
@@ -387,11 +377,6 @@
     .arm-connect{position:static}
     .arm-chooser{right:16px}
     .arm-live-cell{padding:14px 16px}
-  }
-  @media (prefers-reduced-motion: reduce){
-    .g-item.fresh{animation:none}
-    .arm-spinner{animation-duration:1.6s}
-    .g-marker{transition:none}
   }
 </style>
 <body>
@@ -866,7 +851,6 @@
   .fleet-note{padding:0 20px 20px;color:var(--faint);font-size:12.5px;line-height:1.6;max-width:840px}
   @media (max-width:1020px){ .fleet-stats{grid-template-columns:1fr 1fr} .fstat:nth-child(2){border-right:none} .fstat:nth-child(1),.fstat:nth-child(2){border-bottom:1px solid var(--line)} }
   @media (max-width:640px){ #fleetChart{height:230px} .fleet-grid{padding:14px} .fstat b{white-space:normal;font-size:18px} .counter .v{font-size:20px} }
-  @media (prefers-reduced-motion: reduce){ .chaos-dots{animation:none} .ftile{transition:none;opacity:1} }
 </style>
 <script src="loops-data.js"></script>
 <script>
@@ -885,7 +869,7 @@
     st.textContent = ".reveal{opacity:1 !important;transform:none !important;transition:none !important}";
     document.head.appendChild(st);
   }
-  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduced = false; // motion always on (Godson, 2026-11-27): the demo must move on every PC
   var fmt = function(v, dec){ return v.toLocaleString("en-US",{minimumFractionDigits:dec, maximumFractionDigits:dec}); };
   var shortHash = function(h){ return h.slice(0,10) + "…" + h.slice(-6); };
   var BASESCAN = "https://sepolia.basescan.org/tx/";
@@ -1219,7 +1203,7 @@
   var section = document.getElementById("arm");
   if(!section) return;
   var $ = function(id){ return document.getElementById(id); };
-  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduced = false; // motion always on (Godson, 2026-11-27): the demo must move on every PC
 
   /* ---------- constants (from the old app's chain.ts) ---------- */
   var GUARDIAN = "0x057A04Ad09c9A1fD83088F9863E81b181f8a4D9A";   // Reactive Lasna 5318007
@@ -1640,7 +1624,7 @@
   var grid = document.getElementById("fleetGrid");
   var cv = document.getElementById("fleetChart");
   if(!FLEET || !grid || !cv) return;
-  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduced = false; // motion always on (Godson, 2026-11-27): the demo must move on every PC
   var fmt = function(v, dec){ return v.toLocaleString("en-US",{minimumFractionDigits:dec, maximumFractionDigits:dec}); };
   var shortHash = function(h){ return h.slice(0,10) + "…" + h.slice(-6); };
   var shortAddr = function(a){ return a.slice(0,6) + "…" + a.slice(-4); };
