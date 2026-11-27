@@ -1,0 +1,327 @@
+{
+  "positions": [
+    {
+      "idx": 1,
+      "guardian": "0x2689972c603597031CD1B5D8AB03D2bb6f27F812",
+      "guardianDeployTx": "0xae24912aa3ad490ad9bca0adad33a5a47097527ef6ee70aaafc2aeac7a0c10f9",
+      "callback": "0xA185b28d57cAecd4225a328b8B3Ce46264131C70",
+      "callbackDeployTx": "0x1ff1cc1cdf79c1cca98066e2ab7688330243a51d31ad6d106bfe5c010b80885b",
+      "setCallbackTx": "0xf234cc748573a0794048086ddce2301adf7c56f435fd87c96d5579041c305b68",
+      "configureTx": "0x3d90f18665271794d6f2d2b6b877ca8a392383c55607228ea4812fe237ac1fd2",
+      "approveTx": "0x5821488298d0841b0d89f2be5e8aa94f449f317c99abb81a87f6e7d27cedb34b",
+      "guardianFundedLREACT": 0.034,
+      "callbackFundedETH": 0.00005,
+      "stateBefore": 1,
+      "statusBefore": 0,
+      "execution": {
+        "callbackTx": "0xf05d241f8f860bf209fa89eb4ac1259738b0526996fc47168fafbc2276389811",
+        "callbackBlock": 64267093,
+        "deltaBlocks": 10,
+        "kind": 1,
+        "observedPrice": 1800.0000052703128,
+        "executedPrice": 1419.8457209743008,
+        "amountInWETH": 10,
+        "amountOutUSDC": 13407.256277636043
+      },
+      "trigger": {
+        "reactiveTx": "0x8f24d062f3753d184caa706206bb024f4ff599582b15000db4ff003953a93f38",
+        "reactiveBlock": 9369623
+      }
+    },
+    {
+      "idx": 2,
+      "guardian": "0xe5F505732228De36d94C8e966ad598e52523d6fC",
+      "guardianDeployTx": "0x3612de8565d6b8eda00327dc0d02e4276a6d351b70501304c1da9bffa576b781",
+      "callback": "0xC10464EF0C340124507C53Df5493dc1DF72effd2",
+      "callbackDeployTx": "0x14fc004d4a69f2c87b5d8c1c7e7870603fb56bf1102923b76754b709055d1121",
+      "setCallbackTx": "0xe736f18af999e442af8ff14624c661451191b921cc4d08bd89988863f40279e0",
+      "configureTx": "0xbf633a26cc32380c699a50459611bb972abf885da6f25ce95724cccdf98bc9f2",
+      "approveTx": "0xba422203f7ae745a23be2b42cb9a97db791a4a072a2e86dee7b790e97863985b",
+      "guardianFundedLREACT": 0.034,
+      "callbackFundedETH": 0.00005,
+      "stateBefore": 1,
+      "statusBefore": 0,
+      "execution": {
+        "callbackTx": "0x9e89c70764f9c14a5d96b5c8e7dda682267af0417e605be6997483e683db4121",
+        "callbackBlock": 64267102,
+        "deltaBlocks": 19,
+        "kind": 1,
+        "observedPrice": 1800.0000052703128,
+        "executedPrice": 677.8861398603282,
+        "amountInWETH": 10,
+        "amountOutUSDC": 6507.593019443618
+      },
+      "trigger": {
+        "reactiveTx": "0xd5ef765bae6d0bd1b614abdfeab4ff1dec9767c0df4b563e6d11012544954fe9",
+        "reactiveBlock": 9369623
+      }
+    },
+    {
+      "idx": 3,
+      "guardian": "0x664C9D2C701D0B22fe951aF9e82fB85678Fa4259",
+      "guardianDeployTx": "0xae5337199b2c97aa1cd5a89b704967c913981742ef1b4ea2082df127809f8617",
+      "callback": "0xcA86602CF19013a329147FAA59A65d1CAcF3b61B",
+      "callbackDeployTx": "0xf882a27589ccb066d5271d4cb36a235959eb1cf3adfbbc2a51d5414f1af970f6",
+      "setCallbackTx": "0xa0ad118ef0d6dd5ed19761c72f43f70081e11e115f3b2d00c342b45a83eb184b",
+      "configureTx": "0xe39c7073a2c0d9380991b5782d00a0900f3877076158e2a366afc8f5b317839f",
+      "approveTx": "0x93f73bc6e11007b2837d82ba3cfc5a38be2a533614ebfa283de1f8f20509924a",
+      "guardianFundedLREACT": 0.034,
+      "callbackFundedETH": 0.00005,
+      "stateBefore": 1,
+      "statusBefore": 0,
+      "execution": {
+        "callbackTx": "0xfb3c147e0aadeced67592684dd7089fe5563bca4e2c09295a1682cb361516872",
+        "callbackBlock": 64267099,
+        "deltaBlocks": 16,
+        "kind": 1,
+        "observedPrice": 1800.0000052703128,
+        "executedPrice": 867.2053270071461,
+        "amountInWETH": 10,
+        "amountOutUSDC": 8284.651496581419
+      },
+      "trigger": {
+        "reactiveTx": "0x024cfb7218726a3849f3699395f05f024044eec765d835a45c26edc7aa97930b",
+        "reactiveBlock": 9369623
+      }
+    },
+    {
+      "idx": 4,
+      "guardian": "0xe0FaEA014e5D1E072cc2a24832C9aBC6497FdE69",
+      "guardianDeployTx": "0x44a7bc49e2cb1c496add6e228705dfec247976df99e18e61bedbfda0d1711f29",
+      "callback": "0xB0EF443244695B9Cd35Ad782714b94e7A8DB977b",
+      "callbackDeployTx": "0x1ff93fdd858204f0622b0cfe47c36ff9e65620826f8f903c7829219fb3be4dfb",
+      "setCallbackTx": "0x1dca5fc7f692feac56eb7779fec8f6733e44e2463df4f65e7f5cd742dbb08a95",
+      "configureTx": "0xc94279aa79f7aff5ba69cfd2e3c11d3caef50000b194769918ba0001e9070ea3",
+      "approveTx": "0x88e2e4307282c34ea4fde9d052ccd212d9c34699de7c3d4196f7bdb01e7df9c4",
+      "guardianFundedLREACT": 0.034,
+      "callbackFundedETH": 0.00005,
+      "stateBefore": 1,
+      "statusBefore": 0,
+      "execution": {
+        "callbackTx": "0xc166016dc2776296a2ab9b72ed4e6c2757c183b11899854709dc3c179db3831b",
+        "callbackBlock": 64267101,
+        "deltaBlocks": 18,
+        "kind": 1,
+        "observedPrice": 1800.0000052703128,
+        "executedPrice": 733.4435248934466,
+        "amountInWETH": 10,
+        "amountOutUSDC": 7030.432962322958
+      },
+      "trigger": {
+        "reactiveTx": "0xb4c09b8f059650d8b7a2dbd4d7657453bbb61694a9e57f185d19e5b143b408ec",
+        "reactiveBlock": 9369623
+      }
+    },
+    {
+      "idx": 5,
+      "guardian": "0x06DBDd538E9b7211b6e3a7A4a66438C7002173DF",
+      "guardianDeployTx": "0x29a83ecf5345d5043919cbf1752b6d894c7e88aab5b2953ba62ef3b612e553d1",
+      "callback": "0xf222B8a5e0bA4191b7F3464C83e51a2160234393",
+      "callbackDeployTx": "0x8fea2398088d7f5e911dc89bf44c0a23abe4968e0e67800b66fcbb1a85d61c86",
+      "setCallbackTx": "0xaf0770bf6fe3aa59cc619bfbc9511a3d09f764aaa2a139d5495ef2deeb8c52e9",
+      "configureTx": "0x63263944f3aaa64b318c491f00c6ea9e78750df9d955ba6aacd2084b60fb3f10",
+      "approveTx": "0xb7c3bbb1a04030c5f2ad993a939eb9e8f055e5073cc9073b937be7eb12cce7c6",
+      "guardianFundedLREACT": 0.034,
+      "callbackFundedETH": 0.00005,
+      "stateBefore": 1,
+      "statusBefore": 0,
+      "execution": {
+        "callbackTx": "0xf6ac254c7ecd15a09f4a7a158081f00ec863e518da14cb78a1d7411b03b99792",
+        "callbackBlock": 64267091,
+        "deltaBlocks": 8,
+        "kind": 1,
+        "observedPrice": 1800.0000052703128,
+        "executedPrice": 1800.0000052703128,
+        "amountInWETH": 10,
+        "amountOutUSDC": 16884.334106384915
+      },
+      "trigger": {
+        "reactiveTx": "0x907199b639b6a580a1aa2f6ce5afda2134236f9519d5d1a11101e56fac7b243b",
+        "reactiveBlock": 9369623
+      }
+    },
+    {
+      "idx": 6,
+      "guardian": "0x3C21F5c0bD92E474F7855AD1d08F5E5A35FC69fA",
+      "guardianDeployTx": "0xa1f473b17ba9885b1944685553f288217a86da4d21517e372650f056ca25643f",
+      "callback": "0x046765cE17a037075fD15c507aC0Cd459196FF90",
+      "callbackDeployTx": "0xe69a1db7f7ba7c07747f2ba55a20d41978f49aa3efc8736ec1a21596f952b76a",
+      "setCallbackTx": "0xccd8c87b4192bd21bf38416b8c6dabbe21a405ad89b2f27d55dfb08aed970073",
+      "configureTx": "0xb7bfaa95a4ab4ba4bde4aaa8e4853380ac27ef8c034a090abf797a3a086bdd23",
+      "approveTx": "0x4ae9fd7a0156f14b58d1993a373063b260e4d5dfcbf9afded75a5686e040019c",
+      "guardianFundedLREACT": 0.034,
+      "callbackFundedETH": 0.00005,
+      "stateBefore": 1,
+      "statusBefore": 0,
+      "execution": {
+        "callbackTx": "0x25503a011dfb24217f9478d5c2f1520f68abf014bddd7242e0c5ecf04bd07fd6",
+        "callbackBlock": 64267095,
+        "deltaBlocks": 12,
+        "kind": 1,
+        "observedPrice": 1800.0000052703128,
+        "executedPrice": 1148.577416490203,
+        "amountInWETH": 10,
+        "amountOutUSDC": 10903.817133068178
+      },
+      "trigger": {
+        "reactiveTx": "0xf979d740ba4bb1fbed854726fee47e50964784945806b962508960f2cfff3856",
+        "reactiveBlock": 9369623
+      }
+    },
+    {
+      "idx": 7,
+      "guardian": "0x1Cecfe1062DA15342B72EcCe49374997b3BB93aD",
+      "guardianDeployTx": "0xd7723923667831bd1bf5277b1b1b77de3836562110af23da5a72094ffadf4ed1",
+      "callback": "0x53785c2ab66ed8aBdd0A31cD9725468b4532F6Ff",
+      "callbackDeployTx": "0x7e2c2e07099b227bb5146d38d1e404e26d4ee6e46a78d2f8cef5f1827fca78bd",
+      "setCallbackTx": "0x98dcdab288c9e68b3e427aa2f9611ef69cc3308d265dec67544f939715fefc29",
+      "configureTx": "0x583899412f6d6ccfc4f7f379b7dddd8c035741d91c19887b27d51d79362110c3",
+      "approveTx": "0xfa85d510888e83d90f5a4f8b3be893261884c7b182d8fb5c83204ee009b640cc",
+      "guardianFundedLREACT": 0.034,
+      "callbackFundedETH": 0.00005,
+      "stateBefore": 1,
+      "statusBefore": 0,
+      "execution": {
+        "callbackTx": "0x4f65fb3c811df22d67c1df7a806b51dd91c3e59f3d19e2cb73be2d3a7cba17d0",
+        "callbackBlock": 64267092,
+        "deltaBlocks": 9,
+        "kind": 1,
+        "observedPrice": 1800.0000052703128,
+        "executedPrice": 1593.0439203884273,
+        "amountInWETH": 10,
+        "amountOutUSDC": 14995.677708121346
+      },
+      "trigger": {
+        "reactiveTx": "0x6bd53dfb3cdac4039ae47f895f000ef1d9ec0f2028ebf16db50a72185dcb46c7",
+        "reactiveBlock": 9369623
+      }
+    },
+    {
+      "idx": 8,
+      "guardian": "0x5e4541398BCBe134aE3B3Cd5445c6119Cfed5a34",
+      "guardianDeployTx": "0x69766cbf31b4ccc6f17d5e8b3bf6901835989e9f08f5a5b9249391a9bc9925ab",
+      "callback": "0x3a60CA06Ba17bE9f1805c158258BDdA91b161c9E",
+      "callbackDeployTx": "0x1cfe0058f3a986deb96c7d36977d6476d3503aa9bc7bf0120a71ca20396b697c",
+      "setCallbackTx": "0x3af4273e4d7f054fa877e5826d617b020068b01eb0b341501df705d3cab0015c",
+      "configureTx": "0xd8b3f30be9742afa09d869f649db3a71465514685538384d4af6352411b6279f",
+      "approveTx": "0x2a51b95736ccf1bf8cb07b4f0ea1263ab4d1b93ba7826f89a3b1702be2d1ddbe",
+      "guardianFundedLREACT": 0.034,
+      "callbackFundedETH": 0.00005,
+      "stateBefore": 1,
+      "statusBefore": 0,
+      "execution": {
+        "callbackTx": "0xd39c7ba31db917ecf89e8b136449e1a3387cb6e408d2ad78ba76c6dbf415cb43",
+        "callbackBlock": 64267098,
+        "deltaBlocks": 15,
+        "kind": 1,
+        "observedPrice": 1800.0000052703128,
+        "executedPrice": 948.2528876778459,
+        "amountInWETH": 10,
+        "amountOutUSDC": 9041.62972499318
+      },
+      "trigger": {
+        "reactiveTx": "0x037213cf7bb918c584f4193eb16d0aabc4e0c044d6a8c54164d9f2315068f148",
+        "reactiveBlock": 9369623
+      }
+    },
+    {
+      "idx": 9,
+      "guardian": "0xC767C9f681344948aC1b35a131e9fCa7E15fe8d2",
+      "guardianDeployTx": "0x5b44fe6c18d38de88fb6d8d11bb01fa0639b8bfd54911b79a8f9d059726cd46e",
+      "callback": "0xBc8A37d563b86d80fFbdf3FbeccbDb9fB5633d0C",
+      "callbackDeployTx": "0x9c6752de7942a633a8246313ea0bafff1853b416139ecc48826bca1aec561628",
+      "setCallbackTx": "0x476f72c97d440439cd27d3178a893774be982964752f408085111a2c625b81d7",
+      "configureTx": "0x213cb7ce310284bd1c0cc24a3c3dc26c48a0dfcb8f2f184471f3eb3771cf91c7",
+      "approveTx": "0xbda82f69faa64e4603a1ffa08b6a4bf6e48575972bf91cadf2b16ff0bdcf5260",
+      "guardianFundedLREACT": 0.034,
+      "callbackFundedETH": 0.00005,
+      "stateBefore": 1,
+      "statusBefore": 0,
+      "execution": {
+        "callbackTx": "0x5ecf0a7636435e5bfa89231a76031b4744e6bb6d05b88270252ac032aec74e99",
+        "callbackBlock": 64267100,
+        "deltaBlocks": 17,
+        "kind": 1,
+        "observedPrice": 1800.0000052703128,
+        "executedPrice": 796.1256498055063,
+        "amountInWETH": 10,
+        "amountOutUSDC": 7618.956889651855
+      },
+      "trigger": {
+        "reactiveTx": "0x6d991c2e37f6fd16f67a6ca4261efbf34b90e971bb63647e40782d54fa7304f3",
+        "reactiveBlock": 9369623
+      }
+    },
+    {
+      "idx": 10,
+      "guardian": "0x5656935b8e05219Ca7a02F04E5Eae542BE981e7C",
+      "guardianDeployTx": "0x7254313985e6ba805857912d22ff1050047171cebb6561ce89fa5edd20a504cd",
+      "callback": "0xb16ee242e0c16333c1a4c64bC0dccc90e820ac64",
+      "callbackDeployTx": "0xfc39ca36759d22596eec3bc73d6bd0edacf9ca4acb7d1a58f99de36b57ca5f0c",
+      "setCallbackTx": "0x45ef5733effb6e1c0fcedf6f5bcee38b2f7f52ecb9a1fc290f4e96fbdc08f68e",
+      "configureTx": "0x030e53b5d4dc74afe1dfde4624dc68d26e4ce424de56ea52078589ee25dec78f",
+      "approveTx": "0x417d60235f7472785463007d40668b78fa7228099e72836f074559a77501cd34",
+      "guardianFundedLREACT": 0.034,
+      "callbackFundedETH": 0.00005,
+      "stateBefore": 1,
+      "statusBefore": 0,
+      "execution": {
+        "callbackTx": "0x178b3c45018069c301b04024e047391cfdec1fd2c3470007a33be487959a7cc0",
+        "callbackBlock": 64267096,
+        "deltaBlocks": 13,
+        "kind": 1,
+        "observedPrice": 1800.0000052703128,
+        "executedPrice": 1041.2237221632752,
+        "amountInWETH": 10,
+        "amountOutUSDC": 9907.385925975264
+      },
+      "trigger": {
+        "reactiveTx": "0x99c94b2526553d3dfeee90ec4fd519b840085197a3e7a2700fa29f74ecd6e65f",
+        "reactiveBlock": 9369623
+      }
+    },
+    {
+      "idx": 11,
+      "guardian": "0x2bBe4EE844c5c4E59649856704BE3f8593476A71",
+      "guardianDeployTx": "0xf76009e025f26f142bdbe306552c0e6268a6b2cbf7923c830e66ddc0f904efe4",
+      "callback": "0xFa5D52f8CB52637A3ec67484e14a4d92ecae4D85",
+      "callbackDeployTx": "0x3cd2961bf007cd92d157d613e3f4810413474da21494c3f71d3d6fef1e06090c",
+      "setCallbackTx": "0x49e8b8f949c9ea6f89d72bac5799be34ba45c27e8aff0bbe103f1d99b710a39d",
+      "configureTx": "0x662f870133dbf955eceb147eaa2e195a96dcbd74ff01b4e9db671da11c7ffb63",
+      "approveTx": "0x6266dd12cc0d3b77f0e30e82c45a47cce7130aa78c8fa8bc6196a523b2279f22",
+      "guardianFundedLREACT": 0.034,
+      "callbackFundedETH": 0.00005,
+      "stateBefore": 1,
+      "statusBefore": 0,
+      "execution": {
+        "callbackTx": "0xd6738134caf89cefa1bf07eea67434f9a3e3fdee93d116d26a0e45c4239667db",
+        "callbackBlock": 64267094,
+        "deltaBlocks": 11,
+        "kind": 1,
+        "observedPrice": 1800.0000052703128,
+        "executedPrice": 1273.4422244542877,
+        "amountInWETH": 10,
+        "amountOutUSDC": 12058.623306793192
+      },
+      "trigger": {
+        "reactiveTx": "0xfef4cb48abcfa1057498cd69d9282f3a4fb05c3318f4fb9a5baadca4c77a04bf",
+        "reactiveBlock": 9369623
+      }
+    }
+  ],
+  "mainDisarmTx": "0x489cbc7c897a44116381e5ebb1a21baac1699b3fc206c2cb67a0e044c0fed4fb",
+  "mainCallbackDisarmTx": "0xfb6941c3af71d2ef697fe7919ba4ff626146aabd73674d74316ce792577a4a69",
+  "event": {
+    "targetPrice": 1800,
+    "priceBefore": 2008.7155345536135,
+    "priceAfter": 1800.0000052703126,
+    "transferTx": "0x9e02b337381a0dfca59805584b8c9feb421b54b7b078c33e29730cfa239af172",
+    "transferBlock": 64267058,
+    "originTx": "0x0b652cb1e488603aec5ee467e714b80e585aa18c6968cc55540cf28535fd432c",
+    "originBlock": 64267083,
+    "amountIn": 8.475451146568311,
+    "amountOut": 16068.978873990744,
+    "firedAt": "2026-11-27T10:28:04.493Z",
+    "pendingLeft": []
+  }
+}
