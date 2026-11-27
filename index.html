@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reflex — the guardian that sells before you wake up</title>
-<meta name="description" content="Reflex is a stop loss and take profit guardian that lives inside a Reactive smart contract. 64 executed loops on chain, 1,698,003.97 USDC of protective sales, median reaction 8 Base blocks. Every loop replayed from the evidence pack.">
+<meta name="description" content="Reflex is a stop loss and take profit guardian that lives inside a Reactive smart contract. 1,000 executed loops on chain, 27,271,144.94 USDC of protective sales, median reaction 6 Base blocks, plus an 11 position fleet fired by a single crash. Every loop replayed from the evidence pack.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -410,7 +410,7 @@
     <div class="topmeta">
       <span class="pill"><span class="dot rec"></span> Execution record</span>
       <span class="pill">Reactive Omni · <b>Every Second Counts</b></span>
-      <span class="pill"><b>64</b> loops · <b>183</b> receipts</span>
+      <span class="pill"><b>1,000</b> loops · <b>3,000</b> receipts</span>
     </div>
   </div>
 </header>
@@ -421,7 +421,7 @@
     <div class="overline">Reactive Network · Base Sepolia × Lasna</div>
     <h1>Reflex<span class="it">.</span></h1>
     <p class="lede">Reflex is a <b>stop loss and take profit guardian that lives inside a Reactive smart contract</b>. Set two prices and walk away. When the market crosses one, the contract sells the position itself. No keeper, no bot, no one watching a screen.</p>
-    <p class="lede" style="margin-top:14px">Then it was made to prove it: <b>64 complete executions on chain</b>, each one a real origin swap, a real reaction on Lasna, and a real protective sale settled back on Base Sepolia.</p>
+    <p class="lede" style="margin-top:14px">Then it was made to prove it: <b>1,000 complete executions on chain</b>, each one a real origin swap, a real reaction on Lasna, and a real protective sale settled back on Base Sepolia.</p>
     <div class="hero-status">
       <span class="dot rec"></span>
       <span>RECORDED ON CHAIN</span><span class="sep">/</span>
@@ -431,18 +431,18 @@
     <div class="counters">
       <div class="counter">
         <div class="k">Loops executed</div>
-        <div class="v tnum"><span data-count="64">0</span></div>
-        <div class="s"><b>32</b> stop loss · <b>32</b> take profit</div>
+        <div class="v tnum"><span data-count="1000">0</span></div>
+        <div class="s"><b>501</b> stop loss · <b>499</b> take profit</div>
       </div>
       <div class="counter">
         <div class="k">Protective sales</div>
-        <div class="v tnum"><span data-count="1698003.97" data-dec="2">0</span></div>
+        <div class="v tnum"><span data-count="27271144.94" data-dec="2">0</span></div>
         <div class="s"><b>USDC</b> · settled to the owner, on chain</div>
       </div>
       <div class="counter">
         <div class="k">Median reaction</div>
-        <div class="v tnum"><span data-count="8">0</span><small> blocks</small></div>
-        <div class="s"><b>63 of 64</b> inside 10 Base blocks</div>
+        <div class="v tnum"><span data-count="6">0</span><small> blocks</small></div>
+        <div class="s"><b>997 of 1,000</b> inside 10 Base blocks</div>
       </div>
       <div class="counter">
         <div class="k">Protected per loop</div>
@@ -461,7 +461,7 @@
   <section class="block" id="replay">
     <div class="sec-kicker">The evidence, in motion</div>
     <div class="sec-head reveal">
-      <h2>All 64 loops, <em>replayed</em></h2>
+      <h2>All 1,000 loops, <em>replayed</em></h2>
       <p class="note">This is a replay of recorded executions, not a live feed. Every point is one loop from the evidence pack: the price it fired at, what it sold, and how many Base blocks the reaction took.</p>
     </div>
 
@@ -478,8 +478,8 @@
         <canvas id="replayChart"></canvas>
       </div>
       <div class="scrub">
-        <input type="range" id="scrubber" min="0" max="64" step="1" value="0" aria-label="Scrub the replay">
-        <span class="pos">LOOP <b id="scrubPos">0 / 64</b></span>
+        <input type="range" id="scrubber" min="0" max="1000" step="1" value="0" aria-label="Scrub the replay">
+        <span class="pos">LOOP <b id="scrubPos">0 / 1,000</b></span>
       </div>
       <div class="chart-legend">
         <span><span class="lg-line"></span> Executed price, in loop order</span>
@@ -514,16 +514,31 @@
     </div>
   </section>
 
+  <!-- ================= CHAOS STRIP ================= -->
+  <section class="chaos reveal" id="chaos">
+    <div class="chaos-dots" aria-hidden="true"></div>
+    <div class="chaos-in">
+      <div class="chaos-k">Loops 301 to 332 · the chaos batch</div>
+      <p class="chaos-big">Thirty two loops ran <em>under fire</em>: 58 random noise trades hit the pool while they executed.</p>
+      <p class="chaos-note">Twice, the guardian fired entirely on its own, with no driver running, when a noise trade crossed the band: <b>loop 309</b> and <b>loop 322</b>. Both sales were reconstructed from chain receipts afterwards and verified like every other loop.</p>
+      <div class="chaos-chips">
+        <span class="evchip"><i>batch</i> 32 loops</span>
+        <span class="evchip"><i>noise</i> 58 random swaps</span>
+        <span class="evchip"><i>autonomous</i> 2 firings, no driver</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= HISTOGRAM ================= -->
   <section class="block" id="latency">
     <div class="sec-kicker">Reaction speed</div>
     <div class="sec-head reveal">
       <h2>How fast is a <em>reflex</em>?</h2>
-      <p class="note">Blocks between the origin swap on Base Sepolia and the protective sale landing in the callback, for all 64 loops. One loop, number 17, took 17 blocks. It is in the chart, not edited out.</p>
+      <p class="note">Blocks between the origin swap on Base Sepolia and the protective sale landing in the callback, for all 1,000 loops. Three loops took longer than ten blocks: number 17 at 17 blocks, 877 at 14 and 407 at 12. They are in the chart, not edited out.</p>
     </div>
     <div class="hist-shell reveal">
       <div class="hist" id="hist"></div>
-      <div class="hist-cap"><span>BASE BLOCKS FROM CROSS TO SETTLED SALE</span><span>MEDIAN 8 · MEAN 7.67 · RANGE 5 TO 17</span></div>
+      <div class="hist-cap"><span>BASE BLOCKS FROM CROSS TO SETTLED SALE</span><span>MEDIAN 6 · MEAN 5.89 · RANGE 3 TO 17</span></div>
     </div>
   </section>
 
@@ -551,18 +566,39 @@
           <h3>The reaction<span class="chain">Reactive Lasna · ReflexGuardian</span></h3>
           <p>The guardian is a Reactive smart contract subscribed to the pair. It prices the event on Lasna and <b>fires its own Triggered transaction</b>. Nobody polls an API, nobody holds a key, nobody signs. The watcher is code, and it does not sleep.</p>
           <span class="evchip"><i>event</i> Triggered(kind, price, originTxHash)</span>
-          <span class="evchip"><i>cost</i> ≈ 0.027 lREACT per reaction</span>
+          <span class="evchip"><i>cost</i> ≈ 0.030 lREACT per reaction, all in</span>
         </div>
       </div>
       <div class="stage s3">
         <div class="ghost">03</div>
         <div>
           <h3>The sale<span class="chain">Base Sepolia · ReflexCallback</span></h3>
-          <p>The callback contract receives the reaction back on Base Sepolia and <b>sells the protected 10 WETH</b> into the pair, settling USDC to the owner and recording the execution on chain. Median time from cross to settled sale across 64 loops: <b>8 blocks</b>.</p>
+          <p>The callback contract receives the reaction back on Base Sepolia and <b>sells the protected 10 WETH</b> into the pair, settling USDC to the owner and recording the execution on chain. Median time from cross to settled sale across 1,000 loops: <b>6 blocks</b>.</p>
           <span class="evchip"><i>record</i> Execution(kind, observed, executed, amountIn, amountOut)</span>
           <span class="evchip"><i>then</i> both contracts re-arm and keep watching</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ================= FLEET ================= -->
+  <section class="block" id="fleet">
+    <div class="sec-kicker">The fleet event · 27 November 2026</div>
+    <div class="sec-head reveal">
+      <h2>One crash. Eleven guardians. <em>One block.</em></h2>
+      <p class="note">Eleven more guardians, deployed from the identical contract code, each guarding its own 10 WETH position on the same pool. A single crash swap dragged the price from 2,008.72 to 1,800.00. Every guardian fired in the same Reactive block, and every position settled. None aborted.</p>
+    </div>
+    <div class="fleet-shell reveal">
+      <div class="fleet-chart-wrap"><canvas id="fleetChart"></canvas></div>
+      <div class="fleet-cap"><span>THE CRASH SWAP · BASE BLOCK 64,267,083 · LASNA BLOCK 9,369,623</span><span>THEN 11 SALES INTO THE SAME POOL</span></div>
+      <div class="fleet-stats">
+        <div class="fstat"><div class="ro-k">Positions</div><b class="tnum">11</b></div>
+        <div class="fstat"><div class="ro-k">Sold</div><b class="tnum">110 <small>WETH</small></b></div>
+        <div class="fstat"><div class="ro-k">Settled</div><b class="tnum">116,640.36 <small>USDC</small></b></div>
+        <div class="fstat"><div class="ro-k">Reaction spread</div><b class="tnum">8–19 <small>blocks · median 13</small></b></div>
+      </div>
+      <div class="fleet-grid" id="fleetGrid"></div>
+      <p class="fleet-note">Each sale landed in the same small pool, so the sales settled at different prices as the pool moved under them. That is the pool's price impact, recorded as it happened. The guardian code behind all 11 positions is byte identical to the submitted ReflexGuardian, checked on chain.</p>
     </div>
   </section>
 
@@ -744,16 +780,16 @@
         <div class="vk">Forge test suite passing, covering the abort path, re-arming and the guard logic</div>
       </div>
       <div class="vcell">
-        <div class="vv tnum"><em>61</em> loops · <em>183</em> receipts</div>
-        <div class="vk">Independently re-verified from chain by a separate QA pass, every hash and amount reconciled</div>
+        <div class="vv tnum"><em>1,000</em> loops · <em>3,000</em> receipts</div>
+        <div class="vk">Every loop re-verified from chain receipts by the evidence pack verifier, totals matching to the cent</div>
       </div>
       <div class="vcell">
         <div class="vv tnum">Negative proof · <em>PASS</em></div>
         <div class="vk">An in band swap moved the price and the guardian priced it, then correctly did nothing</div>
       </div>
       <div class="vcell">
-        <div class="vv tnum"><em>192</em> hashes</div>
-        <div class="vk">Three per loop, origin, reactive and callback, all published in the open evidence pack</div>
+        <div class="vv tnum"><em>3,000</em> hashes</div>
+        <div class="vk">Three per loop, origin, reactive and callback, all published in the open evidence pack, alongside the fleet record</div>
       </div>
     </div>
   </section>
@@ -780,7 +816,7 @@
     <div class="fl">
       <b>Reflex</b> — a stop loss and take profit guardian inside a Reactive smart contract. Built for the Reactive Omni Buildathon, Every Second Counts track. Testnet deployment: Base Sepolia and Reactive Lasna, mock tokens, no real funds at any point.<br>
       Built by Godson · Telegram @smigle22<br>
-      All 64 loops executed on testnet against the project's own pool, as the brief requires: detection, reaction and settlement proven end to end, 64 times without a miss.
+      All 1,000 loops executed on testnet against the project's own pool, as the brief requires: detection, reaction and settlement proven end to end, 1,000 times without a miss, plus an 11 position fleet that fired together on a single crash.
     </div>
     <div class="foot-links">
       <a href="https://github.com/Godson-droid/reflex" target="_blank" rel="noopener">GitHub repo ↗</a>
@@ -790,16 +826,58 @@
   </div>
 </footer>
 
+<style>
+  /* ---------- chaos strip ---------- */
+  .chaos{position:relative;margin-top:64px;border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden}
+  .chaos-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(251,113,133,.16) 1px, transparent 1.4px),radial-gradient(rgba(207,249,77,.10) 1px, transparent 1.4px);background-size:26px 26px,44px 44px;background-position:0 0,13px 21px;animation:chaosdrift 9s linear infinite;opacity:.7}
+  @keyframes chaosdrift{from{background-position:0 0,13px 21px}to{background-position:26px 12px,57px 47px}}
+  .chaos-in{position:relative;padding:34px 36px 30px}
+  .chaos-k{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rose)}
+  .chaos-big{font-size:clamp(24px,3.4vw,38px);font-weight:800;letter-spacing:-.025em;line-height:1.15;margin-top:12px;max-width:800px}
+  .chaos-big em{font-style:normal;color:var(--rose)}
+  .chaos-note{color:var(--muted);font-size:15px;line-height:1.6;margin-top:12px;max-width:760px}
+  .chaos-note b{color:var(--text)}
+  .chaos-chips{margin-top:16px}
+  @media (max-width:640px){ .chaos-in{padding:24px 20px 22px} }
+
+  /* ---------- fleet ---------- */
+  .fleet-shell{margin-top:20px;border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden}
+  .fleet-chart-wrap{position:relative;border-bottom:1px solid var(--line)}
+  #fleetChart{display:block;width:100%;height:300px}
+  .fleet-cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 20px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.06em}
+  .fleet-stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+  .fstat{padding:18px 20px;border-right:1px solid var(--line)}
+  .fstat:last-child{border-right:none}
+  .fstat b{font-family:var(--mono);font-size:clamp(19px,2.2vw,26px);font-weight:700;display:block;margin-top:5px;white-space:nowrap}
+  .fstat b small{font-size:.58em;color:var(--muted);font-weight:500}
+  .fleet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px;padding:20px}
+  .ftile{border:1px solid var(--line);border-radius:14px;background:var(--inset);padding:15px 16px;opacity:.38;transition:opacity .5s,border-color .5s,box-shadow .5s}
+  .ftile.lit{opacity:1;border-color:var(--volt-dim);box-shadow:0 0 0 1px rgba(207,249,77,.12),0 6px 24px rgba(0,0,0,.35)}
+  .ftile-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .ftile-pos{font-weight:700;font-size:13.5px}
+  .ftile-delta{font-family:var(--mono);font-size:11px;color:var(--volt);white-space:nowrap}
+  .ftile-out{font-family:var(--mono);font-size:19px;font-weight:700;margin-top:8px}
+  .ftile-out small{font-size:.58em;color:var(--muted);font-weight:500}
+  .ftile-sub{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:3px}
+  .ftile-g{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:9px}
+  .ftile-links{margin-top:6px}
+  .ftile-links a{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+  .ftile-links a:hover{color:var(--volt-hi)}
+  .fleet-note{padding:0 20px 20px;color:var(--faint);font-size:12.5px;line-height:1.6;max-width:840px}
+  @media (max-width:1020px){ .fleet-stats{grid-template-columns:1fr 1fr} .fstat:nth-child(2){border-right:none} .fstat:nth-child(1),.fstat:nth-child(2){border-bottom:1px solid var(--line)} }
+  @media (max-width:640px){ #fleetChart{height:230px} .fleet-grid{padding:14px} .fstat b{white-space:normal;font-size:18px} .counter .v{font-size:20px} }
+  @media (prefers-reduced-motion: reduce){ .chaos-dots{animation:none} .ftile{transition:none;opacity:1} }
+</style>
 <script src="loops-data.js"></script>
 <script>
 (function(){
   "use strict";
   var LOOPS = window.REFLEX_LOOPS || [];
-  var TOTAL_USDC = 1698003.97;
+  var TOTAL_USDC = 27271144.94;
   var QA_IDX = null;
   try {
     var qp = new URLSearchParams(window.location.search).get("qa");
-    if(qp !== null){ QA_IDX = Math.max(0, Math.min(64, parseInt(qp, 10) || 0)); }
+    if(qp !== null){ QA_IDX = Math.max(0, Math.min(LOOPS.length, parseInt(qp, 10) || 0)); }
   } catch(e){}
   if(QA_IDX !== null){
     document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
@@ -887,6 +965,9 @@
       return '<span class="tk"><i>LOOP ' + l.n + '</i><span class="' + (l.k === "SL" ? "sl" : "tp") + '">' + (l.k === "SL" ? "STOP LOSS" : "TAKE PROFIT") + '</span><b>' + fmt(l.out, 2) + ' USDC</b><span>' + l.lat + ' BLOCKS</span><span class="sep">·</span></span>';
     }).join("");
     track.innerHTML = '<div class="tk-group">' + items + '</div><div class="tk-group">' + items + '</div>';
+    // keep the scroll speed constant now that the track carries 1,000 loops
+    var halfW = track.scrollWidth / 2;
+    if(halfW > 0) track.style.animationDuration = Math.round(halfW / 55) + "s";
   }
 
   /* ---------- replay ---------- */
@@ -934,13 +1015,17 @@
     ctx.strokeStyle = "rgba(238,242,233,.13)"; ctx.lineWidth = 1.4; ctx.stroke();
     // played path
     if(state.idx > 0){
+      var dense = state.idx > 120;
       ctx.beginPath();
       for(var i = 0; i < state.idx; i++){ if(i === 0) ctx.moveTo(X(i), Y(LOOPS[i].price)); else ctx.lineTo(X(i), Y(LOOPS[i].price)); }
-      ctx.strokeStyle = "#cff94d"; ctx.lineWidth = 2.2;
-      ctx.shadowColor = "rgba(207,249,77,.45)"; ctx.shadowBlur = 9; ctx.stroke(); ctx.shadowBlur = 0;
+      if(dense){ ctx.strokeStyle = "rgba(207,249,77,.34)"; ctx.lineWidth = 1.1; ctx.stroke(); }
+      else {
+        ctx.strokeStyle = "#cff94d"; ctx.lineWidth = 2.2;
+        ctx.shadowColor = "rgba(207,249,77,.45)"; ctx.shadowBlur = 9; ctx.stroke(); ctx.shadowBlur = 0;
+      }
       for(var j = 0; j < state.idx; j++){
         var l = LOOPS[j], isCur = j === state.idx - 1;
-        ctx.beginPath(); ctx.arc(X(j), Y(l.price), isCur ? 5.5 : 3.4, 0, Math.PI * 2);
+        ctx.beginPath(); ctx.arc(X(j), Y(l.price), isCur ? 5.5 : (dense ? 1.9 : 3.4), 0, Math.PI * 2);
         ctx.fillStyle = l.k === "SL" ? "#fb7185" : "#cff94d"; ctx.fill();
         if(isCur){
           ctx.beginPath(); ctx.arc(X(j), Y(l.price), 11, 0, Math.PI * 2);
@@ -953,7 +1038,7 @@
     ctx.fillStyle = "#5f6a62"; ctx.textAlign = "left";
     ctx.fillText("LOOP 1", padL, h - 10);
     ctx.textAlign = "right";
-    ctx.fillText("LOOP 64", padL + pw, h - 10);
+    ctx.fillText("LOOP " + LOOPS.length.toLocaleString("en-US"), padL + pw, h - 10);
     ctx.textAlign = "left";
   }
 
@@ -966,7 +1051,7 @@
   function render(){
     drawChart();
     scrubber.value = state.idx;
-    scrubPos.textContent = state.idx + " / " + LOOPS.length;
+    scrubPos.textContent = fmt(state.idx, 0) + " / " + fmt(LOOPS.length, 0);
     document.getElementById("roCum").textContent = fmt(cum(state.idx), 2);
     var loopEl = document.getElementById("roLoop"), kindEl = document.getElementById("roKind");
     var priceEl = document.getElementById("roPrice"), outEl = document.getElementById("roOut"), latEl = document.getElementById("roLat");
@@ -990,23 +1075,26 @@
       pipsEl.innerHTML = pips;
       txEl.innerHTML = txLinks(l);
     }
-    document.querySelectorAll("#ledgerBody tr").forEach(function(tr){
-      tr.classList.toggle("sel", parseInt(tr.getAttribute("data-n"), 10) === state.idx);
-    });
+    if(window.__ledgerRows){
+      if(window.__ledgerPrev && window.__ledgerRows[window.__ledgerPrev]) window.__ledgerRows[window.__ledgerPrev].classList.remove("sel");
+      if(window.__ledgerRows[state.idx]) window.__ledgerRows[state.idx].classList.add("sel");
+      window.__ledgerPrev = state.idx;
+    }
     replayState.textContent = state.playing ? "Replay running · recorded executions" :
-      (state.idx >= LOOPS.length ? "Replay complete · 64 of 64" : "Replay paused · recorded executions");
+      (state.idx >= LOOPS.length ? "Replay complete · " + fmt(LOOPS.length, 0) + " of " + fmt(LOOPS.length, 0) : "Replay paused · recorded executions");
     btnPlay.textContent = state.playing ? "❚❚ Pause" : (state.idx >= LOOPS.length ? "▶ Replay again" : "▶ Play");
     btnPlay.classList.toggle("primary", !state.playing);
   }
 
   function stopTimer(){ if(state.timer){ clearTimeout(state.timer); state.timer = null; } }
+  var STEP = Math.max(1, Math.round(LOOPS.length / 170));
   function step(){
     if(!state.playing) return;
     if(state.idx >= LOOPS.length){ state.playing = false; render(); return; }
-    state.idx += 1;
+    state.idx = Math.min(LOOPS.length, state.idx + STEP);
     render();
     if(state.idx >= LOOPS.length){ state.playing = false; render(); return; }
-    state.timer = setTimeout(step, 640 / state.speed);
+    state.timer = setTimeout(step, 620 / state.speed);
   }
   function play(){
     if(state.idx >= LOOPS.length) state.idx = 0;
@@ -1054,15 +1142,16 @@
     LOOPS.forEach(function(l){ counts[l.lat] = (counts[l.lat] || 0) + 1; });
     var maxC = 0; Object.keys(counts).forEach(function(k){ maxC = Math.max(maxC, counts[k]); });
     var html = "";
-    for(var b = 5; b <= 17; b++){
+    for(var b = 3; b <= 17; b++){
       var c = counts[b] || 0;
-      html += '<div class="hbar' + (b === 8 ? " is-median" : "") + '">' +
+      var isOut = (b === 12 || b === 14 || b === 17);
+      html += '<div class="hbar' + (b === 6 ? " is-median" : "") + '">' +
         '<div class="count' + (c === 0 ? " zero" : "") + '">' + (c === 0 ? "·" : c) + '</div>' +
-        '<div class="bar' + (b === 17 ? " outlier" : "") + (c === 0 ? " zero" : "") + '" data-h="' + (c === 0 ? 0 : Math.round(c / maxC * 100)) + '"></div>' +
+        '<div class="bar' + (isOut ? " outlier" : "") + (c === 0 ? " zero" : "") + '" data-h="' + (c === 0 ? 0 : Math.round(c / maxC * 100)) + '"></div>' +
         '<div class="blk">' + b + '</div></div>';
     }
-    html += '<div class="median-line" style="left:' + ((3.5 / 13) * 100) + '%"></div>' +
-            '<div class="median-tag" style="left:' + ((3.5 / 13) * 100) + '%">MEDIAN 8</div>';
+    html += '<div class="median-line" style="left:' + ((3.5 / 15) * 100) + '%"></div>' +
+            '<div class="median-tag" style="left:' + ((3.5 / 15) * 100) + '%">MEDIAN 6</div>';
     histEl.innerHTML = html;
     var hio = ("IntersectionObserver" in window) ? new IntersectionObserver(function(es){
       es.forEach(function(e){
@@ -1090,9 +1179,11 @@
         '<td>' + l.lat + ' blocks</td>' +
         '<td><a href="' + BASESCAN + l.c + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + shortHash(l.c) + ' ↗</a></td></tr>';
     }).join("");
+    window.__ledgerRows = {};
     ledgerBody.querySelectorAll("tr").forEach(function(tr){
+      var n = parseInt(tr.getAttribute("data-n"), 10);
+      window.__ledgerRows[n] = tr;
       tr.addEventListener("click", function(){
-        var n = parseInt(tr.getAttribute("data-n"), 10);
         window.__setReplay(n);
         document.getElementById("replay").scrollIntoView({behavior: reduced ? "auto" : "smooth", block: "start"});
       });
@@ -1138,7 +1229,7 @@
   var LASNA_RPC = "https://lasna-rpc.rnk.dev/";
   var WC_PROJECT_ID = "5940522633ad9fc623dd1fb3f00b05f4";
   var MOCK_BALANCE = 10; // WETH available in the connected demo wallet (old app)
-  var RECORDED = { price: 2866.21, sl: 2700, tp: 3300, amount: 10, label: "Watching" };
+  var RECORDED = { price: 1988.56, sl: 2700, tp: 3300, amount: 10, label: "Watching" };
   var SEL = { reserves: "0x0902f1ac", state: "0xc19d93fb", status: "0x200d2ed2",
               amount: "0xaa8c217c", sl: "0xe0efb1fd", tp: "0x0cb479d8" };
 
@@ -1539,6 +1630,102 @@
   loadLive();
   restore();
   setInterval(loadLive, 30000);
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  /* ================= The fleet event ================= */
+  var FLEET = window.REFLEX_FLEET;
+  var grid = document.getElementById("fleetGrid");
+  var cv = document.getElementById("fleetChart");
+  if(!FLEET || !grid || !cv) return;
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fmt = function(v, dec){ return v.toLocaleString("en-US",{minimumFractionDigits:dec, maximumFractionDigits:dec}); };
+  var shortHash = function(h){ return h.slice(0,10) + "…" + h.slice(-6); };
+  var shortAddr = function(a){ return a.slice(0,6) + "…" + a.slice(-4); };
+  var BASESCAN = "https://sepolia.basescan.org/tx/";
+
+  grid.innerHTML = FLEET.positions.map(function(p, i){
+    return '<div class="ftile" style="transition-delay:' + (i * 110) + 'ms">' +
+      '<div class="ftile-top"><span class="ftile-pos">Position ' + p.pos + '</span><span class="ftile-delta">+' + p.delta + ' blocks</span></div>' +
+      '<div class="ftile-out tnum">' + fmt(p.out, 2) + ' <small>USDC</small></div>' +
+      '<div class="ftile-sub">10 WETH at ' + fmt(p.px, 2) + '</div>' +
+      '<div class="ftile-g">Guardian ' + shortAddr(p.guardian) + '</div>' +
+      '<div class="ftile-links"><a href="' + BASESCAN + p.ctx + '" target="_blank" rel="noopener">Callback ' + shortHash(p.ctx) + ' ↗</a></div>' +
+    '</div>';
+  }).join("");
+
+  var pts = [{ p: FLEET.event.priceBefore, kind: "start" }, { p: FLEET.event.priceAfter, kind: "crash" }]
+    .concat(FLEET.positions.map(function(p){ return { p: p.px, kind: "sale" }; }));
+  var pMin = 550, pMax = 2150;
+
+  function drawFleet(prog){
+    var w = cv.clientWidth, h = cv.clientHeight;
+    if(!w || !h) return;
+    var dpr = window.devicePixelRatio || 1;
+    if(cv.width !== Math.round(w * dpr)){ cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+    var ctx = cv.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    var padL = 16, padR = 96, padT = 26, padB = 30;
+    var pw = w - padL - padR, ph = h - padT - padB;
+    var X = function(i){ return padL + (i / (pts.length - 1)) * pw; };
+    var Y = function(p){ return padT + (1 - (p - pMin) / (pMax - pMin)) * ph; };
+    ctx.font = "600 10.5px 'JetBrains Mono', monospace";
+    // stop loss band reference
+    var yb = Y(2008.72);
+    ctx.beginPath(); ctx.setLineDash([5, 6]); ctx.moveTo(padL, Y(1800)); ctx.lineTo(padL + pw, Y(1800));
+    ctx.strokeStyle = "rgba(251,113,133,.45)"; ctx.lineWidth = 1.1; ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = "#fb7185"; ctx.textAlign = "left";
+    ctx.fillText("CRASH", padL + pw + 10, Y(1800) - 3);
+    ctx.fillText("1,800.00", padL + pw + 10, Y(1800) + 11);
+    // path up to prog
+    var upto = Math.max(1, Math.floor(prog * (pts.length - 1)));
+    ctx.beginPath();
+    for(var i = 0; i <= upto; i++){ if(i === 0) ctx.moveTo(X(i), Y(pts[i].p)); else ctx.lineTo(X(i), Y(pts[i].p)); }
+    ctx.strokeStyle = "#fb7185"; ctx.lineWidth = 2.2;
+    ctx.shadowColor = "rgba(251,113,133,.4)"; ctx.shadowBlur = 8; ctx.stroke(); ctx.shadowBlur = 0;
+    for(var j = 0; j <= upto; j++){
+      var pt = pts[j];
+      ctx.beginPath(); ctx.arc(X(j), Y(pt.p), pt.kind === "sale" ? 4 : 5.5, 0, Math.PI * 2);
+      ctx.fillStyle = pt.kind === "sale" ? "#cff94d" : "#fb7185"; ctx.fill();
+      if(pt.kind === "start"){
+        ctx.fillStyle = "#eef2e9"; ctx.textAlign = "left";
+        ctx.fillText("2,008.72", X(j), Y(pt.p) - 10);
+      }
+    }
+    ctx.fillStyle = "#5f6a62"; ctx.textAlign = "left";
+    ctx.fillText("THE SWAP", padL, h - 10);
+    ctx.textAlign = "right";
+    ctx.fillText("11 SALES SETTLE", padL + pw, h - 10);
+    ctx.textAlign = "left";
+    void yb;
+  }
+
+  var fleetDone = false;
+  function lightTiles(){ grid.querySelectorAll(".ftile").forEach(function(t){ t.classList.add("lit"); }); }
+  if(reduced){ drawFleet(1); lightTiles(); fleetDone = true; }
+  else if("IntersectionObserver" in window){
+    var fio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting && !fleetDone){
+          fleetDone = true; fio.disconnect();
+          var t0 = null;
+          (function anim(ts){
+            if(!t0) t0 = ts;
+            var p = Math.min(1, (ts - t0) / 1700), ease = 1 - Math.pow(1 - p, 3);
+            drawFleet(ease);
+            if(p < 1) requestAnimationFrame(anim); else lightTiles();
+          })(performance.now());
+          setTimeout(lightTiles, 1900);
+        }
+      });
+    }, {threshold:.25});
+    fio.observe(cv);
+    drawFleet(0.02);
+  } else { drawFleet(1); lightTiles(); }
+  window.addEventListener("resize", function(){ if(fleetDone) drawFleet(1); });
 })();
 </script>
 </body>
