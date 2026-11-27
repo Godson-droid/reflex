@@ -934,18 +934,25 @@
       hctx.beginPath(); hctx.arc(px, py, 3.4, 0, Math.PI * 2); hctx.fillStyle = "#cff94d"; hctx.fill();
     }
     heroDraw(2400);
-    if(!reduced){
-      var heroRun = function(ts){ heroDraw(ts || 2400); requestAnimationFrame(heroRun); };
-      requestAnimationFrame(heroRun);
-      setInterval(function(){ heroDraw(Date.now()); }, 120);
-    }
+    var heroVisible = false, heroLast = 0, heroRaf = null;
+    var heroRun = function(ts){
+      heroRaf = null;
+      if(!heroVisible || document.hidden) return;
+      if(ts - heroLast >= 100){ heroLast = ts; heroDraw(ts); }
+      heroRaf = requestAnimationFrame(heroRun);
+    };
+    var heroKick = function(){ if(heroVisible && !document.hidden && heroRaf === null) heroRaf = requestAnimationFrame(heroRun); };
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(es){ es.forEach(function(e){ heroVisible = e.isIntersecting; if(heroVisible) heroKick(); }); }, {threshold:.05}).observe(heroCv);
+    } else { heroVisible = true; heroKick(); }
+    document.addEventListener("visibilitychange", heroKick);
     window.addEventListener("resize", function(){ heroDraw(2400); });
   }
 
   /* ---------- ticker ---------- */
   var track = document.getElementById("tickerTrack");
   if(track && LOOPS.length){
-    var items = LOOPS.map(function(l){
+    var items = LOOPS.slice(-48).map(function(l){
       return '<span class="tk"><i>LOOP ' + l.n + '</i><span class="' + (l.k === "SL" ? "sl" : "tp") + '">' + (l.k === "SL" ? "STOP LOSS" : "TAKE PROFIT") + '</span><b>' + fmt(l.out, 2) + ' USDC</b><span>' + l.lat + ' BLOCKS</span><span class="sep">·</span></span>';
     }).join("");
     track.innerHTML = '<div class="tk-group">' + items + '</div><div class="tk-group">' + items + '</div>';
@@ -1155,23 +1162,51 @@
   /* ---------- ledger ---------- */
   var ledgerBody = document.getElementById("ledgerBody");
   if(ledgerBody && LOOPS.length){
-    ledgerBody.innerHTML = LOOPS.map(function(l){
+    window.__ledgerRows = {};
+    var rowHtml = function(l){
       return '<tr data-n="' + l.n + '"><td class="n">' + l.n + '</td>' +
         '<td><span class="kdot ' + (l.k === "SL" ? "sl" : "tp") + '"></span>' + (l.k === "SL" ? "Stop loss" : "Take profit") + '</td>' +
         '<td>' + fmt(l.price, 2) + '</td><td>10 WETH</td>' +
         '<td class="amt">' + fmt(l.out, 2) + '</td>' +
         '<td>' + l.lat + ' blocks</td>' +
         '<td><a href="' + BASESCAN + l.c + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + shortHash(l.c) + ' ↗</a></td></tr>';
-    }).join("");
-    window.__ledgerRows = {};
-    ledgerBody.querySelectorAll("tr").forEach(function(tr){
-      var n = parseInt(tr.getAttribute("data-n"), 10);
-      window.__ledgerRows[n] = tr;
-      tr.addEventListener("click", function(){
-        window.__setReplay(n);
-        document.getElementById("replay").scrollIntoView({behavior: reduced ? "auto" : "smooth", block: "start"});
+    };
+    var wireRows = function(){
+      ledgerBody.querySelectorAll("tr:not([data-wired])").forEach(function(tr){
+        tr.setAttribute("data-wired", "1");
+        var n = parseInt(tr.getAttribute("data-n"), 10);
+        window.__ledgerRows[n] = tr;
+        tr.addEventListener("click", function(){
+          window.__setReplay(n);
+          document.getElementById("replay").scrollIntoView({behavior: reduced ? "auto" : "smooth", block: "start"});
+        });
       });
-    });
+    };
+    var built = 0;
+    var buildUpTo = function(target){
+      if(built >= target) return;
+      var end = Math.min(target, LOOPS.length), html = "";
+      for(var i = built; i < end; i++) html += rowHtml(LOOPS[i]);
+      ledgerBody.insertAdjacentHTML("beforeend", html);
+      built = end; wireRows();
+    };
+    buildUpTo(120);
+    if(built < LOOPS.length){
+      var buildRest = function(){
+        var step = function(){
+          buildUpTo(built + 220);
+          if(built < LOOPS.length) setTimeout(step, 60);
+        };
+        step();
+      };
+      var ledgerSec = document.getElementById("ledger");
+      if(ledgerSec && "IntersectionObserver" in window){
+        var lio = new IntersectionObserver(function(es){
+          es.forEach(function(e){ if(e.isIntersecting){ buildRest(); lio.disconnect(); } });
+        }, {rootMargin: "900px"});
+        lio.observe(ledgerSec);
+      } else buildRest();
+    }
   }
 
   /* ---------- copy buttons ---------- */
